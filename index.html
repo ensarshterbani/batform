@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Batform - A clean and simple social media platform">
+    <title>Batform - Social Media</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/feed.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Main Navigation Header -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <h1 class="logo">
+                    <a href="index.html">Batform</a>
+                </h1>
+            </div>
+            
+            <div class="nav-center">
+                <form class="search-form" role="search">
+                    <input type="search" 
+                           class="search-input" 
+                           placeholder="Search for people, posts, or topics..." 
+                           aria-label="Search">
+                    <button type="submit" class="search-btn" aria-label="Search">
+                        <span class="search-icon">⚲</span>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="profile.html" class="nav-link">Profile</a></li>
+                    <li><a href="#" class="nav-link">Messages</a></li>
+                    <li><a href="#" class="nav-link">Notifications</a></li>
+                </ul>
+                <div class="user-menu">
+                    <img src="https://via.placeholder.com/32x32/4a90e2/ffffff?text=JD" 
+                         alt="John Doe profile picture" 
+                         class="user-avatar">
+                    <span class="user-name">John Doe</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <section class="user-profile-card">
+                <img src="https://via.placeholder.com/80x80/4a90e2/ffffff?text=JD" 
+                     alt="John Doe profile picture" 
+                     class="profile-avatar">
+                <h2 class="profile-name">John Doe</h2>
+                <p class="profile-title">Computer Science Student</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-number">245</span>
+                        <span class="stat-label">Friends</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">89</span>
+                        <span class="stat-label">Posts</span>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="sidebar-nav">
+                <h3>Navigation</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link active">News Feed</a></li>
+                    <li><a href="profile.html" class="sidebar-link">My Profile</a></li>
+                    <li><a href="#" class="sidebar-link">Friends</a></li>
+                    <li><a href="#" class="sidebar-link">Groups</a></li>
+                    <li><a href="#" class="sidebar-link">Events</a></li>
+                    <li><a href="#" class="sidebar-link">Photos</a></li>
+                    <li><a href="#" class="sidebar-link">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Central Feed Area -->
+        <section class="feed-container">
+            <!-- Post Creation Box -->
+            <article class="post-creator">
+                <h2 class="visually-hidden">Create a new post</h2>
+                <div class="post-creator-header">
+                    <img src="https://via.placeholder.com/40x40/4a90e2/ffffff?text=JD" 
+                         alt="Your profile picture" 
+                         class="creator-avatar">
+                    <form class="post-form">
+                        <textarea class="post-input" 
+                                  placeholder="What's on your mind, John?" 
+                                  rows="3"
+                                  aria-label="Write a post"></textarea>
+                        <div class="post-actions">
+                            <button type="button" class="post-option-btn">📷 Photo</button>
+                            <button type="button" class="post-option-btn">🎬 Video</button>
+                            <button type="button" class="post-option-btn">📍 Location</button>
+                            <button type="submit" class="post-submit-btn">Post</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+
+            <!-- News Feed -->
+            <section class="news-feed">
+                <h2 class="visually-hidden">News Feed</h2>
+                
+                <!-- Post 1 -->
+                <article class="post">
+                    <header class="post-header">
+                        <img src="https://via.placeholder.com/50x50/e74c3c/ffffff?text=SM" 
+                             alt="Sarah Miller profile picture" 
+                             class="post-avatar">
+                        <div class="post-author-info">
+                            <h3 class="post-author">Sarah Miller</h3>
+                            <time class="post-time" datetime="2024-11-05T10:30:00">2 hours ago</time>
+                        </div>
+                    </header>
+                    
+                    <div class="post-content">
+                        <p>Just finished my final project for Web Development class! Built a complete e-commerce site with React and Node.js. The feeling of seeing everything work together is incredible! 🎉</p>
+                        <img src="https://via.placeholder.com/500x300/34495e/ffffff?text=Project+Screenshot" 
+                             alt="Screenshot of Sarah's web development project" 
+                             class="post-image">
+                    </div>
+                    
+                    <footer class="post-footer">
+                        <div class="post-stats">
+                            <span class="likes-count">24 likes</span>
+                            <span class="comments-count">8 comments</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like-btn" data-action="like">
+                                <span class="action-icon">♡</span>
+                                <span class="action-text">Like</span>
+                            </button>
+                            <button class="action-btn comment-btn" data-action="comment">
+                                <span class="action-icon">💬</span>
+                                <span class="action-text">Comment</span>
+                            </button>
+                            <button class="action-btn share-btn" data-action="share">
+                                <span class="action-icon">↗</span>
+                                <span class="action-text">Share</span>
+                            </button>
+                        </div>
+                    </footer>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post">
+                    <header class="post-header">
+                        <img src="https://via.placeholder.com/50x50/2ecc71/ffffff?text=MC" 
+                             alt="Mike Chen profile picture" 
+                             class="post-avatar">
+                        <div class="post-author-info">
+                            <h3 class="post-author">Mike Chen</h3>
+                            <time class="post-time" datetime="2024-11-05T08:15:00">4 hours ago</time>
+                        </div>
+                    </header>
+                    
+                    <div class="post-content">
+                        <p>Anyone else excited about the new JavaScript features coming in ES2024? The pipeline operator is going to change how we write functional code! Here's a quick example of how clean it makes data transformations:</p>
+                        <pre class="code-block"><code>const result = data
+  |> filter(x => x.active)
+  |> map(x => x.name)
+  |> sort();</code></pre>
+                    </div>
+                    
+                    <footer class="post-footer">
+                        <div class="post-stats">
+                            <span class="likes-count">15 likes</span>
+                            <span class="comments-count">12 comments</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like-btn" data-action="like">
+                                <span class="action-icon">♡</span>
+                                <span class="action-text">Like</span>
+                            </button>
+                            <button class="action-btn comment-btn" data-action="comment">
+                                <span class="action-icon">💬</span>
+                                <span class="action-text">Comment</span>
+                            </button>
+                            <button class="action-btn share-btn" data-action="share">
+                                <span class="action-icon">↗</span>
+                                <span class="action-text">Share</span>
+                            </button>
+                        </div>
+                    </footer>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post">
+                    <header class="post-header">
+                        <img src="https://via.placeholder.com/50x50/9b59b6/ffffff?text=EJ" 
+                             alt="Emily Johnson profile picture" 
+                             class="post-avatar">
+                        <div class="post-author-info">
+                            <h3 class="post-author">Emily Johnson</h3>
+                            <time class="post-time" datetime="2024-11-05T07:45:00">5 hours ago</time>
+                        </div>
+                    </header>
+                    
+                    <div class="post-content">
+                        <p>Study group session was productive today! We tackled algorithms and data structures. Nothing beats collaborative learning. Thanks everyone who joined! 📚</p>
+                        <p>Next week: Dynamic Programming deep dive. Who's in?</p>
+                    </div>
+                    
+                    <footer class="post-footer">
+                        <div class="post-stats">
+                            <span class="likes-count">31 likes</span>
+                            <span class="comments-count">6 comments</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like-btn" data-action="like">
+                                <span class="action-icon">♡</span>
+                                <span class="action-text">Like</span>
+                            </button>
+                            <button class="action-btn comment-btn" data-action="comment">
+                                <span class="action-icon">💬</span>
+                                <span class="action-text">Comment</span>
+                            </button>
+                            <button class="action-btn share-btn" data-action="share">
+                                <span class="action-icon">↗</span>
+                                <span class="action-text">Share</span>
+                            </button>
+                        </div>
+                    </footer>
+                </article>
+            </section>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <section class="friend-suggestions">
+                <h3>Friend Suggestions</h3>
+                <article class="suggestion-item">
+                    <img src="https://via.placeholder.com/40x40/f39c12/ffffff?text=AW" 
+                         alt="Alex Wilson profile picture" 
+                         class="suggestion-avatar">
+                    <div class="suggestion-info">
+                        <h4 class="suggestion-name">Alex Wilson</h4>
+                        <p class="suggestion-mutual">3 mutual friends</p>
+                    </div>
+                    <button class="add-friend-btn" data-user="alex-wilson">Add Friend</button>
+                </article>
+                
+                <article class="suggestion-item">
+                    <img src="https://via.placeholder.com/40x40/1abc9c/ffffff?text=LB" 
+                         alt="Lisa Brown profile picture" 
+                         class="suggestion-avatar">
+                    <div class="suggestion-info">
+                        <h4 class="suggestion-name">Lisa Brown</h4>
+                        <p class="suggestion-mutual">5 mutual friends</p>
+                    </div>
+                    <button class="add-friend-btn" data-user="lisa-brown">Add Friend</button>
+                </article>
+                
+                <article class="suggestion-item">
+                    <img src="https://via.placeholder.com/40x40/e67e22/ffffff?text=DT" 
+                         alt="David Taylor profile picture" 
+                         class="suggestion-avatar">
+                    <div class="suggestion-info">
+                        <h4 class="suggestion-name">David Taylor</h4>
+                        <p class="suggestion-mutual">2 mutual friends</p>
+                    </div>
+                    <button class="add-friend-btn" data-user="david-taylor">Add Friend</button>
+                </article>
+            </section>
+
+            <section class="trending-topics">
+                <h3>Trending Topics</h3>
+                <ul class="trending-list">
+                    <li><a href="#" class="trending-link">#WebDevelopment</a></li>
+                    <li><a href="#" class="trending-link">#ReactJS</a></li>
+                    <li><a href="#" class="trending-link">#Programming</a></li>
+                    <li><a href="#" class="trending-link">#ComputerScience</a></li>
+                    <li><a href="#" class="trending-link">#TechNews</a></li>
+                    <li><a href="#" class="trending-link">#OpenSource</a></li>
+                </ul>
+            </section>
+
+            <section class="online-friends">
+                <h3>Online Now</h3>
+                <ul class="online-list">
+                    <li class="online-friend">
+                        <img src="https://via.placeholder.com/24x24/27ae60/ffffff?text=SM" 
+                             alt="Sarah Miller is online" 
+                             class="online-avatar">
+                        <span class="online-name">Sarah Miller</span>
+                        <span class="online-indicator"></span>
+                    </li>
+                    <li class="online-friend">
+                        <img src="https://via.placeholder.com/24x24/8e44ad/ffffff?text=MC" 
+                             alt="Mike Chen is online" 
+                             class="online-avatar">
+                        <span class="online-name">Mike Chen</span>
+                        <span class="online-indicator"></span>
+                    </li>
+                    <li class="online-friend">
+                        <img src="https://via.placeholder.com/24x24/3498db/ffffff?text=EJ" 
+                             alt="Emily Johnson is online" 
+                             class="online-avatar">
+                        <span class="online-name">Emily Johnson</span>
+                        <span class="online-indicator"></span>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Batform.</p>
+            <nav class="footer-nav">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Help</a>
+                <a href="#" class="footer-link">About</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Accessibility helper for screen readers -->
+    <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
+</body>
+</html>

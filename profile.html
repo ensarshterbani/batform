@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="John Doe's Profile - Batform Social Media">
+    <title>John Doe - Profile | Batform</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Main Navigation Header -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <h1 class="logo">
+                    <a href="index.html">Batform</a>
+                </h1>
+            </div>
+            
+            <div class="nav-center">
+                <form class="search-form" role="search">
+                    <input type="search" 
+                           class="search-input" 
+                           placeholder="Search for people, posts, or topics..." 
+                           aria-label="Search">
+                    <button type="submit" class="search-btn" aria-label="Search">
+                        <span class="search-icon">⚲</span>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="profile.html" class="nav-link active" aria-current="page">Profile</a></li>
+                    <li><a href="#" class="nav-link">Messages</a></li>
+                    <li><a href="#" class="nav-link">Notifications</a></li>
+                </ul>
+                <div class="user-menu">
+                    <img src="https://via.placeholder.com/32x32/4a90e2/ffffff?text=JD" 
+                         alt="John Doe profile picture" 
+                         class="user-avatar">
+                    <span class="user-name">John Doe</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="profile-main">
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <div class="profile-cover">
+                <img src="https://via.placeholder.com/1200x300/34495e/ffffff?text=Cover+Photo" 
+                     alt="John Doe's cover photo" 
+                     class="cover-photo">
+            </div>
+            
+            <div class="profile-info">
+                <div class="profile-picture-container">
+                    <img src="https://via.placeholder.com/150x150/4a90e2/ffffff?text=JD" 
+                         alt="John Doe profile picture" 
+                         class="profile-picture">
+                </div>
+                
+                <div class="profile-details">
+                    <h1 class="profile-name">John Doe</h1>
+                    <p class="profile-bio">Computer Science Student at Tech University | Web Developer | React Enthusiast</p>
+                    
+                    <div class="profile-meta">
+                        <span class="profile-location">📍 San Francisco, CA</span>
+                        <span class="profile-joined">📅 Joined March 2023</span>
+                        <span class="profile-website">🔗 <a href="https://johndoe.dev" target="_blank" rel="noopener">johndoe.dev</a></span>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">245</span>
+                            <span class="stat-label">Friends</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">89</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1.2k</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">892</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <button class="edit-profile-btn">Edit Profile</button>
+                    <button class="message-btn">Message</button>
+                    <button class="more-options-btn">⋯</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Profile Navigation -->
+            <nav class="profile-nav">
+                <ul class="profile-nav-list">
+                    <li><a href="#posts" class="profile-nav-link active">Posts</a></li>
+                    <li><a href="#about" class="profile-nav-link">About</a></li>
+                    <li><a href="#friends" class="profile-nav-link">Friends</a></li>
+                    <li><a href="#photos" class="profile-nav-link">Photos</a></li>
+                    <li><a href="#videos" class="profile-nav-link">Videos</a></li>
+                </ul>
+            </nav>
+
+            <div class="profile-body">
+                <!-- Left Column - About Info -->
+                <aside class="profile-sidebar">
+                    <section class="about-card">
+                        <h2>About</h2>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <strong>Education:</strong>
+                                <p>Computer Science at Tech University</p>
+                            </div>
+                            <div class="info-item">
+                                <strong>Work:</strong>
+                                <p>Frontend Developer Intern at StartupCo</p>
+                            </div>
+                            <div class="info-item">
+                                <strong>Skills:</strong>
+                                <p>JavaScript, React, Node.js, Python, HTML/CSS</p>
+                            </div>
+                            <div class="info-item">
+                                <strong>Interests:</strong>
+                                <p>Web Development, Open Source, Gaming, Photography</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="friends-preview">
+                        <h2>Friends <span class="friends-count">(245)</span></h2>
+                        <div class="friends-grid">
+                            <a href="#" class="friend-item">
+                                <img src="https://via.placeholder.com/80x80/e74c3c/ffffff?text=SM" 
+                                     alt="Sarah Miller" 
+                                     class="friend-avatar">
+                                <span class="friend-name">Sarah Miller</span>
+                            </a>
+                            <a href="#" class="friend-item">
+                                <img src="https://via.placeholder.com/80x80/2ecc71/ffffff?text=MC" 
+                                     alt="Mike Chen" 
+                                     class="friend-avatar">
+                                <span class="friend-name">Mike Chen</span>
+                            </a>
+                            <a href="#" class="friend-item">
+                                <img src="https://via.placeholder.com/80x80/9b59b6/ffffff?text=EJ" 
+                                     alt="Emily Johnson" 
+                                     class="friend-avatar">
+                                <span class="friend-name">Emily Johnson</span>
+                            </a>
+                            <a href="#" class="friend-item">
+                                <img src="https://via.placeholder.com/80x80/f39c12/ffffff?text=AW" 
+                                     alt="Alex Wilson" 
+                                     class="friend-avatar">
+                                <span class="friend-name">Alex Wilson</span>
+                            </a>
+                            <a href="#" class="friend-item">
+                                <img src="https://via.placeholder.com/80x80/1abc9c/ffffff?text=LB" 
+                                     alt="Lisa Brown" 
+                                     class="friend-avatar">
+                                <span class="friend-name">Lisa Brown</span>
+                            </a>
+                            <a href="#" class="friend-item">
+                                <img src="https://via.placeholder.com/80x80/e67e22/ffffff?text=DT" 
+                                     alt="David Taylor" 
+                                     class="friend-avatar">
+                                <span class="friend-name">David Taylor</span>
+                            </a>
+                        </div>
+                        <a href="#" class="see-all-friends">See All Friends</a>
+                    </section>
+
+                    <section class="photos-preview">
+                        <h2>Photos</h2>
+                        <div class="photos-grid">
+                            <img src="https://via.placeholder.com/100x100/3498db/ffffff?text=Photo" 
+                                 alt="John's photo" 
+                                 class="photo-thumbnail">
+                            <img src="https://via.placeholder.com/100x100/e74c3c/ffffff?text=Photo" 
+                                 alt="John's photo" 
+                                 class="photo-thumbnail">
+                            <img src="https://via.placeholder.com/100x100/2ecc71/ffffff?text=Photo" 
+                                 alt="John's photo" 
+                                 class="photo-thumbnail">
+                            <img src="https://via.placeholder.com/100x100/f39c12/ffffff?text=Photo" 
+                                 alt="John's photo" 
+                                 class="photo-thumbnail">
+                            <img src="https://via.placeholder.com/100x100/9b59b6/ffffff?text=Photo" 
+                                 alt="John's photo" 
+                                 class="photo-thumbnail">
+                            <img src="https://via.placeholder.com/100x100/1abc9c/ffffff?text=Photo" 
+                                 alt="John's photo" 
+                                 class="photo-thumbnail">
+                        </div>
+                        <a href="#" class="see-all-photos">See All Photos</a>
+                    </section>
+                </aside>
+
+                <!-- Right Column - Posts -->
+                <section class="profile-posts">
+                    <!-- Post Creation (only visible on own profile) -->
+                    <article class="post-creator">
+                        <h2 class="visually-hidden">Create a new post</h2>
+                        <div class="post-creator-header">
+                            <img src="https://via.placeholder.com/40x40/4a90e2/ffffff?text=JD" 
+                                 alt="Your profile picture" 
+                                 class="creator-avatar">
+                            <form class="post-form">
+                                <textarea class="post-input" 
+                                          placeholder="Share something with your friends..." 
+                                          rows="3"
+                                          aria-label="Write a post"></textarea>
+                                <div class="post-actions">
+                                    <button type="button" class="post-option-btn">📷 Photo</button>
+                                    <button type="button" class="post-option-btn">🎬 Video</button>
+                                    <button type="button" class="post-option-btn">📍 Location</button>
+                                    <button type="submit" class="post-submit-btn">Post</button>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+
+                    <!-- User's Posts -->
+                    <div class="user-posts">
+                        <h2 class="visually-hidden">John Doe's Posts</h2>
+                        
+                        <!-- Post 1 -->
+                        <article class="post">
+                            <header class="post-header">
+                                <img src="https://via.placeholder.com/50x50/4a90e2/ffffff?text=JD" 
+                                     alt="John Doe profile picture" 
+                                     class="post-avatar">
+                                <div class="post-author-info">
+                                    <h3 class="post-author">John Doe</h3>
+                                    <time class="post-time" datetime="2024-11-04T15:30:00">Yesterday at 3:30 PM</time>
+                                </div>
+                            </header>
+                            
+                            <div class="post-content">
+                                <p>Just deployed my first full-stack application! It's a task management app built with React frontend and Node.js backend. The learning curve was steep but so worth it. Thanks to everyone who helped me debug along the way! 🚀</p>
+                                <img src="https://via.placeholder.com/500x300/2c3e50/ffffff?text=Task+Manager+App" 
+                                     alt="Screenshot of John's task manager application" 
+                                     class="post-image">
+                            </div>
+                            
+                            <footer class="post-footer">
+                                <div class="post-stats">
+                                    <span class="likes-count">42 likes</span>
+                                    <span class="comments-count">15 comments</span>
+                                </div>
+                                <div class="post-actions">
+                                    <button class="action-btn like-btn" data-action="like">
+                                        <span class="action-icon">♡</span>
+                                        <span class="action-text">Like</span>
+                                    </button>
+                                    <button class="action-btn comment-btn" data-action="comment">
+                                        <span class="action-icon">💬</span>
+                                        <span class="action-text">Comment</span>
+                                    </button>
+                                    <button class="action-btn share-btn" data-action="share">
+                                        <span class="action-icon">↗</span>
+                                        <span class="action-text">Share</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <!-- Post 2 -->
+                        <article class="post">
+                            <header class="post-header">
+                                <img src="https://via.placeholder.com/50x50/4a90e2/ffffff?text=JD" 
+                                     alt="John Doe profile picture" 
+                                     class="post-avatar">
+                                <div class="post-author-info">
+                                    <h3 class="post-author">John Doe</h3>
+                                    <time class="post-time" datetime="2024-11-03T12:15:00">2 days ago</time>
+                                </div>
+                            </header>
+                            
+                            <div class="post-content">
+                                <p>Attending the local JavaScript meetup tonight! Looking forward to the talk on "Modern React Patterns". Always excited to learn from the community and network with fellow developers. 💻</p>
+                                <p>Anyone else going? Let me know if you want to grab coffee after!</p>
+                            </div>
+                            
+                            <footer class="post-footer">
+                                <div class="post-stats">
+                                    <span class="likes-count">18 likes</span>
+                                    <span class="comments-count">7 comments</span>
+                                </div>
+                                <div class="post-actions">
+                                    <button class="action-btn like-btn" data-action="like">
+                                        <span class="action-icon">♡</span>
+                                        <span class="action-text">Like</span>
+                                    </button>
+                                    <button class="action-btn comment-btn" data-action="comment">
+                                        <span class="action-icon">💬</span>
+                                        <span class="action-text">Comment</span>
+                                    </button>
+                                    <button class="action-btn share-btn" data-action="share">
+                                        <span class="action-icon">↗</span>
+                                        <span class="action-text">Share</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <!-- Post 3 -->
+                        <article class="post">
+                            <header class="post-header">
+                                <img src="https://via.placeholder.com/50x50/4a90e2/ffffff?text=JD" 
+                                     alt="John Doe profile picture" 
+                                     class="post-avatar">
+                                <div class="post-author-info">
+                                    <h3 class="post-author">John Doe</h3>
+                                    <time class="post-time" datetime="2024-11-01T09:45:00">4 days ago</time>
+                                </div>
+                            </header>
+                            
+                            <div class="post-content">
+                                <p>Weekend coding session complete! Spent the last two days refactoring my portfolio website. Clean code is happy code. Here's what I learned about component composition in React:</p>
+                                <pre class="code-block"><code>// Instead of prop drilling
+const App = () => {
+  const [user, setUser] = useState(null);
+  return &lt;Profile user={user} setUser={setUser} /&gt;;
+};
+
+// Use composition
+const App = () => {
+  return (
+    &lt;UserProvider&gt;
+      &lt;Profile /&gt;
+    &lt;/UserProvider&gt;
+  );
+};</code></pre>
+                            </div>
+                            
+                            <footer class="post-footer">
+                                <div class="post-stats">
+                                    <span class="likes-count">29 likes</span>
+                                    <span class="comments-count">11 comments</span>
+                                </div>
+                                <div class="post-actions">
+                                    <button class="action-btn like-btn" data-action="like">
+                                        <span class="action-icon">♡</span>
+                                        <span class="action-text">Like</span>
+                                    </button>
+                                    <button class="action-btn comment-btn" data-action="comment">
+                                        <span class="action-icon">💬</span>
+                                        <span class="action-text">Comment</span>
+                                    </button>
+                                    <button class="action-btn share-btn" data-action="share">
+                                        <span class="action-icon">↗</span>
+                                        <span class="action-text">Share</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Batform. A student project for educational purposes.</p>
+            <nav class="footer-nav">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Help</a>
+                <a href="#" class="footer-link">About</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Accessibility helper for screen readers -->
+    <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
+</body>
+</html>
