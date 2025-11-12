@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="John Doe's Profile - Batform Social Media">
     <title>John Doe - Profile | Batform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/posts.css">
 </head>
 <body>
     <!-- Main Navigation Header -->
@@ -23,27 +25,25 @@
             <div class="nav-center">
                 <form class="search-form" role="search">
                     <input type="search" 
-                           class="search-input" 
-                           placeholder="Search for people, posts, or topics..." 
-                           aria-label="Search">
+                          class="search-input" 
+                          placeholder="Search for people, posts, or topics..." 
+                          aria-label="Search">
                     <button type="submit" class="search-btn" aria-label="Search">
-                        <span class="search-icon">⚲</span>
+                        <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
                     </button>
                 </form>
             </div>
             
             <div class="nav-right">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="profile.html" class="nav-link active" aria-current="page">Profile</a></li>
-                    <li><a href="#" class="nav-link">Messages</a></li>
-                    <li><a href="#" class="nav-link">Notifications</a></li>
+                    <li><a href="index.html" class="nav-link" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    <li><a href="profile.html" class="nav-link active"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="nav-link"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
                 </ul>
                 <div class="user-menu">
-                    <img src="https://via.placeholder.com/32x32/4a90e2/ffffff?text=JD" 
-                         alt="John Doe profile picture" 
-                         class="user-avatar">
-                    <span class="user-name">John Doe</span>
+                    <img src="images/profile_picture.svg" aria-placeholder="images/profile_picture.svg"
+                        alt="User profile picture" 
+                        class="user-avatar">
                 </div>
             </div>
         </nav>
@@ -54,16 +54,16 @@
         <!-- Profile Header -->
         <header class="profile-header">
             <div class="profile-cover">
-                <img src="https://via.placeholder.com/1200x300/34495e/ffffff?text=Cover+Photo" 
-                     alt="John Doe's cover photo" 
-                     class="cover-photo">
+                <img src="images/profile_picture.svg" 
+                    alt="John Doe's cover photo" 
+                    class="cover-photo">
             </div>
             
             <div class="profile-info">
                 <div class="profile-picture-container">
-                    <img src="https://via.placeholder.com/150x150/4a90e2/ffffff?text=JD" 
-                         alt="John Doe profile picture" 
-                         class="profile-picture">
+                    <img src="images/profile_picture.svg"  
+                        alt="John Doe profile picture" 
+                        class="profile-picture">
                 </div>
                 
                 <div class="profile-details">
@@ -146,37 +146,37 @@
                         <h2>Friends <span class="friends-count">(245)</span></h2>
                         <div class="friends-grid">
                             <a href="#" class="friend-item">
-                                <img src="https://via.placeholder.com/80x80/e74c3c/ffffff?text=SM" 
+                                <img src="images/profile_picture.svg" 
                                      alt="Sarah Miller" 
                                      class="friend-avatar">
                                 <span class="friend-name">Sarah Miller</span>
                             </a>
                             <a href="#" class="friend-item">
-                                <img src="https://via.placeholder.com/80x80/2ecc71/ffffff?text=MC" 
+                                <img src="images/profile_picture.svg" 
                                      alt="Mike Chen" 
                                      class="friend-avatar">
                                 <span class="friend-name">Mike Chen</span>
                             </a>
                             <a href="#" class="friend-item">
-                                <img src="https://via.placeholder.com/80x80/9b59b6/ffffff?text=EJ" 
+                                <img src="images/profile_picture.svg" 
                                      alt="Emily Johnson" 
                                      class="friend-avatar">
                                 <span class="friend-name">Emily Johnson</span>
                             </a>
                             <a href="#" class="friend-item">
-                                <img src="https://via.placeholder.com/80x80/f39c12/ffffff?text=AW" 
+                                <img src="images/profile_picture.svg" 
                                      alt="Alex Wilson" 
                                      class="friend-avatar">
                                 <span class="friend-name">Alex Wilson</span>
                             </a>
                             <a href="#" class="friend-item">
-                                <img src="https://via.placeholder.com/80x80/1abc9c/ffffff?text=LB" 
+                                <img src="images/profile_picture.svg" 
                                      alt="Lisa Brown" 
                                      class="friend-avatar">
                                 <span class="friend-name">Lisa Brown</span>
                             </a>
                             <a href="#" class="friend-item">
-                                <img src="https://via.placeholder.com/80x80/e67e22/ffffff?text=DT" 
+                                <img src="images/profile_picture.svg" 
                                      alt="David Taylor" 
                                      class="friend-avatar">
                                 <span class="friend-name">David Taylor</span>
@@ -188,22 +188,22 @@
                     <section class="photos-preview">
                         <h2>Photos</h2>
                         <div class="photos-grid">
-                            <img src="https://via.placeholder.com/100x100/3498db/ffffff?text=Photo" 
+                            <img src="images/profile_picture.svg" 
                                  alt="John's photo" 
                                  class="photo-thumbnail">
-                            <img src="https://via.placeholder.com/100x100/e74c3c/ffffff?text=Photo" 
+                            <img src="images/profile_picture.svg" 
                                  alt="John's photo" 
                                  class="photo-thumbnail">
-                            <img src="https://via.placeholder.com/100x100/2ecc71/ffffff?text=Photo" 
+                            <img src="images/profile_picture.svg" 
                                  alt="John's photo" 
                                  class="photo-thumbnail">
-                            <img src="https://via.placeholder.com/100x100/f39c12/ffffff?text=Photo" 
+                            <img src="images/profile_picture.svg" 
                                  alt="John's photo" 
                                  class="photo-thumbnail">
-                            <img src="https://via.placeholder.com/100x100/9b59b6/ffffff?text=Photo" 
+                            <img src="images/profile_picture.svg" 
                                  alt="John's photo" 
                                  class="photo-thumbnail">
-                            <img src="https://via.placeholder.com/100x100/1abc9c/ffffff?text=Photo" 
+                            <img src="images/profile_picture.svg" 
                                  alt="John's photo" 
                                  class="photo-thumbnail">
                         </div>
@@ -217,7 +217,7 @@
                     <article class="post-creator">
                         <h2 class="visually-hidden">Create a new post</h2>
                         <div class="post-creator-header">
-                            <img src="https://via.placeholder.com/40x40/4a90e2/ffffff?text=JD" 
+                            <img src="images/profile_picture.svg" 
                                  alt="Your profile picture" 
                                  class="creator-avatar">
                             <form class="post-form">
@@ -242,7 +242,7 @@
                         <!-- Post 1 -->
                         <article class="post">
                             <header class="post-header">
-                                <img src="https://via.placeholder.com/50x50/4a90e2/ffffff?text=JD" 
+                                <img src="images/profile_picture.svg" 
                                      alt="John Doe profile picture" 
                                      class="post-avatar">
                                 <div class="post-author-info">
@@ -283,7 +283,7 @@
                         <!-- Post 2 -->
                         <article class="post">
                             <header class="post-header">
-                                <img src="https://via.placeholder.com/50x50/4a90e2/ffffff?text=JD" 
+                                <img src="images/profile_picture.svg" 
                                      alt="John Doe profile picture" 
                                      class="post-avatar">
                                 <div class="post-author-info">
@@ -313,7 +313,7 @@
                                     </button>
                                     <button class="action-btn share-btn" data-action="share">
                                         <span class="action-icon">↗</span>
-                                        <span class="action-text">Share</span>
+                                        <span class="action-text">Save</span>
                                     </button>
                                 </div>
                             </footer>
@@ -322,7 +322,7 @@
                         <!-- Post 3 -->
                         <article class="post">
                             <header class="post-header">
-                                <img src="https://via.placeholder.com/50x50/4a90e2/ffffff?text=JD" 
+                                <img src="images/profile_picture.svg" 
                                      alt="John Doe profile picture" 
                                      class="post-avatar">
                                 <div class="post-author-info">
@@ -333,20 +333,6 @@
                             
                             <div class="post-content">
                                 <p>Weekend coding session complete! Spent the last two days refactoring my portfolio website. Clean code is happy code. Here's what I learned about component composition in React:</p>
-                                <pre class="code-block"><code>// Instead of prop drilling
-const App = () => {
-  const [user, setUser] = useState(null);
-  return &lt;Profile user={user} setUser={setUser} /&gt;;
-};
-
-// Use composition
-const App = () => {
-  return (
-    &lt;UserProvider&gt;
-      &lt;Profile /&gt;
-    &lt;/UserProvider&gt;
-  );
-};</code></pre>
                             </div>
                             
                             <footer class="post-footer">
@@ -365,7 +351,7 @@ const App = () => {
                                     </button>
                                     <button class="action-btn share-btn" data-action="share">
                                         <span class="action-icon">↗</span>
-                                        <span class="action-text">Share</span>
+                                        <span class="action-text">Save</span>
                                     </button>
                                 </div>
                             </footer>
