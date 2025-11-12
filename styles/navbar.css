@@ -30,12 +30,12 @@
 .logo a {
     font-size: 24px;
     font-weight: 700;
-    color: #4a90e2;
+    color: #088178;
     text-decoration: none;
 }
 
 .logo a:hover {
-    color: #357abd;
+    color: #088178;
     text-decoration: none;
 }
 
@@ -54,7 +54,7 @@
 .search-input {
     width: 100%;
     padding: 8px 40px 8px 16px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #088178;
     border-radius: 20px;
     background-color: #f8f9fa;
     font-size: 14px;
@@ -63,7 +63,7 @@
 
 .search-input:focus {
     background-color: white;
-    border-color: #4a90e2;
+    border-color: #088178;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
 }
 
@@ -120,26 +120,55 @@
 }
 
 .nav-link:hover {
-    color: #4a90e2;
-    background-color: #f8f9fa;
+    color: #088178;
     text-decoration: none;
 }
 
 .nav-link.active {
-    color: #4a90e2;
-    background-color: #e3f2fd;
+    color: #088178;
 }
 
 .nav-link.active::after {
     content: '';
     position: absolute;
-    bottom: -16px;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     width: 4px;
-    height: 4px;
-    background-color: #4a90e2;
-    border-radius: 50%;
+    height: 3px;
+    background-color: #088178;
+    width: 50%;
+    border-radius: 2px;
+}
+
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background-color: #088178;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.nav-link .fa,
+.nav-link i {
+    display: inline-block; /* allow transform */
+    transition: transform 0.18s ease, color 0.18s ease;
+    font-size: 18px;
+}
+
+.nav-link:hover .fa,
+.nav-link:hover i {
+    transform: scale(1.2);
+}
+
+.nav-link.active .fa,
+.nav-link.active i {
+    transform: scale(1.08);
 }
 
 /* User Menu */
@@ -171,7 +200,7 @@
     color: #333333;
 }
 
-/* Mobile Navigation Toggle (for future responsive design) */
+/* Mobile Navigation Toggle */
 .nav-toggle {
     display: none;
     background: none;
@@ -187,7 +216,7 @@
     background-color: #f8f9fa;
 }
 
-/* Notification Badge (for future use) */
+/* Notification Badge */
 .nav-link[data-notifications]::before {
     content: attr(data-notifications);
     position: absolute;
@@ -204,7 +233,7 @@
     line-height: 1;
 }
 
-/* Dropdown Menu (for future enhancement) */
+/* Dropdown Menu */
 .nav-dropdown {
     position: relative;
 }
@@ -252,7 +281,7 @@
     margin: 8px 0;
 }
 
-/* Search Suggestions (for future enhancement) */
+/* Search Suggestions */
 .search-suggestions {
     position: absolute;
     top: 100%;
