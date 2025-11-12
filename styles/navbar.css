@@ -25,6 +25,11 @@
 
 .logo {
     margin: 0;
+    transition: 0.4s;
+}
+
+.logo:hover {
+  transform: scale(1.1) translateY(-1px);
 }
 
 .logo a {
@@ -56,7 +61,7 @@
     padding: 8px 40px 8px 16px;
     border: 1px solid #088178;
     border-radius: 20px;
-    background-color: #f8f9fa;
+    background-color: white;
     font-size: 14px;
     transition: all 0.2s ease;
 }
@@ -64,7 +69,8 @@
 .search-input:focus {
     background-color: white;
     border-color: #088178;
-    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+    box-shadow: 0 0 0 2px rgba(8, 129, 120, 1)
+;
 }
 
 .search-input::placeholder {
@@ -85,12 +91,12 @@
 }
 
 .search-btn:hover {
-    background-color: #e9ecef;
+    background-color: #088178;
 }
 
 .search-icon {
     font-size: 16px;
-    color: #6c757d;
+    color: #088178;
     font-weight: bold;
 }
 
@@ -140,7 +146,6 @@
     width: 50%;
     border-radius: 2px;
 }
-
 .nav-link:hover::after {
     content: '';
     position: absolute;
@@ -156,7 +161,7 @@
 
 .nav-link .fa,
 .nav-link i {
-    display: inline-block; /* allow transform */
+    display: inline-block;
     transition: transform 0.18s ease, color 0.18s ease;
     font-size: 18px;
 }
@@ -177,18 +182,18 @@
     align-items: center;
     gap: 8px;
     padding: 4px 8px;
-    border-radius: 20px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: 0.2s;
 }
 
 .user-menu:hover {
-    background-color: #f8f9fa;
+    transform: scale(1.2) translateY(-1px);
 }
 
 .user-avatar {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #e9ecef;
@@ -216,7 +221,7 @@
     background-color: #f8f9fa;
 }
 
-/* Notification Badge */
+/* Notification Badge (for future use) */
 .nav-link[data-notifications]::before {
     content: attr(data-notifications);
     position: absolute;
@@ -281,7 +286,7 @@
     margin: 8px 0;
 }
 
-/* Search Suggestions */
+/* Search Suggestions (for future enhancement) */
 .search-suggestions {
     position: absolute;
     top: 100%;
