@@ -8,7 +8,7 @@
 /* User Profile Card */
 .user-profile-card {
     background: white;
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
@@ -66,7 +66,7 @@
 /* Sidebar Navigation */
 .sidebar-nav {
     background: white;
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
@@ -105,13 +105,15 @@
 
 .sidebar-link:hover {
     background-color: #f8f9fa;
-    color: #4a90e2;
+    color: #088178;;
+    border-radius: 16px;
+    font-weight: 700;
     text-decoration: none;
 }
 
 .sidebar-link.active {
-    background-color: #e3f2fd;
-    color: #4a90e2;
+  font-weight: 700;
+    color: #088178;
 }
 
 .sidebar-link.active::before {
@@ -122,7 +124,7 @@
     transform: translateY(-50%);
     width: 3px;
     height: 20px;
-    background-color: #4a90e2;
+    background-color: #088178;;
     border-radius: 0 2px 2px 0;
 }
 
@@ -130,13 +132,13 @@
 .right-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 /* Friend Suggestions */
 .friend-suggestions {
     background: white;
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
