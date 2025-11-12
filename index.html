@@ -74,12 +74,11 @@
             <nav class="sidebar-nav">
                 <h3>Navigation</h3>
                 <ul class="sidebar-menu">
-                    <li><a href="index.html" class="sidebar-link active">News Feed</a></li>
-                    <li><a href="profile.html" class="sidebar-link">My Profile</a></li>
-                    <li><a href="#" class="sidebar-link">Friends</a></li>
-                    <li><a href="#" class="sidebar-link">Groups</a></li>
-                    <li><a href="#" class="sidebar-link">Events</a></li>
-                    <li><a href="#" class="sidebar-link">Photos</a></li>
+                    <li><a href="index.html" class="sidebar-link active">Home</a></li>
+                    <li><a href="profile.html" class="sidebar-link">Profile</a></li>
+                    <li><a href="#" class="sidebar-link">Explore</a></li>
+                    <li><a href="#" class="sidebar-link">Notifications</a></li>
+                    <li><a href="#" class="sidebar-link">Saved</a></li>
                     <li><a href="#" class="sidebar-link">Settings</a></li>
                 </ul>
             </nav>
@@ -102,7 +101,6 @@
                         <div class="post-actions">
                             <button type="button" class="post-option-btn">📷 Photo</button>
                             <button type="button" class="post-option-btn">🎬 Video</button>
-                            <button type="button" class="post-option-btn">📍 Location</button>
                             <button type="submit" class="post-submit-btn">Post</button>
                         </div>
                     </form>
@@ -146,10 +144,6 @@
                                 <span class="action-icon">💬</span>
                                 <span class="action-text">Comment</span>
                             </button>
-                            <button class="action-btn share-btn" data-action="share">
-                                <span class="action-icon">↗</span>
-                                <span class="action-text">Share</span>
-                            </button>
                         </div>
                     </footer>
                 </article>
@@ -168,10 +162,6 @@
                     
                     <div class="post-content">
                         <p>Anyone else excited about the new JavaScript features coming in ES2024? The pipeline operator is going to change how we write functional code! Here's a quick example of how clean it makes data transformations:</p>
-                        <pre class="code-block"><code>const result = data
-  |> filter(x => x.active)
-  |> map(x => x.name)
-  |> sort();</code></pre>
                     </div>
                     
                     <footer class="post-footer">
@@ -187,10 +177,6 @@
                             <button class="action-btn comment-btn" data-action="comment">
                                 <span class="action-icon">💬</span>
                                 <span class="action-text">Comment</span>
-                            </button>
-                            <button class="action-btn share-btn" data-action="share">
-                                <span class="action-icon">↗</span>
-                                <span class="action-text">Share</span>
                             </button>
                         </div>
                     </footer>
@@ -227,9 +213,6 @@
                                 <span class="action-icon">💬</span>
                                 <span class="action-text">Comment</span>
                             </button>
-                            <button class="action-btn share-btn" data-action="share">
-                                <span class="action-icon">↗</span>
-                                <span class="action-text">Share</span>
                             </button>
                         </div>
                     </footer>
@@ -273,45 +256,6 @@
                     </div>
                     <button class="add-friend-btn" data-user="david-taylor">Add Friend</button>
                 </article>
-            </section>
-
-            <section class="trending-topics">
-                <h3>Trending Topics</h3>
-                <ul class="trending-list">
-                    <li><a href="#" class="trending-link">#WebDevelopment</a></li>
-                    <li><a href="#" class="trending-link">#ReactJS</a></li>
-                    <li><a href="#" class="trending-link">#Programming</a></li>
-                    <li><a href="#" class="trending-link">#ComputerScience</a></li>
-                    <li><a href="#" class="trending-link">#TechNews</a></li>
-                    <li><a href="#" class="trending-link">#OpenSource</a></li>
-                </ul>
-            </section>
-
-            <section class="online-friends">
-                <h3>Online Now</h3>
-                <ul class="online-list">
-                    <li class="online-friend">
-                        <img src="https://via.placeholder.com/24x24/27ae60/ffffff?text=SM" 
-                             alt="Sarah Miller is online" 
-                             class="online-avatar">
-                        <span class="online-name">Sarah Miller</span>
-                        <span class="online-indicator"></span>
-                    </li>
-                    <li class="online-friend">
-                        <img src="https://via.placeholder.com/24x24/8e44ad/ffffff?text=MC" 
-                             alt="Mike Chen is online" 
-                             class="online-avatar">
-                        <span class="online-name">Mike Chen</span>
-                        <span class="online-indicator"></span>
-                    </li>
-                    <li class="online-friend">
-                        <img src="https://via.placeholder.com/24x24/3498db/ffffff?text=EJ" 
-                             alt="Emily Johnson is online" 
-                             class="online-avatar">
-                        <span class="online-name">Emily Johnson</span>
-                        <span class="online-indicator"></span>
-                    </li>
-                </ul>
             </section>
         </aside>
     </main>
