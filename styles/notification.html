@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Notifications - Batform Social Media" />
+    <title>Notifications | Batform</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/feed.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/posts.css" />
+  </head>
+  <body>
+    <!-- Main Navigation Header -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <div class="nav-left">
+          <h1 class="logo">
+            <a href="index.html">Batform</a>
+          </h1>
+        </div>
+
+        <div class="nav-center">
+          <form class="search-form" role="search">
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search for people, posts, or topics..."
+              aria-label="Search"
+            />
+            <button type="submit" class="search-btn" aria-label="Search">
+              <span class="search-icon"
+                ><i class="fa fa-search" aria-hidden="true"></i
+              ></span>
+            </button>
+          </form>
+        </div>
+
+        <div class="nav-right">
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html" class="nav-link"
+                ><i class="fa fa-home" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a href="profile.html" class="nav-link"
+                ><i class="fa fa-user" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a href="notification.html" class="nav-link active"
+                ><i class="fa fa-bell" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+          <div class="user-menu">
+            <img
+              src="images/profile_picture.svg"
+              aria-placeholder="images/profile_picture.svg"
+              alt="User profile picture"
+              class="user-avatar"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- Left Sidebar -->
+      <aside class="left-sidebar">
+        <section class="user-profile-card">
+          <img
+            src="images/profile_picture.svg"
+            alt="John Doe profile picture"
+            class="profile-avatar"
+          />
+          <h2 class="profile-name">John Doe</h2>
+          <p class="profile-title">Computer Science Student</p>
+          <div class="profile-stats">
+            <div class="stat">
+              <span class="stat-number">245</span>
+              <span class="stat-label">Friends</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10</span>
+              <span class="stat-label">Posts</span>
+            </div>
+          </div>
+        </section>
+
+        <nav class="sidebar-nav">
+          <h3>Navigation</h3>
+          <ul class="sidebar-menu">
+            <li><a href="index.html" class="sidebar-link">Home</a></li>
+            <li><a href="profile.html" class="sidebar-link">Profile</a></li>
+            <li><a href="#" class="sidebar-link">Explore</a></li>
+            <li><a href="notification.html" class="sidebar-link active">Notifications</a></li>
+            <li><a href="#" class="sidebar-link">Saved</a></li>
+            <li><a href="#" class="sidebar-link">Settings</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Center Notifications -->
+      <section class="feed-container">
+        <article class="card">
+          <header class="card-header">
+            <h2>Notifications</h2>
+          </header>
+
+          <div class="card-body">
+            <ul class="notification-list">
+              <li class="suggestion-item notification-item">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Alex Wilson"
+                  class="suggestion-avatar"
+                />
+                <div class="suggestion-info">
+                  <strong class="suggestion-name">Alex Wilson</strong>
+                  <p class="suggestion-mutual">
+                    sent you a friend request ·
+                    <time datetime="2025-11-12T10:30:00">1h</time>
+                  </p>
+                </div>
+                <div style="display: flex; gap: 8px">
+                  <button class="add-friend-btn">Accept</button>
+                  <button class="post-option-btn">Decline</button>
+                </div>
+              </li>
+
+              <li class="suggestion-item notification-item">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Sarah Miller"
+                  class="suggestion-avatar"
+                />
+                <div class="suggestion-info">
+                  <strong class="suggestion-name">Sarah Miller</strong>
+                  <p class="suggestion-mutual">
+                    liked your post ·
+                    <time datetime="2025-11-12T08:20:00">3h</time>
+                  </p>
+                </div>
+              </li>
+
+              <li class="suggestion-item notification-item">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Mike Chen"
+                  class="suggestion-avatar"
+                />
+                <div class="suggestion-info">
+                  <strong class="suggestion-name">Mike Chen</strong>
+                  <p class="suggestion-mutual">
+                    commented: "Great work!" ·
+                    <time datetime="2025-11-11T20:15:00">Yesterday</time>
+                  </p>
+                </div>
+              </li>
+
+              <li class="suggestion-item notification-item">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Emily Johnson"
+                  class="suggestion-avatar"
+                />
+                <div class="suggestion-info">
+                  <strong class="suggestion-name">Emily Johnson</strong>
+                  <p class="suggestion-mutual">
+                    mentioned you in a comment ·
+                    <time datetime="2025-11-10T09:00:00">2d</time>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- Right Sidebar -->
+      <aside class="right-sidebar">
+        <section class="friend-suggestions">
+          <h3>Friend Suggestions</h3>
+          <article class="suggestion-item">
+            <img
+              src="images/profile_picture.svg"
+              alt="Alex Wilson profile picture"
+              class="suggestion-avatar"
+            />
+            <div class="suggestion-info">
+              <h4 class="suggestion-name">Alex Wilson</h4>
+              <p class="suggestion-mutual">3 mutual friends</p>
+            </div>
+            <button class="add-friend-btn" data-user="alex-wilson">
+              Add Friend
+            </button>
+          </article>
+          <article class="suggestion-item">
+            <img
+              src="images/profile_picture.svg"
+              alt="Lisa Brown profile picture"
+              class="suggestion-avatar"
+            />
+            <div class="suggestion-info">
+              <h4 class="suggestion-name">Lisa Brown</h4>
+              <p class="suggestion-mutual">5 mutual friends</p>
+            </div>
+            <button class="add-friend-btn" data-user="lisa-brown">
+              Add Friend
+            </button>
+          </article>
+        </section>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Batform.</p>
+        <nav class="footer-nav">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Help</a>
+          <a href="#" class="footer-link">About</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
+  </body>
+</html>
