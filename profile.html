@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="John Doe's Profile - Batform Social Media">
     <title>John Doe - Profile | Batform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/navbar.css">
@@ -54,9 +57,9 @@
         <!-- Profile Header -->
         <header class="profile-header">
             <div class="profile-cover">
-                <img src="images/profile_picture.svg" 
-                    alt="John Doe's cover photo" 
-                    class="cover-photo">
+                <img src="images/cover-placeholder.svg" 
+                     alt="John Doe's cover photo" 
+                     class="cover-photo">
             </div>
             
             <div class="profile-info">
@@ -226,9 +229,11 @@
                                           rows="3"
                                           aria-label="Write a post"></textarea>
                                 <div class="post-actions">
-                                    <button type="button" class="post-option-btn">📷 Photo</button>
-                                    <button type="button" class="post-option-btn">🎬 Video</button>
-                                    <button type="button" class="post-option-btn">📍 Location</button>
+                                    <div class="post-options">
+                                        <button type="button" class="post-option-btn">🎬 Media</button>
+                                        <button type="button" class="post-option-btn">📎 File</button>
+                                        <button type="button" class="post-option-btn">📊 Poll</button>
+                                    </div>
                                     <button type="submit" class="post-submit-btn">Post</button>
                                 </div>
                             </form>
@@ -253,7 +258,7 @@
                             
                             <div class="post-content">
                                 <p>Just deployed my first full-stack application! It's a task management app built with React frontend and Node.js backend. The learning curve was steep but so worth it. Thanks to everyone who helped me debug along the way! 🚀</p>
-                                <img src="https://via.placeholder.com/500x300/2c3e50/ffffff?text=Task+Manager+App" 
+                                <img src="images/post-placeholder.svg" 
                                      alt="Screenshot of John's task manager application" 
                                      class="post-image">
                             </div>
@@ -313,7 +318,7 @@
                                     </button>
                                     <button class="action-btn share-btn" data-action="share">
                                         <span class="action-icon">↗</span>
-                                        <span class="action-text">Save</span>
+                                        <span class="action-text">Share</span>
                                     </button>
                                 </div>
                             </footer>
@@ -351,7 +356,7 @@
                                     </button>
                                     <button class="action-btn share-btn" data-action="share">
                                         <span class="action-icon">↗</span>
-                                        <span class="action-text">Save</span>
+                                        <span class="action-text">Share</span>
                                     </button>
                                 </div>
                             </footer>

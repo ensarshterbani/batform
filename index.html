@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Batform - A clean and simple social media platform">
     <title>Batform - Social Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/navbar.css">
@@ -41,7 +44,7 @@
                     <li><a href="#" class="nav-link"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
                 </ul>
                 <div class="user-menu">
-                    <img src="https://via.placeholder.com/32x32/4a90e2/ffffff?text=JD" 
+                    <img src="images/profile_picture.svg" 
                          alt="User profile picture" 
                          class="user-avatar">
                 </div>
@@ -54,7 +57,7 @@
         <!-- Left Sidebar -->
         <aside class="left-sidebar">
             <section class="user-profile-card">
-                <img src="https://via.placeholder.com/80x80/4a90e2/ffffff?text=JD" 
+                <img src="images/profile_picture.svg" 
                      alt="John Doe profile picture" 
                      class="profile-avatar">
                 <h2 class="profile-name">John Doe</h2>
@@ -90,7 +93,7 @@
             <article class="post-creator">
                 <h2 class="visually-hidden">Create a new post</h2>
                 <div class="post-creator-header">
-                    <img src="https://via.placeholder.com/40x40/4a90e2/ffffff?text=JD" 
+                    <img src="images/profile_picture.svg" 
                          alt="Your profile picture" 
                          class="creator-avatar">
                     <form class="post-form">
@@ -99,8 +102,11 @@
                                   rows="3"
                                   aria-label="Write a post"></textarea>
                         <div class="post-actions">
-                            <button type="button" class="post-option-btn">📷 Photo</button>
-                            <button type="button" class="post-option-btn">🎬 Video</button>
+                            <div class="post-options">
+                                <button type="button" class="post-option-btn">🎬 Media</button>
+                                <button type="button" class="post-option-btn">📎 File</button>
+                                <button type="button" class="post-option-btn">📊 Poll</button>
+                            </div>
                             <button type="submit" class="post-submit-btn">Post</button>
                         </div>
                     </form>
@@ -114,7 +120,7 @@
                 <!-- Post 1 -->
                 <article class="post">
                     <header class="post-header">
-                        <img src="https://via.placeholder.com/50x50/e74c3c/ffffff?text=SM" 
+                        <img src="images/profile_picture.svg" 
                              alt="Sarah Miller profile picture" 
                              class="post-avatar">
                         <div class="post-author-info">
@@ -125,7 +131,7 @@
                     
                     <div class="post-content">
                         <p>Just finished my final project for Web Development class! Built a complete e-commerce site with React and Node.js. The feeling of seeing everything work together is incredible! 🎉</p>
-                        <img src="https://via.placeholder.com/500x300/34495e/ffffff?text=Project+Screenshot" 
+                        <img src="images/post-placeholder.svg" 
                              alt="Screenshot of Sarah's web development project" 
                              class="post-image">
                     </div>
@@ -144,6 +150,10 @@
                                 <span class="action-icon">💬</span>
                                 <span class="action-text">Comment</span>
                             </button>
+                            <button class="action-btn share-btn" data-action="share">
+                                <span class="action-icon">↗</span>
+                                <span class="action-text">Share</span>
+                            </button>
                         </div>
                     </footer>
                 </article>
@@ -151,7 +161,7 @@
                 <!-- Post 2 -->
                 <article class="post">
                     <header class="post-header">
-                        <img src="https://via.placeholder.com/50x50/2ecc71/ffffff?text=MC" 
+                        <img src="images/profile_picture.svg" 
                              alt="Mike Chen profile picture" 
                              class="post-avatar">
                         <div class="post-author-info">
@@ -178,6 +188,10 @@
                                 <span class="action-icon">💬</span>
                                 <span class="action-text">Comment</span>
                             </button>
+                            <button class="action-btn share-btn" data-action="share">
+                                <span class="action-icon">↗</span>
+                                <span class="action-text">Share</span>
+                            </button>
                         </div>
                     </footer>
                 </article>
@@ -185,7 +199,7 @@
                 <!-- Post 3 -->
                 <article class="post">
                     <header class="post-header">
-                        <img src="https://via.placeholder.com/50x50/9b59b6/ffffff?text=EJ" 
+                        <img src="images/profile_picture.svg" 
                              alt="Emily Johnson profile picture" 
                              class="post-avatar">
                         <div class="post-author-info">
@@ -225,7 +239,7 @@
             <section class="friend-suggestions">
                 <h3>Friend Suggestions</h3>
                 <article class="suggestion-item">
-                    <img src="https://via.placeholder.com/40x40/f39c12/ffffff?text=AW" 
+                    <img src="images/profile_picture.svg" 
                          alt="Alex Wilson profile picture" 
                          class="suggestion-avatar">
                     <div class="suggestion-info">
@@ -236,7 +250,7 @@
                 </article>
                 
                 <article class="suggestion-item">
-                    <img src="https://via.placeholder.com/40x40/1abc9c/ffffff?text=LB" 
+                    <img src="images/profile_picture.svg" 
                          alt="Lisa Brown profile picture" 
                          class="suggestion-avatar">
                     <div class="suggestion-info">
@@ -247,7 +261,7 @@
                 </article>
                 
                 <article class="suggestion-item">
-                    <img src="https://via.placeholder.com/40x40/e67e22/ffffff?text=DT" 
+                    <img src="images/profile_picture.svg" 
                          alt="David Taylor profile picture" 
                          class="suggestion-avatar">
                     <div class="suggestion-info">

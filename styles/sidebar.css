@@ -17,10 +17,12 @@
 .profile-avatar {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 50% !important;
     object-fit: cover;
-    margin-bottom: 12px;
+    margin: 0 auto 12px auto;
     border: 3px solid #e9ecef;
+    background-color: #088178;
+    display: block;
 }
 
 .profile-name {
@@ -93,12 +95,12 @@
 .sidebar-link {
     display: flex;
     align-items: center;
-    padding: 10px 12px;
+    padding: 12px 16px;
     color: #333333;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 20px;
     transition: all 0.2s ease;
     position: relative;
 }
@@ -191,11 +193,11 @@
 }
 
 .add-friend-btn {
-    background-color: #4a90e2;
+    background-color: #088178;
     color: white;
     border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
@@ -204,7 +206,7 @@
 }
 
 .add-friend-btn:hover {
-    background-color: #357abd;
+    background-color: #065f57;
 }
 
 /* Trending Topics */
@@ -235,7 +237,7 @@
 }
 
 .trending-link {
-    color: #4a90e2;
+    color: #088178;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;

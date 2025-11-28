@@ -31,6 +31,8 @@
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 16px;
+        justify-content: center;
+        align-items: flex-start;
     }
     
     .left-sidebar,
@@ -40,6 +42,7 @@
     
     .feed-container {
         max-width: 100%;
+        margin: 0 auto;
     }
     
     /* Navbar adjustments */
@@ -53,12 +56,35 @@
     }
     
     .nav-link {
-        padding: 6px 8px;
-        font-size: 13px;
+        padding: 8px 12px;
+        font-size: 16px;
     }
     
     .user-name {
         display: none;
+    }
+    
+    /* Profile page tablet adjustments */
+    .profile-main {
+        padding: 0 16px;
+    }
+    
+    .profile-header {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .profile-info {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .profile-details {
+        text-align: center;
+    }
+    
+    .profile-actions {
+        justify-content: center;
     }
 }
 
@@ -67,12 +93,14 @@
     .main-content {
         padding: 12px;
         gap: 16px;
+        justify-content: center;
     }
     
     /* Navbar mobile */
     .nav-container {
         padding: 0 16px;
         height: 56px;
+        justify-content: space-between;
     }
     
     .nav-center {
@@ -82,11 +110,12 @@
     }
     
     .nav-menu {
-        display: none;
+        display: flex;
+        gap: 12px;
     }
     
     .nav-toggle {
-        display: block;
+        display: none;
     }
     
     .search-input {
@@ -97,8 +126,9 @@
     /* Posts mobile */
     .post-creator,
     .post {
-        border-radius: 0;
-        margin: 0 -12px;
+        border-radius: 16px;
+        margin: 0 auto;
+        max-width: 100%;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
     
@@ -120,19 +150,68 @@
     
     .post-actions {
         gap: 8px;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
     }
     
     .action-btn {
-        padding: 10px 8px;
+        padding: 12px 8px;
         font-size: 13px;
+        min-width: 80px;
     }
     
     .action-text {
-        display: none;
+        font-size: 12px;
     }
     
     .action-icon {
-        font-size: 18px;
+        font-size: 16px;
+    }
+    
+    /* Profile mobile adjustments */
+    .profile-main {
+        padding: 0 12px;
+    }
+    
+    .profile-cover {
+        height: 200px;
+    }
+    
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 16px;
+    }
+    
+    .profile-picture-container {
+        margin-top: -60px;
+        align-self: center;
+    }
+    
+    .profile-details {
+        margin-top: 0;
+        text-align: center;
+    }
+    
+    .profile-actions {
+        justify-content: center;
+        margin-top: 16px;
+        gap: 8px;
+    }
+    
+    .profile-nav-list {
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        justify-content: center;
+    }
+    
+    .profile-nav-link {
+        white-space: nowrap;
+        padding: 12px 16px;
     }
     
     /* Footer mobile */
@@ -144,6 +223,7 @@
     
     .footer-nav {
         gap: 16px;
+        justify-content: center;
     }
 }
 
@@ -152,24 +232,27 @@
     .main-content {
         padding: 8px;
         gap: 12px;
+        justify-content: center;
     }
     
     /* Navbar extra small */
     .nav-container {
         padding: 0 12px;
+        justify-content: space-between;
     }
     
     .nav-center {
-        margin: 0 12px;
+        margin: 0 8px;
+        flex: 1;
     }
     
     .logo a {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .search-input {
-        padding: 6px 32px 6px 10px;
-        font-size: 14px;
+        padding: 8px 32px 8px 12px;
+        font-size: 16px;
     }
     
     .user-avatar {
@@ -177,63 +260,153 @@
         height: 28px;
     }
     
+    .nav-menu {
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 8px;
+    }
+    
     /* Posts extra small */
     .post-creator,
     .post {
-        margin: 0 -8px;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 12px;
     }
     
     .post-creator-header {
-        gap: 8px;
+        gap: 12px;
     }
     
     .creator-avatar,
     .post-avatar {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
     }
     
     .post-author {
-        font-size: 15px;
+        font-size: 14px;
     }
     
     .post-time {
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .post-content p {
         font-size: 14px;
+        line-height: 1.4;
     }
     
     .post-actions {
         justify-content: space-around;
+        gap: 4px;
+        flex-direction: row;
+        align-items: center;
     }
     
     .action-btn {
-        padding: 8px 4px;
+        padding: 10px 6px;
+        min-width: 70px;
+        font-size: 12px;
+    }
+    
+    .action-text {
+        font-size: 11px;
+    }
+    
+    .action-icon {
+        font-size: 14px;
+    }
+    
+    /* Profile mobile small */
+    .profile-main {
+        padding: 0 8px;
+    }
+    
+    .profile-cover {
+        height: 150px;
+    }
+    
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile-picture-container {
+        margin-top: -50px;
+    }
+    
+    .profile-name {
+        font-size: 20px;
+    }
+    
+    .profile-bio {
+        font-size: 14px;
+    }
+    
+    .profile-stats {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .stat-item {
         min-width: 60px;
+    }
+    
+    .stat-number {
+        font-size: 16px;
+    }
+    
+    .profile-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .edit-profile-btn,
+    .message-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .profile-nav-list {
+        gap: 8px;
+        padding: 0 8px;
+    }
+    
+    .profile-nav-link {
+        padding: 10px 12px;
+        font-size: 13px;
     }
     
     /* Form adjustments */
     .post-input {
         min-height: 60px;
-        padding: 10px 12px;
-        font-size: 14px;
+        padding: 12px;
+        font-size: 16px;
     }
     
     .post-actions {
         flex-wrap: wrap;
         gap: 8px;
+        justify-content: center;
     }
     
     .post-option-btn {
-        padding: 6px 10px;
+        padding: 8px 12px;
         font-size: 12px;
+        flex: 1;
+        min-width: 80px;
     }
     
     .post-submit-btn {
-        padding: 6px 16px;
-        font-size: 13px;
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        margin-top: 8px;
     }
 }
 

@@ -17,6 +17,7 @@
     gap: 24px;
     max-width: 600px;
     width: 100%;
+    margin: 0 auto;
 }
 
 /* Post Creator */
@@ -25,23 +26,28 @@
     border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .post-creator-header {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .creator-avatar {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
 }
 
 .post-form {
-    flex: 1;
+    width: 100%;
 }
 
 .post-input {
@@ -50,7 +56,7 @@
     border-radius: 8px;
     padding: 12px 16px;
     font-size: 14px;
-    font-family: inherit;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
     resize: vertical;
     min-height: 80px;
     margin-bottom: 12px;
@@ -59,8 +65,8 @@
 
 .post-input:focus {
     outline: none;
-    border-color: #4a90e2;
-    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+    border-color: #088178;
+    box-shadow: 0 0 0 2px rgba(8, 129, 120, 0.1);
 }
 
 .post-input::placeholder {
@@ -69,9 +75,17 @@
 
 .post-actions {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     gap: 12px;
+}
+
+.post-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
 }
 
 .post-option-btn {
@@ -81,29 +95,30 @@
     font-size: 14px;
     cursor: pointer;
     padding: 8px 12px;
-    border-radius: 6px;
+    border-radius: 20px;
     transition: all 0.2s ease;
 }
 
 .post-option-btn:hover {
     background-color: #f8f9fa;
-    color: #4a90e2;
+    color: #088178;
 }
 
 .post-submit-btn {
-    background-color: #4a90e2;
+    background-color: #088178;
     color: white;
     border: none;
-    padding: 8px 20px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    border-radius: 25px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    width: 100%;
 }
 
 .post-submit-btn:hover {
-    background-color: #357abd;
+    background-color: #065f57;
 }
 
 .post-submit-btn:disabled {
@@ -125,6 +140,9 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .post:hover {
@@ -186,15 +204,39 @@
 
 .post-image {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
     margin-top: 12px;
     cursor: pointer;
     transition: opacity 0.2s ease;
+    display: block;
+    background-color: #f8f9fa;
 }
 
 .post-image:hover {
     opacity: 0.95;
+}
+
+/* Fallback for broken post images */
+.post-image:not([src]),
+.post-image[src=""],
+.post-image[alt*="Screenshot"],
+.post-image[alt*="screenshot"] {
+    background: linear-gradient(135deg, #e9ecef, #dee2e6);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 14px;
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+}
+
+.post-image:not([src])::before,
+.post-image[src=""]::before {
+    content: "📷 Image not available";
 }
 
 /* Post Footer */
@@ -226,8 +268,10 @@
 .post-actions {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     border-top: 1px solid #f8f9fa;
     padding-top: 8px;
+    flex-direction: row;
 }
 
 .action-btn {
@@ -240,8 +284,8 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 10px 16px;
+    border-radius: 25px;
     transition: all 0.2s ease;
     flex: 1;
     justify-content: center;
@@ -249,7 +293,7 @@
 
 .action-btn:hover {
     background-color: #f8f9fa;
-    color: #4a90e2;
+    color: #088178;
 }
 
 .action-btn.liked {
@@ -358,7 +402,7 @@
 }
 
 .comment-submit {
-    background-color: #4a90e2;
+    background-color: #088178;
     color: white;
     border: none;
     border-radius: 50%;
@@ -370,7 +414,7 @@
 }
 
 .comment-submit:hover {
-    background-color: #357abd;
+    background-color: #065f57;
 }
 
 /* Loading States */
@@ -435,21 +479,58 @@
 @media (max-width: 768px) {
     .feed-container {
         max-width: 100%;
+        margin: 0 auto;
+        padding: 0 8px;
     }
     
     .post-creator,
     .post {
-        margin: 0 -10px;
-        border-radius: 0;
+        margin: 0 auto;
+        border-radius: 16px;
+        max-width: 100%;
     }
     
     .post-actions {
-        flex-direction: column;
+        justify-content: space-around;
         gap: 8px;
     }
     
     .post-option-btn {
-        width: 100%;
+        flex: 1;
         justify-content: center;
+        min-width: 80px;
+    }
+    
+    .action-btn {
+        min-width: 80px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .feed-container {
+        padding: 0 4px;
+    }
+    
+    .post-creator,
+    .post {
+        border-radius: 12px;
+    }
+    
+    .post-options {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .post-option-btn {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 100px;
+        padding: 8px 12px;
+    }
+    
+    .post-submit-btn {
+        width: 100%;
+        margin-top: 8px;
     }
 }

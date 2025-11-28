@@ -119,8 +119,8 @@
     color: #333333;
     font-weight: 500;
     font-size: 14px;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 10px 16px;
+    border-radius: 20px;
     transition: all 0.2s ease;
     position: relative;
 }

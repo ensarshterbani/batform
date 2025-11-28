@@ -1,0 +1,28 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#088178;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#065f57;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#044440;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#coverBg)"/>
+  <rect width="1200" height="300" fill="url(#dots)"/>
+  
+  <!-- Geometric shapes for visual interest -->
+  <g opacity="0.2">
+    <circle cx="200" cy="100" r="60" fill="white"/>
+    <circle cx="1000" cy="200" r="80" fill="white"/>
+    <rect x="500" y="50" width="200" height="200" rx="20" fill="white" opacity="0.1"/>
+  </g>
+  
+  <!-- Center text -->
+  <text x="600" y="160" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" opacity="0.9">
+    Cover Photo
+  </text>
+</svg>
