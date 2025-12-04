@@ -74,12 +74,7 @@
 }
 
 .sidebar-nav h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333333;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e9ecef;
+    display: none; /* Hide the Navigation title */
 }
 
 .sidebar-menu {
@@ -95,6 +90,7 @@
 .sidebar-link {
     display: flex;
     align-items: center;
+    gap: 12px;
     padding: 12px 16px;
     color: #333333;
     font-size: 14px;
@@ -103,6 +99,19 @@
     border-radius: 20px;
     transition: all 0.2s ease;
     position: relative;
+}
+
+.sidebar-link i {
+    width: 18px;
+    font-size: 16px;
+    text-align: center;
+    color: #6c757d;
+    transition: color 0.2s ease;
+}
+
+.sidebar-link:hover i,
+.sidebar-link.active i {
+    color: #088178;
 }
 
 .sidebar-link:hover {
@@ -137,7 +146,8 @@
     gap: 24px;
 }
 
-/* Friend Suggestions */
+/* Follow Suggestions */
+.follow-suggestions,
 .friend-suggestions {
     background: white;
     border-radius: 16px;
@@ -145,6 +155,7 @@
     padding: 20px;
 }
 
+.follow-suggestions h3,
 .friend-suggestions h3 {
     font-size: 16px;
     font-weight: 600;
@@ -192,6 +203,7 @@
     margin: 0;
 }
 
+.follow-btn,
 .add-friend-btn {
     background-color: #088178;
     color: white;
@@ -201,12 +213,53 @@
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
     flex-shrink: 0;
+    min-width: 80px;
+    text-align: center;
 }
 
+.follow-btn:hover,
 .add-friend-btn:hover {
     background-color: #065f57;
+}
+
+/* Following state styling */
+.follow-btn.following,
+.add-friend-btn.following {
+    background-color: #088178;
+    color: white;
+}
+
+/* Hover effect shows "Unfollow" in red */
+.follow-btn[data-following="true"]:hover,
+.add-friend-btn[data-following="true"]:hover {
+    background-color: #dc3545;
+    transform: scale(1.05);
+}
+
+/* Smooth transition for button text changes */
+.follow-btn,
+.add-friend-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.follow-btn::before,
+.add-friend-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.follow-btn:active::before,
+.add-friend-btn:active::before {
+    left: 100%;
 }
 
 /* Trending Topics */

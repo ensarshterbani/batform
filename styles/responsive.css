@@ -33,6 +33,8 @@
         padding: 16px;
         justify-content: center;
         align-items: flex-start;
+        max-width: 100%;
+        margin: 0 auto;
     }
     
     .left-sidebar,
@@ -51,17 +53,25 @@
         margin: 0 20px;
     }
     
-    .nav-menu {
-        gap: 16px;
+    /* Show mobile navigation, hide desktop */
+    .desktop-nav {
+        display: none !important;
     }
     
-    .nav-link {
-        padding: 8px 12px;
-        font-size: 16px;
+    .mobile-nav {
+        display: block;
     }
     
-    .user-name {
-        display: none;
+    /* Expand search bar on mobile */
+    .nav-center {
+        flex: 1;
+        max-width: none;
+        margin: 0 16px;
+    }
+    
+    .search-input {
+        width: 100%;
+        padding: 10px 40px 10px 16px;
     }
     
     /* Profile page tablet adjustments */
@@ -94,6 +104,16 @@
         padding: 12px;
         gap: 16px;
         justify-content: center;
+        width: 100%;
+        max-width: 100vw;
+        margin: 0;
+    }
+    
+    .feed-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
     }
     
     /* Navbar mobile */
@@ -101,6 +121,17 @@
         padding: 0 16px;
         height: 56px;
         justify-content: space-between;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .nav-left {
+        flex-shrink: 0;
+    }
+    
+    .nav-right {
+        flex-shrink: 0;
     }
     
     .nav-center {
@@ -233,12 +264,31 @@
         padding: 8px;
         gap: 12px;
         justify-content: center;
+        width: 100%;
+        max-width: 100vw;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .feed-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 4px;
+        margin: 0;
+        box-sizing: border-box;
     }
     
     /* Navbar extra small */
     .nav-container {
         padding: 0 12px;
         justify-content: space-between;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    .logo a {
+        font-size: 18px;
     }
     
     .nav-center {

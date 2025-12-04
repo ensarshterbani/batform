@@ -38,15 +38,31 @@
             </div>
             
             <div class="nav-right">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                    <li><a href="profile.html" class="nav-link active"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu desktop-nav">
+                    <li><a href="index.html" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="#" class="nav-link"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="nav-link"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+                    <li><a href="profile.html" class="nav-link active" aria-current="page"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                 </ul>
-                <div class="user-menu">
-                    <img src="images/profile_picture.svg" aria-placeholder="images/profile_picture.svg"
-                        alt="User profile picture" 
-                        class="user-avatar">
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="mobile-nav">
+                    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    
+                    <!-- Mobile Dropdown Menu -->
+                    <div class="mobile-dropdown" id="mobile-dropdown">
+                        <ul class="mobile-menu">
+                            <li><a href="index.html" class="mobile-link"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                            <li><a href="#" class="mobile-link"><i class="fa fa-bell" aria-hidden="true"></i> Notifications</a></li>
+                            <li><a href="#" class="mobile-link"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+                            <li><a href="profile.html" class="mobile-link active"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                            <li><a href="#" class="mobile-link"><i class="fa fa-compass" aria-hidden="true"></i> Explore</a></li>
+                            <li><a href="#" class="mobile-link"><i class="fa fa-bookmark" aria-hidden="true"></i> Saved</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -81,10 +97,6 @@
                     
                     <div class="profile-stats">
                         <div class="stat-item">
-                            <span class="stat-number">245</span>
-                            <span class="stat-label">Friends</span>
-                        </div>
-                        <div class="stat-item">
                             <span class="stat-number">89</span>
                             <span class="stat-label">Posts</span>
                         </div>
@@ -113,9 +125,9 @@
             <nav class="profile-nav">
                 <ul class="profile-nav-list">
                     <li><a href="#posts" class="profile-nav-link active">Posts</a></li>
-                    <li><a href="#about" class="profile-nav-link">About</a></li>
-                    <li><a href="#friends" class="profile-nav-link">Friends</a></li>
-                    <li><a href="#photos" class="profile-nav-link">Photos</a></li>
+                            <li><a href="#about" class="profile-nav-link">About</a></li>
+                            <li><a href="#followers" class="profile-nav-link">Followers</a></li>
+                            <li><a href="#photos" class="profile-nav-link">Photos</a></li>
                     <li><a href="#videos" class="profile-nav-link">Videos</a></li>
                 </ul>
             </nav>
@@ -145,47 +157,47 @@
                         </div>
                     </section>
 
-                    <section class="friends-preview">
-                        <h2>Friends <span class="friends-count">(245)</span></h2>
-                        <div class="friends-grid">
-                            <a href="#" class="friend-item">
+                    <section class="followers-preview">
+                        <h2>Followers <span class="followers-count">(1.2k)</span></h2>
+                        <div class="followers-grid">
+                            <a href="#" class="follower-item">
                                 <img src="images/profile_picture.svg" 
                                      alt="Sarah Miller" 
-                                     class="friend-avatar">
-                                <span class="friend-name">Sarah Miller</span>
+                                     class="follower-avatar">
+                                <span class="follower-name">Sarah Miller</span>
                             </a>
-                            <a href="#" class="friend-item">
+                            <a href="#" class="follower-item">
                                 <img src="images/profile_picture.svg" 
                                      alt="Mike Chen" 
-                                     class="friend-avatar">
-                                <span class="friend-name">Mike Chen</span>
+                                     class="follower-avatar">
+                                <span class="follower-name">Mike Chen</span>
                             </a>
-                            <a href="#" class="friend-item">
+                            <a href="#" class="follower-item">
                                 <img src="images/profile_picture.svg" 
                                      alt="Emily Johnson" 
-                                     class="friend-avatar">
-                                <span class="friend-name">Emily Johnson</span>
+                                     class="follower-avatar">
+                                <span class="follower-name">Emily Johnson</span>
                             </a>
-                            <a href="#" class="friend-item">
+                            <a href="#" class="follower-item">
                                 <img src="images/profile_picture.svg" 
                                      alt="Alex Wilson" 
-                                     class="friend-avatar">
-                                <span class="friend-name">Alex Wilson</span>
+                                     class="follower-avatar">
+                                <span class="follower-name">Alex Wilson</span>
                             </a>
-                            <a href="#" class="friend-item">
+                            <a href="#" class="follower-item">
                                 <img src="images/profile_picture.svg" 
                                      alt="Lisa Brown" 
-                                     class="friend-avatar">
-                                <span class="friend-name">Lisa Brown</span>
+                                     class="follower-avatar">
+                                <span class="follower-name">Lisa Brown</span>
                             </a>
-                            <a href="#" class="friend-item">
+                            <a href="#" class="follower-item">
                                 <img src="images/profile_picture.svg" 
                                      alt="David Taylor" 
-                                     class="friend-avatar">
-                                <span class="friend-name">David Taylor</span>
+                                     class="follower-avatar">
+                                <span class="follower-name">David Taylor</span>
                             </a>
                         </div>
-                        <a href="#" class="see-all-friends">See All Friends</a>
+                        <a href="#" class="see-all-followers">See All Followers</a>
                     </section>
 
                     <section class="photos-preview">
@@ -382,5 +394,10 @@
 
     <!-- Accessibility helper for screen readers -->
     <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
+
+    <!-- JavaScript Files -->
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/interactions.js"></script>
+    <script src="scripts/profile.js"></script>
 </body>
 </html>
