@@ -52,3 +52,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('✅ Mobile navigation initialized successfully');
 });
+

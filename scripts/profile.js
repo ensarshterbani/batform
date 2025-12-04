@@ -133,3 +133,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Profile page features initialized');
     }
 });
+
