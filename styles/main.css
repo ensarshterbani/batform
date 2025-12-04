@@ -155,6 +155,120 @@ a:hover {
     background-color: #f8f9fa;
 }
 
+/* Dark mode card elements */
+body.dark-mode .card-header {
+    background-color: var(--secondary-bg);
+    border-bottom-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+body.dark-mode .card-body {
+    color: var(--text-primary);
+}
+
+body.dark-mode .card-footer {
+    background-color: var(--secondary-bg);
+    border-top-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Dark mode notification elements */
+body.dark-mode .notification-list {
+    color: var(--text-primary);
+}
+
+body.dark-mode .notification-item {
+    border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .notification-item:hover {
+    background-color: var(--hover-bg);
+}
+
+body.dark-mode .card h2 {
+    color: var(--text-primary);
+}
+
+/* Dark mode notification buttons */
+body.dark-mode .follow-btn,
+body.dark-mode .add-friend-btn {
+    background-color: #088178 !important;
+    color: white !important;
+    border: none !important;
+}
+
+body.dark-mode .follow-btn:hover,
+body.dark-mode .add-friend-btn:hover {
+    background-color: #065f57 !important;
+    color: white !important;
+}
+
+/* Dark mode following state */
+body.dark-mode .follow-btn[data-following="true"]:hover,
+body.dark-mode .add-friend-btn[data-following="true"]:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+/* Specific dark mode styles for follow suggestions */
+body.dark-mode .follow-suggestions .follow-btn,
+body.dark-mode .follow-suggestions .add-friend-btn,
+body.dark-mode .right-sidebar .follow-btn,
+body.dark-mode .right-sidebar .add-friend-btn,
+body.dark-mode .notification-item .follow-btn,
+body.dark-mode .notification-item .add-friend-btn {
+    background-color: #088178 !important;
+    color: white !important;
+    border: none !important;
+}
+
+body.dark-mode .follow-suggestions .follow-btn:hover,
+body.dark-mode .follow-suggestions .add-friend-btn:hover,
+body.dark-mode .right-sidebar .follow-btn:hover,
+body.dark-mode .right-sidebar .add-friend-btn:hover,
+body.dark-mode .notification-item .follow-btn:hover,
+body.dark-mode .notification-item .add-friend-btn:hover {
+    background-color: #065f57 !important;
+    color: white !important;
+}
+
+body.dark-mode .post-option-btn {
+    color: var(--text-secondary);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode .post-option-btn:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+/* Ensure follow buttons maintain green color in all states */
+.follow-btn,
+.add-friend-btn,
+button.follow-btn,
+button.add-friend-btn {
+    background-color: #088178 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.follow-btn:hover,
+.add-friend-btn:hover,
+button.follow-btn:hover,
+button.add-friend-btn:hover {
+    background-color: #065f57 !important;
+    color: white !important;
+}
+
+.follow-btn[data-following="true"]:hover,
+.add-friend-btn[data-following="true"]:hover,
+button.follow-btn[data-following="true"]:hover,
+button.add-friend-btn[data-following="true"]:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
 /* Forms */
 input, textarea, select {
     width: 100%;
@@ -379,6 +493,10 @@ body.dark-mode {
 body.dark-mode {
     background-color: var(--bg-primary) !important;
     color: var(--text-primary) !important;
+    --card-bg: var(--bg-secondary);
+    --input-bg: var(--bg-tertiary);
+    --secondary-bg: var(--bg-tertiary);
+    --hover-bg: var(--bg-tertiary);
 }
 
 /* All containers and cards */
@@ -397,7 +515,11 @@ body.dark-mode .mobile-dropdown,
 body.dark-mode .upload-section,
 body.dark-mode .security-item,
 body.dark-mode .data-item,
-body.dark-mode .safety-item {
+body.dark-mode .safety-item,
+body.dark-mode .friends-preview,
+body.dark-mode .followers-preview,
+body.dark-mode .photos-preview,
+body.dark-mode .about-card {
     background-color: var(--bg-secondary) !important;
     border-color: var(--border-color) !important;
     color: var(--text-primary) !important;

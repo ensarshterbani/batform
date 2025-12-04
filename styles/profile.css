@@ -307,7 +307,7 @@ body.dark-mode .profile-nav-link {
 
 body.dark-mode .profile-nav-link:hover,
 body.dark-mode .profile-nav-link.active {
-    color: var(--primary-color);
+    color: #088178;
 }
 /* Profile Body */
 .profile-body {
@@ -331,9 +331,10 @@ body.dark-mode .profile-nav-link.active {
 }
 
 /* Dark mode about card */
-body.dark-mode .about-card {
-    background: var(--card-bg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+body.dark-mode .about-card,
+body.dark-mode .profile-sidebar .about-card {
+    background: var(--card-bg) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .about-card h2 {
@@ -390,9 +391,10 @@ body.dark-mode .info-item p {
 }
 
 /* Dark mode friends preview */
-body.dark-mode .friends-preview {
-    background: var(--card-bg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+body.dark-mode .friends-preview,
+body.dark-mode .profile-sidebar .friends-preview {
+    background: var(--card-bg) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .friends-preview h2 {
@@ -496,9 +498,10 @@ body.dark-mode .see-all-friends:hover {
 }
 
 /* Dark mode followers preview */
-body.dark-mode .followers-preview {
-    background: var(--card-bg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+body.dark-mode .followers-preview,
+body.dark-mode .profile-sidebar .followers-preview {
+    background: var(--card-bg) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .followers-preview h2 {
@@ -602,9 +605,10 @@ body.dark-mode .see-all-followers:hover {
 }
 
 /* Dark mode photos preview */
-body.dark-mode .photos-preview {
-    background: var(--card-bg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+body.dark-mode .photos-preview,
+body.dark-mode .profile-sidebar .photos-preview {
+    background: var(--card-bg) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .photos-preview h2 {
@@ -658,11 +662,6 @@ body.dark-mode .photos-preview h2 {
 .see-all-photos:hover {
     background-color: #f8f9fa;
     text-decoration: none;
-}
-
-/* Dark mode see all photos */
-body.dark-mode .see-all-photos:hover {
-    background-color: var(--hover-bg);
 }
 
 /* Profile Posts */
@@ -736,7 +735,7 @@ body.dark-mode .profile-posts .post-input {
 }
 
 body.dark-mode .profile-posts .post-input:focus {
-    border-color: var(--primary-color);
+    border-color: #088178;
     box-shadow: 0 0 0 2px rgba(8, 129, 120, 0.2);
 }
 
@@ -785,7 +784,7 @@ body.dark-mode .profile-posts .post-option-btn {
 
 body.dark-mode .profile-posts .post-option-btn:hover {
     background-color: var(--hover-bg);
-    color: var(--primary-color);
+    color: #088178;
 }
 
 .profile-posts .post-submit-btn {
@@ -811,12 +810,6 @@ body.dark-mode .profile-posts .post-option-btn:hover {
     border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
-}
-
-/* Dark mode post creator */
-body.dark-mode .post-creator {
-    background: var(--card-bg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .post-creator-header {
@@ -859,22 +852,6 @@ body.dark-mode .post-creator {
     color: #6c757d;
 }
 
-/* Dark mode post input */
-body.dark-mode .post-input {
-    background-color: var(--input-bg);
-    border-color: var(--border-color);
-    color: var(--text-primary);
-}
-
-body.dark-mode .post-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(8, 129, 120, 0.2);
-}
-
-body.dark-mode .post-input::placeholder {
-    color: var(--text-secondary);
-}
-
 .post-actions {
     display: flex;
     justify-content: space-around;
@@ -897,16 +874,6 @@ body.dark-mode .post-input::placeholder {
 .post-option-btn:hover {
     background-color: #f8f9fa;
     color: #088178;
-}
-
-/* Dark mode post option buttons */
-body.dark-mode .post-option-btn {
-    color: var(--text-secondary);
-}
-
-body.dark-mode .post-option-btn:hover {
-    background-color: var(--hover-bg);
-    color: var(--primary-color);
 }
 
 .post-submit-btn {
@@ -1001,7 +968,7 @@ body.dark-mode .post-author {
 }
 
 body.dark-mode .post-author:hover {
-    color: var(--primary-color);
+    color: #088178;
 }
 
 body.dark-mode .post-time {
@@ -1068,16 +1035,6 @@ body.dark-mode .post-content p {
     color: #088178;
 }
 
-/* Dark mode post stats */
-body.dark-mode .post-stats {
-    color: var(--text-secondary);
-}
-
-body.dark-mode .likes-count:hover,
-body.dark-mode .comments-count:hover {
-    color: var(--primary-color);
-}
-
 .post-actions {
     display: flex;
     justify-content: space-around;
@@ -1137,7 +1094,7 @@ body.dark-mode .action-btn {
 
 body.dark-mode .action-btn:hover {
     background-color: var(--hover-bg);
-    color: var(--primary-color);
+    color: #088178;
 }
 
 .action-btn.liked {
@@ -1185,12 +1142,6 @@ body.dark-mode .action-btn:hover {
     background-color: #f8f9fa;
 }
 
-/* Dark mode comments section */
-body.dark-mode .comments-section {
-    border-top-color: var(--border-color);
-    background-color: var(--secondary-bg);
-}
-
 .comment {
     display: flex;
     gap: 10px;
@@ -1235,20 +1186,6 @@ body.dark-mode .comments-section {
     margin-top: 4px;
 }
 
-/* Dark mode comments */
-body.dark-mode .comment-content {
-    background: var(--card-bg);
-}
-
-body.dark-mode .comment-author,
-body.dark-mode .comment-text {
-    color: var(--text-primary);
-}
-
-body.dark-mode .comment-time {
-    color: var(--text-secondary);
-}
-
 /* Comment Input */
 .comment-input-container {
     display: flex;
@@ -1263,17 +1200,6 @@ body.dark-mode .comment-time {
     padding: 8px 16px;
     font-size: 13px;
     background-color: white;
-}
-
-/* Dark mode comment input */
-body.dark-mode .comment-input {
-    background-color: var(--input-bg);
-    border-color: var(--border-color);
-    color: var(--text-primary);
-}
-
-body.dark-mode .comment-input::placeholder {
-    color: var(--text-secondary);
 }
 
 .comment-submit {
@@ -1434,4 +1360,57 @@ body.dark-mode .comment-input::placeholder {
         margin-top: 8px;
         padding: 12px 20px;
     }
+}
+
+/* COMPREHENSIVE DARK MODE FIXES */
+body.dark-mode .profile-sidebar .friends-preview,
+body.dark-mode .profile-sidebar .followers-preview, 
+body.dark-mode .profile-sidebar .photos-preview,
+body.dark-mode .profile-sidebar .about-card,
+body.dark-mode .friends-preview,
+body.dark-mode .followers-preview,
+body.dark-mode .photos-preview,
+body.dark-mode .about-card {
+    background: #1a1f2e !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .friends-preview h2,
+body.dark-mode .followers-preview h2,
+body.dark-mode .photos-preview h2,
+body.dark-mode .about-card h2 {
+    color: #ffffff !important;
+    border-bottom-color: #30363d !important;
+}
+
+body.dark-mode .friends-count,
+body.dark-mode .followers-count,
+body.dark-mode .info-item strong,
+body.dark-mode .friend-name,
+body.dark-mode .follower-name {
+    color: #ffffff !important;
+}
+
+body.dark-mode .info-item p {
+    color: #8b949e !important;
+}
+
+/* FINAL OVERRIDE - HIGHEST PRIORITY DARK MODE STYLES */
+body.dark-mode .profile-sidebar > section,
+body.dark-mode .profile-sidebar > .friends-preview,
+body.dark-mode .profile-sidebar > .followers-preview,
+body.dark-mode .profile-sidebar > .photos-preview,
+body.dark-mode .profile-sidebar > .about-card {
+    background: #1a1f2e !important;
+    border: 1px solid #30363d !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure all profile cards have dark backgrounds */
+body.dark-mode section.friends-preview,
+body.dark-mode section.followers-preview,
+body.dark-mode section.photos-preview,
+body.dark-mode section.about-card {
+    background: #1a1f2e !important;
+    color: #ffffff !important;
 }

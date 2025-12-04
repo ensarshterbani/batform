@@ -262,6 +262,32 @@
     left: 100%;
 }
 
+/* Dark mode follow buttons */
+body.dark-mode .follow-btn,
+body.dark-mode .add-friend-btn {
+    background-color: #088178 !important;
+    color: white !important;
+    border: none !important;
+}
+
+body.dark-mode .follow-btn:hover,
+body.dark-mode .add-friend-btn:hover {
+    background-color: #065f57 !important;
+    color: white !important;
+}
+
+body.dark-mode .follow-btn.following,
+body.dark-mode .add-friend-btn.following {
+    background-color: #088178 !important;
+    color: white !important;
+}
+
+body.dark-mode .follow-btn[data-following="true"]:hover,
+body.dark-mode .add-friend-btn[data-following="true"]:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
 /* Trending Topics */
 .trending-topics {
     background: white;

@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Notifications - Batform Social Media" />
-    <title>Notifications Batform</title>
+    <title>Notifications | Batform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -43,32 +46,33 @@
         </div>
 
         <div class="nav-right">
-          <ul class="nav-menu">
-            <li>
-              <a href="index.html" class="nav-link"
-                ><i class="fa fa-home" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="profile.html" class="nav-link"
-                ><i class="fa fa-user" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="notification.html" class="nav-link active"
-                ><i class="fa fa-bell" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
-          <div class="user-menu">
-            <img
-              src="images/profile_picture.svg"
-              aria-placeholder="images/profile_picture.svg"
-              alt="User profile picture"
-              class="user-avatar"
-            />
-          </div>
-        </div>
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu desktop-nav">
+                    <li><a href="index.html" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    <li><a href="notification.html" class="nav-link active" aria-current="page"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                    <li><a href="settings.html" class="nav-link"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+                    <li><a href="profile.html" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                </ul>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="mobile-nav">
+                    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    
+                    <!-- Mobile Dropdown Menu -->
+                    <div class="mobile-dropdown" id="mobile-dropdown">
+                        <ul class="mobile-menu">
+                            <li><a href="index.html" class="mobile-link"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                            <li><a href="notification.html" class="mobile-link active"><i class="fa fa-bell" aria-hidden="true"></i> Notifications</a></li>
+                            <li><a href="settings.html" class="mobile-link"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+                            <li><a href="profile.html" class="mobile-link"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                            <li><a href="#" class="mobile-link"><i class="fa fa-compass" aria-hidden="true"></i> Explore</a></li>
+                            <li><a href="#" class="mobile-link"><i class="fa fa-bookmark" aria-hidden="true"></i> Saved</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
       </nav>
     </header>
 
@@ -86,7 +90,7 @@
           <div class="profile-stats">
             <div class="stat">
               <span class="stat-number">245</span>
-              <span class="stat-label">Friends</span>
+              <span class="stat-label">Followers</span>
             </div>
             <div class="stat">
               <span class="stat-number">10</span>
@@ -103,7 +107,7 @@
             <li><a href="#" class="sidebar-link">Explore</a></li>
             <li><a href="notification.html" class="sidebar-link active">Notifications</a></li>
             <li><a href="#" class="sidebar-link">Saved</a></li>
-            <li><a href="#" class="sidebar-link">Settings</a></li>
+            <li><a href="settings.html" class="sidebar-link">Settings</a></li>
           </ul>
         </nav>
       </aside>
@@ -126,12 +130,12 @@
                 <div class="suggestion-info">
                   <strong class="suggestion-name">Alex Wilson</strong>
                   <p class="suggestion-mutual">
-                    sent you a friend request ·
+                    wants to follow you ·
                     <time datetime="2025-11-12T10:30:00">1h</time>
                   </p>
                 </div>
                 <div style="display: flex; gap: 8px">
-                  <button class="add-friend-btn">Accept</button>
+                  <button class="follow-btn" data-user="alex-wilson">Accept</button>
                   <button class="post-option-btn">Decline</button>
                 </div>
               </li>
@@ -187,8 +191,8 @@
 
       <!-- Right Sidebar -->
       <aside class="right-sidebar">
-        <section class="friend-suggestions">
-          <h3>Friend Suggestions</h3>
+        <section class="follow-suggestions">
+          <h3>Suggested for You</h3>
           <article class="suggestion-item">
             <img
               src="images/profile_picture.svg"
@@ -197,11 +201,9 @@
             />
             <div class="suggestion-info">
               <h4 class="suggestion-name">Alex Wilson</h4>
-              <p class="suggestion-mutual">3 mutual friends</p>
+              <p class="suggestion-mutual">Suggested for you</p>
             </div>
-            <button class="add-friend-btn" data-user="alex-wilson">
-              Add Friend
-            </button>
+            <button class="follow-btn" data-user="alex-wilson">Follow</button>
           </article>
           <article class="suggestion-item">
             <img
@@ -211,11 +213,9 @@
             />
             <div class="suggestion-info">
               <h4 class="suggestion-name">Lisa Brown</h4>
-              <p class="suggestion-mutual">5 mutual friends</p>
+              <p class="suggestion-mutual">Suggested for you</p>
             </div>
-            <button class="add-friend-btn" data-user="lisa-brown">
-              Add Friend
-            </button>
+            <button class="follow-btn" data-user="lisa-brown">Follow</button>
           </article>
         </section>
       </aside>
@@ -235,5 +235,10 @@
     </footer>
 
     <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
+
+    <!-- JavaScript Files -->
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/interactions.js"></script>
   </body>
 </html>
