@@ -401,6 +401,7 @@ body.dark-mode .danger-info p {
 .settings-actions {
     padding: 30px;
     background-color: #f8f9fa;
+    background-color: var(--bg-tertiary, #f8f9fa);
     display: flex;
     gap: 16px;
     justify-content: center;
