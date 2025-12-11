@@ -609,6 +609,7 @@ body.dark-mode .nav-link.active,
 body.dark-mode .sidebar-link.active,
 body.dark-mode .mobile-link.active {
   color: var(--accent-color) !important;
+  background-color: rgba(8, 129, 120, 0.2) !important;
 }
 
 body.dark-mode .nav-link:hover,
@@ -616,6 +617,69 @@ body.dark-mode .sidebar-link:hover,
 body.dark-mode .mobile-link:hover {
   color: var(--accent-color) !important;
   background-color: rgba(8, 129, 120, 0.15) !important;
+}
+
+/* Mobile link base styles in dark mode */
+body.dark-mode .mobile-link {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .mobile-link i {
+  color: #888 !important;
+}
+
+body.dark-mode .mobile-link:hover i,
+body.dark-mode .mobile-link.active i {
+  color: var(--accent-color) !important;
+}
+
+/* Hamburger button in dark mode */
+body.dark-mode .hamburger-btn {
+  color: #ffffff !important;
+}
+
+body.dark-mode .hamburger-btn:hover {
+  background-color: rgba(8, 129, 120, 0.15) !important;
+  color: var(--accent-color) !important;
+}
+
+body.dark-mode .hamburger-btn.active {
+  background-color: var(--accent-color) !important;
+  color: #ffffff !important;
+}
+
+/* Logo text must stay green in dark mode */
+body.dark-mode .logo a,
+body.dark-mode .logo-text {
+  color: #088178 !important;
+}
+
+/* Like button states in dark mode */
+body.dark-mode .like-btn:hover,
+body.dark-mode .like-btn:hover .fa-heart,
+body.dark-mode .like-btn:hover i {
+  color: #088178 !important;
+}
+
+body.dark-mode .like-btn.liked,
+body.dark-mode .like-btn.liked .fa-heart,
+body.dark-mode .like-btn.liked i,
+body.dark-mode .like-btn.liked .action-icon {
+  color: #088178 !important;
+}
+
+/* Save button states in dark mode */
+body.dark-mode .save-btn:hover,
+body.dark-mode .save-btn:hover .fa-bookmark,
+body.dark-mode .save-btn:hover i {
+  color: #088178 !important;
+}
+
+body.dark-mode .save-btn.saved,
+body.dark-mode .save-btn.saved .fa-bookmark,
+body.dark-mode .save-btn.saved i,
+body.dark-mode .save-btn.saved .action-icon {
+  color: #088178 !important;
 }
 
 /* Toggle switches */
@@ -1097,15 +1161,15 @@ body.dark-mode .saved-post-stat {
 }
 
 .comment-like-btn:hover {
-    color: #e74c3c;
+    color: #088178;
 }
 
 .comment-like-btn.liked {
-    color: #e74c3c;
+    color: #088178;
 }
 
 .comment-like-btn.liked i {
-    font-weight: 900;
+    color: #088178;
 }
 
 .comment-reply-btn:hover {
@@ -1176,6 +1240,15 @@ body.dark-mode .comment-timestamp,
 body.dark-mode .comment-like-btn,
 body.dark-mode .comment-reply-btn {
     color: var(--text-secondary);
+}
+
+body.dark-mode .comment-like-btn:hover {
+    color: #088178 !important;
+}
+
+body.dark-mode .comment-like-btn.liked,
+body.dark-mode .comment-like-btn.liked i {
+    color: #088178 !important;
 }
 
 body.dark-mode .comment-replies {

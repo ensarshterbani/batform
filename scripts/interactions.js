@@ -9,33 +9,36 @@ function initializeLikeButtons() {
         
         let liked = false;
         const postFooter = button.closest('.post-footer');
-        const likesSpan = postFooter.querySelector('.likes-count');
-        const initialLikes = parseInt(likesSpan.textContent.match(/\d+/)[0]);
-        let currentLikes = initialLikes;
+        const likesSpan = postFooter ? postFooter.querySelector('.likes-count') : null;
+        let currentLikes = 0;
+        
+        if (likesSpan) {
+            const match = likesSpan.textContent.match(/\d+/);
+            currentLikes = match ? parseInt(match[0]) : 0;
+        }
         
         button.addEventListener('click', function(e) {
             e.preventDefault();
             
             if (liked) {
+                // Unlike
                 currentLikes--;
                 liked = false;
                 button.classList.remove('liked');
-                button.querySelector('.action-icon').textContent = '♡';
-                button.style.color = '#6c757d';
             } else {
+                // Like
                 currentLikes++;
                 liked = true;
                 button.classList.add('liked');
-                button.querySelector('.action-icon').textContent = '♥';
-                button.style.color = '#e74c3c';
             }
             
-            // Update the like count display
-            button.querySelector('.action-text').textContent = `Like (${currentLikes})`;
-            likesSpan.textContent = `${currentLikes} likes`;
+            // Update the like count display if it exists
+            if (likesSpan) {
+                likesSpan.textContent = `${currentLikes} likes`;
+            }
             
             // Visual feedback animation
-            button.style.transform = 'scale(1.1)';
+            button.style.transform = 'scale(1.2)';
             setTimeout(() => {
                 button.style.transform = 'scale(1)';
             }, 150);
@@ -132,6 +135,43 @@ function initializeFollowButtons() {
     console.log(`✅ Initialized ${followButtons.length} follow buttons`);
 }
 
+// Save button functionality
+function initializeSaveButtons() {
+    const saveButtons = document.querySelectorAll('.action-btn.save-btn');
+    
+    saveButtons.forEach(button => {
+        if (button.dataset.initialized) return;
+        
+        let saved = false;
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (saved) {
+                // Unsave
+                saved = false;
+                button.classList.remove('saved');
+                showNotification('Post removed from saved!');
+            } else {
+                // Save
+                saved = true;
+                button.classList.add('saved');
+                showNotification('Post saved!');
+            }
+            
+            // Visual feedback animation
+            button.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        button.dataset.initialized = 'true';
+    });
+    
+    console.log(`✅ Initialized ${saveButtons.length} save buttons`);
+}
+
 // Post Creator functionality
 function initializePostCreator() {
     const postCreator = document.querySelector('.post-creator');
@@ -143,14 +183,21 @@ function initializePostCreator() {
     
     if (!postInput || !postSubmitBtn) return;
     
+    // Set initial disabled state
+    postSubmitBtn.disabled = true;
+    postSubmitBtn.style.opacity = '0.6';
+    postSubmitBtn.style.cursor = 'not-allowed';
+    
     // Enable/disable submit button based on content
     postInput.addEventListener('input', function() {
         if (postInput.value.trim()) {
             postSubmitBtn.disabled = false;
             postSubmitBtn.style.opacity = '1';
+            postSubmitBtn.style.cursor = 'pointer';
         } else {
             postSubmitBtn.disabled = true;
             postSubmitBtn.style.opacity = '0.6';
+            postSubmitBtn.style.cursor = 'not-allowed';
         }
     });
     
@@ -209,20 +256,17 @@ function createNewPostElement(content) {
         <footer class="post-footer">
             <div class="post-stats">
                 <span class="likes-count">0 likes</span>
-                <span class="comments-count">0 comments</span>
+                <a href="comments.html" class="comments-count">0 comments</a>
             </div>
             <div class="post-actions">
                 <button class="action-btn like-btn" data-action="like">
-                    <span class="action-icon">♡</span>
-                    <span class="action-text">Like (0)</span>
+                    <span class="action-icon"><i class="fa fa-heart" aria-hidden="true"></i></span>
                 </button>
-                <button class="action-btn comment-btn" data-action="comment">
-                    <span class="action-icon">💬</span>
-                    <span class="action-text">Comment</span>
-                </button>
-                <button class="action-btn share-btn" data-action="share">
-                    <span class="action-icon">↗</span>
-                    <span class="action-text">Share</span>
+                <a href="comments.html" class="action-btn comment-btn">
+                    <span class="action-icon"><i class="fa fa-commenting" aria-hidden="true"></i></span>
+                </a>
+                <button class="action-btn save-btn" data-action="save">
+                    <span class="action-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
                 </button>
             </div>
         </footer>
@@ -245,13 +289,61 @@ function showNotification(message) {
     console.log(`📢 Notification: ${message}`);
 }
 
+// Comment like button functionality
+function initializeCommentLikeButtons() {
+    const commentLikeButtons = document.querySelectorAll('.comment-like-btn');
+    
+    commentLikeButtons.forEach(button => {
+        if (button.dataset.initialized) return;
+        
+        let liked = button.classList.contains('liked');
+        const countSpan = button.querySelector('span');
+        let currentLikes = 0;
+        
+        if (countSpan) {
+            const match = countSpan.textContent.match(/\d+/);
+            currentLikes = match ? parseInt(match[0]) : 0;
+        }
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (liked) {
+                currentLikes--;
+                liked = false;
+                button.classList.remove('liked');
+            } else {
+                currentLikes++;
+                liked = true;
+                button.classList.add('liked');
+            }
+            
+            if (countSpan) {
+                countSpan.textContent = currentLikes;
+            }
+            
+            // Animation
+            button.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        button.dataset.initialized = 'true';
+    });
+    
+    console.log(`✅ Initialized ${commentLikeButtons.length} comment like buttons`);
+}
+
 // Initialize all interactive features when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Initializing interactive features...');
     
     initializeLikeButtons();
     initializeFollowButtons();
+    initializeSaveButtons();
     initializePostCreator();
+    initializeCommentLikeButtons();
     
     console.log('✅ All interactive features initialized');
 });

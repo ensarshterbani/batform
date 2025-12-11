@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50" fill="currentColor">
+  <!-- Batform Logo - Clean minimalist bat silhouette -->
+  <path d="
+    M60 4
+    L57 12
+    L44 8
+    L20 4
+    L0 18
+    L12 22
+    L14 32
+    L26 24
+    L44 28
+    L56 40
+    L60 48
+    L64 40
+    L76 28
+    L94 24
+    L106 32
+    L108 22
+    L120 18
+    L100 4
+    L76 8
+    L63 12
+    L60 4
+    Z
+  " fill="#088178"/>
+</svg>

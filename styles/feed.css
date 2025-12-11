@@ -300,10 +300,21 @@ a.comment-btn {
   justify-content: center;
 }
 
-.fa-heart:hover {
-  color: red;
+/* Like button hover - green color */
+.like-btn:hover,
+.like-btn:hover .fa-heart,
+.like-btn:hover i {
+  color: #088178 !important;
   transform: scale(1.09);
   cursor: pointer;
+}
+
+/* Like button liked state - stays green */
+.like-btn.liked,
+.like-btn.liked .fa-heart,
+.like-btn.liked i,
+.like-btn.liked .action-icon {
+  color: #088178 !important;
 }
 
 .fa-commenting:hover {
@@ -318,20 +329,28 @@ a.comment-btn {
   cursor: pointer;
 }
 
-.fa-heart.liked {
-  color: red !important;
+/* Save button hover and saved state - green color */
+.save-btn:hover,
+.save-btn:hover .fa-bookmark,
+.save-btn:hover i {
+  color: #088178 !important;
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+.save-btn.saved,
+.save-btn.saved .fa-bookmark,
+.save-btn.saved i,
+.save-btn.saved .action-icon {
+  color: #088178 !important;
 }
 
 .fa-commenting.active-comment {
   color: #088178 !important;
 }
 
-.fa-bookmark.saved {
-  color: #088178 !important;
-}
-
 .action-icon i {
-  transition: color 0.3s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .action-icon {
