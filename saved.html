@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Saved Posts - Batform Social Media" />
+    <title>Saved | Batform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/feed.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <!-- Main Navigation Header -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <div class="nav-left">
+          <h1 class="logo">
+            <a href="index.html">Batform</a>
+          </h1>
+        </div>
+
+        <div class="nav-center">
+          <form class="search-form" role="search">
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search for people, posts, or topics..."
+              aria-label="Search" />
+            <button type="submit" class="search-btn" aria-label="Search">
+              <span class="search-icon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </button>
+          </form>
+        </div>
+
+        <div class="nav-right">
+          <!-- Desktop Navigation -->
+          <ul class="nav-menu desktop-nav">
+            <li>
+              <a href="index.html" class="nav-link">
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="notification.html" class="nav-link">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="settings.html" class="nav-link">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="profile.html" class="nav-link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile Hamburger Menu -->
+          <div class="mobile-nav">
+            <button
+              class="hamburger-btn"
+              id="hamburger-btn"
+              aria-label="Toggle navigation menu">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <!-- Mobile Dropdown Menu -->
+            <div class="mobile-dropdown" id="mobile-dropdown">
+              <ul class="mobile-menu">
+                <li>
+                  <a href="index.html" class="mobile-link">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                  </a>
+                </li>
+                <li>
+                  <a href="notification.html" class="mobile-link">
+                    <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+                  </a>
+                </li>
+                <li>
+                  <a href="settings.html" class="mobile-link">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                  </a>
+                </li>
+                <li>
+                  <a href="profile.html" class="mobile-link">
+                    <i class="fa fa-user" aria-hidden="true"></i> Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="saved.html" class="mobile-link active">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i> Saved
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- Left Sidebar -->
+      <aside class="left-sidebar">
+        <section class="user-profile-card">
+          <img
+            src="images/profile_picture.svg"
+            alt="John Doe profile picture"
+            class="profile-avatar" />
+          <h2 class="profile-name">John Doe</h2>
+          <p class="profile-title">Computer Science Student</p>
+          <div class="profile-stats">
+            <div class="stat">
+              <span class="stat-number">245</span>
+              <span class="stat-label">Followers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10</span>
+              <span class="stat-label">Posts</span>
+            </div>
+          </div>
+        </section>
+
+        <nav class="sidebar-nav">
+          <ul class="sidebar-menu">
+            <li>
+              <a href="index.html" class="sidebar-link">
+                <i class="fa fa-home" aria-hidden="true"></i> Home
+              </a>
+            </li>
+            <li>
+              <a href="notification.html" class="sidebar-link">
+                <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+              </a>
+            </li>
+            <li>
+              <a href="settings.html" class="sidebar-link">
+                <i class="fa fa-cog" aria-hidden="true"></i> Settings
+              </a>
+            </li>
+            <li>
+              <a href="profile.html" class="sidebar-link">
+                <i class="fa fa-user" aria-hidden="true"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a href="saved.html" class="sidebar-link active">
+                <i class="fa fa-bookmark" aria-hidden="true"></i> Saved
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Center Content - Saved Posts -->
+      <section class="feed-container">
+        <article class="card">
+          <header class="card-header">
+            <h2><i class="fa fa-bookmark" aria-hidden="true"></i> Saved Posts</h2>
+            <p class="card-subtitle">Posts you've saved for later</p>
+          </header>
+
+          <div class="card-body saved-posts-container">
+            <!-- Saved Post 1 -->
+            <article class="saved-post-item">
+              <div class="saved-post-header">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Sarah Miller"
+                  class="saved-post-avatar" />
+                <div class="saved-post-info">
+                  <strong class="saved-post-author">Sarah Miller</strong>
+                  <p class="saved-post-meta">
+                    Saved · <time datetime="2025-11-10">3 days ago</time>
+                  </p>
+                </div>
+                <button class="unsave-btn" data-post="1" title="Remove from saved">
+                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="saved-post-content">
+                <p>Just finished my final project for Web Development class! Built a complete e-commerce site with React and Node.js. 🎉</p>
+              </div>
+              <div class="saved-post-actions">
+                <span class="saved-post-stat"><i class="fa fa-heart"></i> 24 likes</span>
+                <span class="saved-post-stat"><i class="fa fa-comment"></i> 8 comments</span>
+              </div>
+            </article>
+
+            <!-- Saved Post 2 -->
+            <article class="saved-post-item">
+              <div class="saved-post-header">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Mike Chen"
+                  class="saved-post-avatar" />
+                <div class="saved-post-info">
+                  <strong class="saved-post-author">Mike Chen</strong>
+                  <p class="saved-post-meta">
+                    Saved · <time datetime="2025-11-09">4 days ago</time>
+                  </p>
+                </div>
+                <button class="unsave-btn" data-post="2" title="Remove from saved">
+                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="saved-post-content">
+                <p>Anyone else excited about the new JavaScript features coming in ES2024? The pipeline operator is going to change how we write functional code!</p>
+              </div>
+              <div class="saved-post-actions">
+                <span class="saved-post-stat"><i class="fa fa-heart"></i> 15 likes</span>
+                <span class="saved-post-stat"><i class="fa fa-comment"></i> 12 comments</span>
+              </div>
+            </article>
+
+            <!-- Saved Post 3 -->
+            <article class="saved-post-item">
+              <div class="saved-post-header">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Emily Johnson"
+                  class="saved-post-avatar" />
+                <div class="saved-post-info">
+                  <strong class="saved-post-author">Emily Johnson</strong>
+                  <p class="saved-post-meta">
+                    Saved · <time datetime="2025-11-08">5 days ago</time>
+                  </p>
+                </div>
+                <button class="unsave-btn" data-post="3" title="Remove from saved">
+                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="saved-post-content">
+                <p>Study group session was productive today! We tackled algorithms and data structures. Nothing beats collaborative learning. 📚</p>
+              </div>
+              <div class="saved-post-actions">
+                <span class="saved-post-stat"><i class="fa fa-heart"></i> 31 likes</span>
+                <span class="saved-post-stat"><i class="fa fa-comment"></i> 6 comments</span>
+              </div>
+            </article>
+
+            <!-- Saved Post 4 -->
+            <article class="saved-post-item">
+              <div class="saved-post-header">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Alex Wilson"
+                  class="saved-post-avatar" />
+                <div class="saved-post-info">
+                  <strong class="saved-post-author">Alex Wilson</strong>
+                  <p class="saved-post-meta">
+                    Saved · <time datetime="2025-11-05">1 week ago</time>
+                  </p>
+                </div>
+                <button class="unsave-btn" data-post="4" title="Remove from saved">
+                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="saved-post-content">
+                <p>Just published my first open-source library on npm! It's a utility for handling async state management in React. Check it out! 🚀</p>
+              </div>
+              <div class="saved-post-actions">
+                <span class="saved-post-stat"><i class="fa fa-heart"></i> 48 likes</span>
+                <span class="saved-post-stat"><i class="fa fa-comment"></i> 15 comments</span>
+              </div>
+            </article>
+
+            <!-- Saved Post 5 -->
+            <article class="saved-post-item">
+              <div class="saved-post-header">
+                <img
+                  src="images/profile_picture.svg"
+                  alt="Lisa Brown"
+                  class="saved-post-avatar" />
+                <div class="saved-post-info">
+                  <strong class="saved-post-author">Lisa Brown</strong>
+                  <p class="saved-post-meta">
+                    Saved · <time datetime="2025-11-01">2 weeks ago</time>
+                  </p>
+                </div>
+                <button class="unsave-btn" data-post="5" title="Remove from saved">
+                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="saved-post-content">
+                <p>Best resources for learning TypeScript in 2025 - A comprehensive guide for beginners to advanced developers. Thread below! 👇</p>
+              </div>
+              <div class="saved-post-actions">
+                <span class="saved-post-stat"><i class="fa fa-heart"></i> 127 likes</span>
+                <span class="saved-post-stat"><i class="fa fa-comment"></i> 34 comments</span>
+              </div>
+            </article>
+          </div>
+        </article>
+      </section>
+
+      <!-- Right Sidebar -->
+      <aside class="right-sidebar">
+        <section class="follow-suggestions">
+          <h3>Suggested for You</h3>
+          <article class="suggestion-item">
+            <img
+              src="images/profile_picture.svg"
+              alt="Alex Wilson profile picture"
+              class="suggestion-avatar" />
+            <div class="suggestion-info">
+              <h4 class="suggestion-name">Alex Wilson</h4>
+              <p class="suggestion-mutual">Suggested for you</p>
+            </div>
+            <button class="follow-btn" data-user="alex-wilson">Follow</button>
+          </article>
+          <article class="suggestion-item">
+            <img
+              src="images/profile_picture.svg"
+              alt="Lisa Brown profile picture"
+              class="suggestion-avatar" />
+            <div class="suggestion-info">
+              <h4 class="suggestion-name">Lisa Brown</h4>
+              <p class="suggestion-mutual">Suggested for you</p>
+            </div>
+            <button class="follow-btn" data-user="lisa-brown">Follow</button>
+          </article>
+        </section>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Batform.</p>
+        <nav class="footer-nav">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Help</a>
+          <a href="#" class="footer-link">About</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
+
+    <!-- JavaScript Files -->
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/interactions.js"></script>
+  </body>
+</html>

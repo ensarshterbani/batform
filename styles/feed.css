@@ -260,9 +260,20 @@
   transition: color 0.2s ease;
 }
 
+a.comments-count {
+  color: inherit;
+  text-decoration: none;
+}
+
 .likes-count:hover,
 .comments-count:hover {
   color: #088178;
+}
+
+/* Comment button as anchor link */
+a.comment-btn {
+  text-decoration: none;
+  color: inherit;
 }
 
 .post-actions {

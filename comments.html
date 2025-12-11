@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Post Comments - Batform Social Media" />
+    <title>Comments | Batform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/feed.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <!-- Main Navigation Header -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <div class="nav-left">
+          <h1 class="logo">
+            <a href="index.html">Batform</a>
+          </h1>
+        </div>
+
+        <div class="nav-center">
+          <form class="search-form" role="search">
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search for people, posts, or topics..."
+              aria-label="Search" />
+            <button type="submit" class="search-btn" aria-label="Search">
+              <span class="search-icon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </button>
+          </form>
+        </div>
+
+        <div class="nav-right">
+          <!-- Desktop Navigation -->
+          <ul class="nav-menu desktop-nav">
+            <li>
+              <a href="index.html" class="nav-link">
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="notification.html" class="nav-link">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="settings.html" class="nav-link">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="profile.html" class="nav-link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile Hamburger Menu -->
+          <div class="mobile-nav">
+            <button
+              class="hamburger-btn"
+              id="hamburger-btn"
+              aria-label="Toggle navigation menu">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <!-- Mobile Dropdown Menu -->
+            <div class="mobile-dropdown" id="mobile-dropdown">
+              <ul class="mobile-menu">
+                <li>
+                  <a href="index.html" class="mobile-link">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                  </a>
+                </li>
+                <li>
+                  <a href="notification.html" class="mobile-link">
+                    <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+                  </a>
+                </li>
+                <li>
+                  <a href="settings.html" class="mobile-link">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                  </a>
+                </li>
+                <li>
+                  <a href="profile.html" class="mobile-link">
+                    <i class="fa fa-user" aria-hidden="true"></i> Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="saved.html" class="mobile-link">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i> Saved
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content comments-page-layout">
+      <!-- Back Button & Page Header -->
+      <div class="comments-page-container">
+        <header class="comments-page-header">
+          <a href="index.html" class="back-btn">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <span>Back</span>
+          </a>
+          <h1>Post</h1>
+          <div class="header-spacer"></div>
+        </header>
+
+        <!-- Original Post -->
+        <article class="post comment-page-post" id="original-post">
+          <header class="post-header">
+            <img
+              src="images/profile_picture.svg"
+              alt="Sarah Miller profile picture"
+              class="post-avatar" />
+            <div class="post-author-info">
+              <h3 class="post-author">Sarah Miller</h3>
+              <time class="post-time" datetime="2024-11-05T10:30:00">2 hours ago</time>
+            </div>
+          </header>
+
+          <div class="post-content">
+            <p>
+              Just finished my final project for Web Development class! Built
+              a complete e-commerce site with React and Node.js. The feeling
+              of seeing everything work together is incredible! 🎉
+            </p>
+            <img
+              src="images/post-placeholder.svg"
+              alt="Screenshot of Sarah's web development project"
+              class="post-image" />
+          </div>
+
+          <footer class="post-footer">
+            <div class="post-stats">
+              <span class="likes-count">24 likes</span>
+              <span class="comments-count">8 comments</span>
+            </div>
+            <div class="post-actions">
+              <button class="action-btn like-btn" data-action="like">
+                <span class="action-icon">
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                </span>
+              </button>
+              <button class="action-btn comment-btn active" data-action="comment">
+                <span class="action-icon">
+                  <i class="fa fa-commenting" aria-hidden="true"></i>
+                </span>
+              </button>
+              <button class="action-btn save-btn" data-action="save">
+                <span class="action-icon">
+                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+          </footer>
+        </article>
+
+        <!-- Comments Section -->
+        <section class="comments-section-container">
+          <h2 class="comments-section-title">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            Comments <span class="comments-total">(8)</span>
+          </h2>
+
+          <!-- Comment Input (at top like Instagram) -->
+          <div class="add-comment-box">
+            <img
+              src="images/profile_picture.svg"
+              alt="Your profile picture"
+              class="comment-user-avatar" />
+            <form class="comment-form">
+              <input
+                type="text"
+                class="comment-input-field"
+                placeholder="Add a comment..."
+                aria-label="Write a comment" />
+              <button type="submit" class="comment-post-btn">Post</button>
+            </form>
+          </div>
+
+          <!-- Comments List -->
+          <div class="comments-list" id="comments-list">
+            <!-- Comment 1 -->
+            <article class="comment-item">
+              <img
+                src="images/profile_picture.svg"
+                alt="Mike Chen"
+                class="comment-avatar" />
+              <div class="comment-body">
+                <div class="comment-header">
+                  <strong class="comment-author-name">Mike Chen</strong>
+                  <time class="comment-timestamp">1h ago</time>
+                </div>
+                <p class="comment-text">This is amazing! 🎉 Would love to see a demo. Did you use any specific state management library?</p>
+                <div class="comment-actions">
+                  <button class="comment-like-btn">
+                    <i class="fa fa-heart"></i> <span>12</span>
+                  </button>
+                  <button class="comment-reply-btn">Reply</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Comment 2 -->
+            <article class="comment-item">
+              <img
+                src="images/profile_picture.svg"
+                alt="Emily Johnson"
+                class="comment-avatar" />
+              <div class="comment-body">
+                <div class="comment-header">
+                  <strong class="comment-author-name">Emily Johnson</strong>
+                  <time class="comment-timestamp">1h ago</time>
+                </div>
+                <p class="comment-text">Congrats Sarah! The UI looks so clean and professional. How long did it take you to build?</p>
+                <div class="comment-actions">
+                  <button class="comment-like-btn">
+                    <i class="fa fa-heart"></i> <span>8</span>
+                  </button>
+                  <button class="comment-reply-btn">Reply</button>
+                </div>
+
+                <!-- Nested Reply -->
+                <div class="comment-replies">
+                  <article class="comment-item reply">
+                    <img
+                      src="images/profile_picture.svg"
+                      alt="Sarah Miller"
+                      class="comment-avatar" />
+                    <div class="comment-body">
+                      <div class="comment-header">
+                        <strong class="comment-author-name">Sarah Miller</strong>
+                        <span class="author-badge">Author</span>
+                        <time class="comment-timestamp">45m ago</time>
+                      </div>
+                      <p class="comment-text">Thanks Emily! It took me about 3 weeks of intense coding 😅</p>
+                      <div class="comment-actions">
+                        <button class="comment-like-btn">
+                          <i class="fa fa-heart"></i> <span>5</span>
+                        </button>
+                        <button class="comment-reply-btn">Reply</button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </article>
+
+            <!-- Comment 3 -->
+            <article class="comment-item">
+              <img
+                src="images/profile_picture.svg"
+                alt="Alex Wilson"
+                class="comment-avatar" />
+              <div class="comment-body">
+                <div class="comment-header">
+                  <strong class="comment-author-name">Alex Wilson</strong>
+                  <time class="comment-timestamp">2h ago</time>
+                </div>
+                <p class="comment-text">The checkout flow looks smooth! Did you implement Stripe for payments?</p>
+                <div class="comment-actions">
+                  <button class="comment-like-btn">
+                    <i class="fa fa-heart"></i> <span>4</span>
+                  </button>
+                  <button class="comment-reply-btn">Reply</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Comment 4 -->
+            <article class="comment-item">
+              <img
+                src="images/profile_picture.svg"
+                alt="John Doe"
+                class="comment-avatar" />
+              <div class="comment-body">
+                <div class="comment-header">
+                  <strong class="comment-author-name">John Doe</strong>
+                  <time class="comment-timestamp">2h ago</time>
+                </div>
+                <p class="comment-text">This is inspiring! I'm working on a similar project. Would you mind sharing the GitHub repo? 🚀</p>
+                <div class="comment-actions">
+                  <button class="comment-like-btn liked">
+                    <i class="fa fa-heart"></i> <span>15</span>
+                  </button>
+                  <button class="comment-reply-btn">Reply</button>
+                </div>
+
+                <!-- Nested Reply -->
+                <div class="comment-replies">
+                  <article class="comment-item reply">
+                    <img
+                      src="images/profile_picture.svg"
+                      alt="Sarah Miller"
+                      class="comment-avatar" />
+                    <div class="comment-body">
+                      <div class="comment-header">
+                        <strong class="comment-author-name">Sarah Miller</strong>
+                        <span class="author-badge">Author</span>
+                        <time class="comment-timestamp">1h ago</time>
+                      </div>
+                      <p class="comment-text">Of course! I'll DM you the link. It's still a bit messy but feel free to check it out!</p>
+                      <div class="comment-actions">
+                        <button class="comment-like-btn">
+                          <i class="fa fa-heart"></i> <span>7</span>
+                        </button>
+                        <button class="comment-reply-btn">Reply</button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </article>
+
+            <!-- Comment 5 -->
+            <article class="comment-item">
+              <img
+                src="images/profile_picture.svg"
+                alt="Lisa Brown"
+                class="comment-avatar" />
+              <div class="comment-body">
+                <div class="comment-header">
+                  <strong class="comment-author-name">Lisa Brown</strong>
+                  <time class="comment-timestamp">2h ago</time>
+                </div>
+                <p class="comment-text">Love the color scheme! Very modern and user-friendly 💜</p>
+                <div class="comment-actions">
+                  <button class="comment-like-btn">
+                    <i class="fa fa-heart"></i> <span>9</span>
+                  </button>
+                  <button class="comment-reply-btn">Reply</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Comment 6 -->
+            <article class="comment-item">
+              <img
+                src="images/profile_picture.svg"
+                alt="David Taylor"
+                class="comment-avatar" />
+              <div class="comment-body">
+                <div class="comment-header">
+                  <strong class="comment-author-name">David Taylor</strong>
+                  <time class="comment-timestamp">2h ago</time>
+                </div>
+                <p class="comment-text">Great job! Is it mobile responsive? Would love to see how it looks on smaller screens.</p>
+                <div class="comment-actions">
+                  <button class="comment-like-btn">
+                    <i class="fa fa-heart"></i> <span>3</span>
+                  </button>
+                  <button class="comment-reply-btn">Reply</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Batform.</p>
+        <nav class="footer-nav">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Help</a>
+          <a href="#" class="footer-link">About</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
+
+    <!-- JavaScript Files -->
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/interactions.js"></script>
+  </body>
+</html>

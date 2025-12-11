@@ -3,6 +3,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: sticky;
+    top: 80px; /* Account for navbar height */
+    height: fit-content;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    align-self: flex-start;
 }
 
 /* User Profile Card */
@@ -144,6 +150,12 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    position: sticky;
+    top: 80px; /* Account for navbar height */
+    height: fit-content;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    align-self: flex-start;
 }
 
 /* Follow Suggestions */
