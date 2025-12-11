@@ -615,6 +615,7 @@ body.dark-mode .nav-link:hover,
 body.dark-mode .sidebar-link:hover,
 body.dark-mode .mobile-link:hover {
   color: var(--accent-color) !important;
+  background-color: rgba(8, 129, 120, 0.15) !important;
 }
 
 /* Toggle switches */
