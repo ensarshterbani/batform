@@ -43,9 +43,9 @@
               placeholder="Search for people, posts, or topics..."
               aria-label="Search" />
             <button type="submit" class="search-btn" aria-label="Search">
-              <span class="search-icon"
-                ><i class="fa fa-search" aria-hidden="true"></i
-              ></span>
+              <span class="search-icon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
             </button>
           </form>
         </div>
@@ -54,24 +54,24 @@
           <!-- Desktop Navigation -->
           <ul class="nav-menu desktop-nav">
             <li>
-              <a href="#top" class="nav-link active" aria-current="page"
-                ><i class="fa fa-home" aria-hidden="true"></i
-              ></a>
+              <a href="index.html" class="nav-link active" aria-current="page">
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </a>
             </li>
             <li>
-              <a href="notification.html" class="nav-link"
-                ><i class="fa fa-bell" aria-hidden="true"></i
-              ></a>
+              <a href="notification.html" class="nav-link">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </a>
             </li>
             <li>
-              <a href="settings.html" class="nav-link"
-                ><i class="fa fa-cog" aria-hidden="true"></i
-              ></a>
+              <a href="settings.html" class="nav-link">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
             </li>
             <li>
-              <a href="profile.html" class="nav-link"
-                ><i class="fa fa-user" aria-hidden="true"></i
-              ></a>
+              <a href="profile.html" class="nav-link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
             </li>
           </ul>
 
@@ -88,30 +88,29 @@
             <div class="mobile-dropdown" id="mobile-dropdown">
               <ul class="mobile-menu">
                 <li>
-                  <a href="#top" class="mobile-link active"
-                    ><i class="fa fa-home" aria-hidden="true"></i> Home</a
-                  >
+                  <a href="index.html" class="mobile-link active">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                  </a>
                 </li>
                 <li>
-                  <a href="notification.html" class="mobile-link"
-                    ><i class="fa fa-bell" aria-hidden="true"></i>
-                    Notifications</a
-                  >
+                  <a href="notification.html" class="mobile-link">
+                    <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+                  </a>
                 </li>
                 <li>
-                  <a href="settings.html" class="mobile-link"
-                    ><i class="fa fa-cog" aria-hidden="true"></i> Settings</a
-                  >
+                  <a href="settings.html" class="mobile-link">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                  </a>
                 </li>
                 <li>
-                  <a href="profile.html" class="mobile-link"
-                    ><i class="fa fa-user" aria-hidden="true"></i> Profile</a
-                  >
+                  <a href="profile.html" class="mobile-link">
+                    <i class="fa fa-user" aria-hidden="true"></i> Profile
+                  </a>
                 </li>
                 <li>
-                  <a href="saved.html" class="mobile-link"
-                    ><i class="fa fa-bookmark" aria-hidden="true"></i> Saved</a
-                  >
+                  <a href="saved.html" class="mobile-link">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i> Saved
+                  </a>
                 </li>
               </ul>
             </div>
@@ -127,17 +126,17 @@
         <section class="user-profile-card">
           <img
             src="images/profile_picture.svg"
-            alt="John Doe profile picture"
-            class="profile-avatar" />
-          <h2 class="profile-name">John Doe</h2>
-          <p class="profile-title">Computer Science Student</p>
+            alt="Profile picture"
+            class="profile-avatar current-user-avatar" />
+          <h2 class="profile-name current-user-name">Loading...</h2>
+          <p class="profile-title current-user-username">@username</p>
           <div class="profile-stats">
             <div class="stat">
-              <span class="stat-number">245</span>
+              <span class="stat-number" id="sidebar-followers">0</span>
               <span class="stat-label">Followers</span>
             </div>
             <div class="stat">
-              <span class="stat-number">10</span>
+              <span class="stat-number" id="sidebar-posts">0</span>
               <span class="stat-label">Posts</span>
             </div>
           </div>
@@ -146,34 +145,34 @@
         <nav class="sidebar-nav">
           <ul class="sidebar-menu">
             <li>
-              <a href="#top" class="sidebar-link active"
-                ><i class="fa fa-home" aria-hidden="true"></i> Home</a
-              >
+              <a href="index.html" class="sidebar-link active">
+                <i class="fa fa-home" aria-hidden="true"></i> Home
+              </a>
             </li>
             <li>
-              <a href="notification.html" class="sidebar-link"
-                ><i class="fa fa-bell" aria-hidden="true"></i> Notifications</a
-              >
+              <a href="notification.html" class="sidebar-link">
+                <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+              </a>
             </li>
             <li>
-              <a href="settings.html" class="sidebar-link"
-                ><i class="fa fa-cog" aria-hidden="true"></i> Settings</a
-              >
+              <a href="settings.html" class="sidebar-link">
+                <i class="fa fa-cog" aria-hidden="true"></i> Settings
+              </a>
             </li>
             <li>
-              <a href="profile.html" class="sidebar-link"
-                ><i class="fa fa-user" aria-hidden="true"></i> Profile</a
-              >
+              <a href="profile.html" class="sidebar-link">
+                <i class="fa fa-user" aria-hidden="true"></i> Profile
+              </a>
             </li>
             <li>
-              <a href="saved.html" class="sidebar-link"
-                ><i class="fa fa-bookmark" aria-hidden="true"></i> Saved</a
-              >
+              <a href="saved.html" class="sidebar-link">
+                <i class="fa fa-bookmark" aria-hidden="true"></i> Saved
+              </a>
             </li>
             <li>
-              <a href="#" class="sidebar-link logout-link" onclick="confirmLogout(event)"
-                ><i class="fa fa-sign-out-alt" aria-hidden="true"></i> Log Out</a
-              >
+              <a href="#" class="sidebar-link logout-link" id="logout-btn">
+                <i class="fa fa-sign-out-alt" aria-hidden="true"></i> Log Out
+              </a>
             </li>
           </ul>
         </nav>
@@ -188,183 +187,35 @@
             <img
               src="images/profile_picture.svg"
               alt="Your profile picture"
-              class="creator-avatar" />
-            <form class="post-form">
+              class="creator-avatar current-user-avatar" />
+            <form class="post-form" id="post-form">
               <textarea
                 class="post-input"
-                placeholder="What's on your mind, John?"
+                id="post-input"
+                placeholder="What's on your mind?"
                 rows="3"
                 aria-label="Write a post"></textarea>
+              <div id="image-preview" class="image-preview"></div>
               <div class="post-actions">
                 <div class="post-options">
-                  <button type="button" class="post-option-btn">
+                  <label class="post-option-btn">
                     <i class="fa fa-image" aria-hidden="true"></i>
                     <span>Photo</span>
-                  </button>
-                  <button type="button" class="post-option-btn">
-                    <i class="fa fa-video" aria-hidden="true"></i>
-                    <span>Video</span>
-                  </button>
-                  <button type="submit" class="post-submit-btn">Post</button>
+                    <input type="file" id="post-image-input" accept="image/*" hidden />
+                  </label>
+                  <button type="submit" class="post-submit-btn" id="post-submit-btn">Post</button>
                 </div>
               </div>
             </form>
           </div>
         </article>
 
-        <!-- News Feed -->
-        <section class="news-feed">
-          <h2 class="visually-hidden">News Feed</h2>
-
-          <!-- Post 1 -->
-          <article class="post">
-            <header class="post-header">
-              <img
-                src="images/profile_picture.svg"
-                alt="Sarah Miller profile picture"
-                class="post-avatar" />
-              <div class="post-author-info">
-                <h3 class="post-author">Sarah Miller</h3>
-                <time class="post-time" datetime="2024-11-05T10:30:00"
-                  >2 hours ago</time
-                >
-              </div>
-            </header>
-
-            <div class="post-content">
-              <p>
-                Just finished my final project for Web Development class! Built
-                a complete e-commerce site with React and Node.js. The feeling
-                of seeing everything work together is incredible! 🎉
-              </p>
-              <img
-                src="images/post-placeholder.svg"
-                alt="Screenshot of Sarah's web development project"
-                class="post-image" />
-            </div>
-
-            <footer class="post-footer">
-              <div class="post-stats">
-                <span class="likes-count">24 likes</span>
-                <a href="comments.html" class="comments-count">8 comments</a>
-              </div>
-              <div class="post-actions">
-                <button class="action-btn like-btn" data-action="like">
-                  <span class="action-icon"
-                    ><i class="fa fa-heart" aria-hidden="true"></i
-                  ></span>
-                </button>
-                <a href="comments.html" class="action-btn comment-btn">
-                  <span class="action-icon"
-                    ><i class="fa fa-commenting" aria-hidden="true"></i
-                  ></span>
-                </a>
-                <button class="action-btn save-btn" data-action="save">
-                  <span class="action-icon"
-                    ><i class="fa fa-bookmark" aria-hidden="true"></i
-                  ></span>
-                </button>
-              </div>
-            </footer>
-          </article>
-
-          <!-- Post 2 -->
-          <article class="post">
-            <header class="post-header">
-              <img
-                src="images/profile_picture.svg"
-                alt="Mike Chen profile picture"
-                class="post-avatar" />
-              <div class="post-author-info">
-                <h3 class="post-author">Mike Chen</h3>
-                <time class="post-time" datetime="2024-11-05T08:15:00"
-                  >4 hours ago</time
-                >
-              </div>
-            </header>
-
-            <div class="post-content">
-              <p>
-                Anyone else excited about the new JavaScript features coming in
-                ES2024? The pipeline operator is going to change how we write
-                functional code! Here's a quick example of how clean it makes
-                data transformations:
-              </p>
-            </div>
-
-            <footer class="post-footer">
-              <div class="post-stats">
-                <span class="likes-count">15 likes</span>
-                <a href="comments.html" class="comments-count">12 comments</a>
-              </div>
-              <div class="post-actions">
-                <button class="action-btn like-btn" data-action="like">
-                  <span class="action-icon"
-                    ><i class="fa fa-heart" aria-hidden="true"></i
-                  ></span>
-                </button>
-                <a href="comments.html" class="action-btn comment-btn">
-                  <span class="action-icon"
-                    ><i class="fa fa-commenting" aria-hidden="true"></i
-                  ></span>
-                </a>
-                <button class="action-btn save-btn" data-action="save">
-                  <span class="action-icon"
-                    ><i class="fa fa-bookmark" aria-hidden="true"></i
-                  ></span>
-                </button>
-              </div>
-            </footer>
-          </article>
-
-          <!-- Post 3 -->
-          <article class="post">
-            <header class="post-header">
-              <img
-                src="images/profile_picture.svg"
-                alt="Emily Johnson profile picture"
-                class="post-avatar" />
-              <div class="post-author-info">
-                <h3 class="post-author">Emily Johnson</h3>
-                <time class="post-time" datetime="2024-11-05T07:45:00"
-                  >5 hours ago</time
-                >
-              </div>
-            </header>
-
-            <div class="post-content">
-              <p>
-                Study group session was productive today! We tackled algorithms
-                and data structures. Nothing beats collaborative learning.
-                Thanks everyone who joined! 📚
-              </p>
-              <p>Next week: Dynamic Programming deep dive. Who's in?</p>
-            </div>
-
-            <footer class="post-footer">
-              <div class="post-stats">
-                <span class="likes-count">31 likes</span>
-                <a href="comments.html" class="comments-count">6 comments</a>
-              </div>
-              <div class="post-actions">
-                <button class="action-btn like-btn" data-action="like">
-                  <span class="action-icon"
-                    ><i class="fa fa-heart" aria-hidden="true"></i
-                  ></span>
-                </button>
-                <a href="comments.html" class="action-btn comment-btn">
-                  <span class="action-icon"
-                    ><i class="fa fa-commenting" aria-hidden="true"></i
-                  ></span>
-                </a>
-                <button class="action-btn save-btn" data-action="save">
-                  <span class="action-icon"
-                    ><i class="fa fa-bookmark" aria-hidden="true"></i
-                  ></span>
-                </button>
-              </div>
-            </footer>
-          </article>
+        <!-- News Feed - Dynamic Content -->
+        <section class="news-feed" id="feed-container">
+          <div class="loading-spinner">
+            <i class="fa fa-spinner fa-spin"></i>
+            <p>Loading posts...</p>
+          </div>
         </section>
       </section>
 
@@ -372,41 +223,9 @@
       <aside class="right-sidebar">
         <section class="follow-suggestions">
           <h3>Suggested for You</h3>
-          <article class="suggestion-item">
-            <img
-              src="images/profile_picture.svg"
-              alt="Alex Wilson profile picture"
-              class="suggestion-avatar" />
-            <div class="suggestion-info">
-              <h4 class="suggestion-name">Alex Wilson</h4>
-              <p class="suggestion-mutual">Suggested for you</p>
-            </div>
-            <button class="follow-btn" data-user="alex-wilson">Follow</button>
-          </article>
-
-          <article class="suggestion-item">
-            <img
-              src="images/profile_picture.svg"
-              alt="Lisa Brown profile picture"
-              class="suggestion-avatar" />
-            <div class="suggestion-info">
-              <h4 class="suggestion-name">Lisa Brown</h4>
-              <p class="suggestion-mutual">Suggested for you</p>
-            </div>
-            <button class="follow-btn" data-user="lisa-brown">Follow</button>
-          </article>
-
-          <article class="suggestion-item">
-            <img
-              src="images/profile_picture.svg"
-              alt="David Taylor profile picture"
-              class="suggestion-avatar" />
-            <div class="suggestion-info">
-              <h4 class="suggestion-name">David Taylor</h4>
-              <p class="suggestion-mutual">Suggested for you</p>
-            </div>
-            <button class="follow-btn" data-user="david-taylor">Follow</button>
-          </article>
+          <div id="suggestions-list">
+            <!-- Dynamically populated -->
+          </div>
         </section>
       </aside>
     </main>
@@ -428,8 +247,9 @@
     <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
 
     <!-- JavaScript Files -->
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/theme.js"></script>
     <script src="scripts/navigation.js"></script>
-    <script src="scripts/interactions.js"></script>
   </body>
 </html>

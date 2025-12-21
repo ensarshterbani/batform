@@ -25,7 +25,7 @@
       <nav class="nav-container">
         <div class="nav-left">
           <h1 class="logo">
-            <a href="index.html">
+            <a href="login.html">
               <img src="images/batform-logo.svg" alt="Batform" class="logo-icon" />
               <span class="logo-text">Batform</span>
             </a>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="nav-right">
-          <a href="login.html" class="auth-nav-btn login-btn">Log in</a>
+          <a href="login.html" class="auth-nav-btn login-btn active">Log in</a>
           <a href="signup.html" class="auth-nav-btn signup-btn">Sign up</a>
         </div>
       </nav>
@@ -46,12 +46,12 @@
           <p class="muted">Sign in to continue to Batform.</p>
         </header>
 
-        <form class="auth-form" action="#" method="post" novalidate>
+        <form class="auth-form" id="login-form" novalidate>
           <div class="form-row">
-            <label for="login-identifier">Email or username</label>
+            <label for="email">Email or username</label>
             <input
-              id="login-identifier"
-              name="identifier"
+              id="email"
+              name="email"
               type="text"
               class="auth-input"
               placeholder="you@example.com"
@@ -59,9 +59,9 @@
           </div>
 
           <div class="form-row">
-            <label for="login-password">Password</label>
+            <label for="password">Password</label>
             <input
-              id="login-password"
+              id="password"
               name="password"
               type="password"
               class="auth-input"
@@ -74,9 +74,13 @@
           </p>
 
           <div class="form-row form-actions">
-            <button type="submit" class="auth-btn">Log in</button>
+            <button type="submit" class="auth-btn" id="login-btn">
+              <span class="btn-text">Log in</span>
+              <i class="fa fa-spinner fa-spin btn-spinner" style="display: none;"></i>
+            </button>
           </div>
         </form>
+        
       </section>
     </main>
 
@@ -97,6 +101,11 @@
     <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
 
     <!-- JavaScript Files -->
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/theme.js"></script>
+    <script>
+      document.getElementById('login-form').addEventListener('submit', App.handleLogin);
+    </script>
   </body>
 </html>

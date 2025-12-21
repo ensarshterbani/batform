@@ -1426,3 +1426,157 @@ body.dark-mode section.about-card {
   background: #1a1f2e !important;
   color: #ffffff !important;
 }
+
+/* ============================================
+   NEW PROFILE PAGE LAYOUT
+   ============================================ */
+
+.profile-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px 30px;
+  margin-top: -75px;
+  position: relative;
+}
+
+.profile-avatar-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f0f0f0;
+}
+
+body.dark-mode .profile-avatar-large {
+  border-color: #1a1a2e;
+}
+
+.profile-details {
+  margin-top: 16px;
+}
+
+.profile-fullname {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.profile-username {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 12px;
+}
+
+.profile-bio {
+  font-size: 15px;
+  color: #555;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+body.dark-mode .profile-bio {
+  color: #aaa;
+}
+
+.profile-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.profile-stat {
+  text-align: center;
+}
+
+.profile-stat .stat-value {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+}
+
+.profile-stat .stat-label {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+body.dark-mode .profile-stat .stat-value {
+  color: #e0e0e0;
+}
+
+.profile-actions {
+  margin-top: 20px;
+}
+
+.profile-posts {
+  margin-top: 30px;
+}
+
+.profile-posts .section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+}
+
+.profile-posts .section-title i {
+  color: #088178;
+}
+
+body.dark-mode .profile-posts .section-title {
+  color: #e0e0e0;
+}
+
+.posts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8, 129, 120, 0.2), rgba(8, 129, 120, 0.6));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 10px;
+  }
+  
+  .profile-avatar-large {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-info-container {
+    margin-top: -60px;
+  }
+  
+  .profile-fullname {
+    font-size: 24px;
+  }
+  
+  .profile-stats-row {
+    gap: 24px;
+  }
+  
+  .profile-stat .stat-value {
+    font-size: 18px;
+  }
+}

@@ -117,26 +117,16 @@
       </nav>
     </header>
 
-    <main class="main-content">
+    <main class="main-content saved-page-layout">
       <!-- Left Sidebar -->
       <aside class="left-sidebar">
         <section class="user-profile-card">
           <img
             src="images/profile_picture.svg"
-            alt="John Doe profile picture"
-            class="profile-avatar" />
-          <h2 class="profile-name">John Doe</h2>
-          <p class="profile-title">Computer Science Student</p>
-          <div class="profile-stats">
-            <div class="stat">
-              <span class="stat-number">245</span>
-              <span class="stat-label">Followers</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">10</span>
-              <span class="stat-label">Posts</span>
-            </div>
-          </div>
+            alt="Profile picture"
+            class="profile-avatar current-user-avatar" />
+          <h2 class="profile-name current-user-name">Loading...</h2>
+          <p class="profile-title current-user-username">@username</p>
         </section>
 
         <nav class="sidebar-nav">
@@ -167,7 +157,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="sidebar-link logout-link" onclick="confirmLogout(event)">
+              <a href="#" class="sidebar-link logout-link" id="logout-btn">
                 <i class="fa fa-sign-out-alt" aria-hidden="true"></i> Log Out
               </a>
             </li>
@@ -175,176 +165,21 @@
         </nav>
       </aside>
 
-      <!-- Center Content - Saved Posts -->
-      <section class="feed-container">
-        <article class="card">
-          <header class="card-header">
-            <h2><i class="fa fa-bookmark" aria-hidden="true"></i> Saved Posts</h2>
-            <p class="card-subtitle">Posts you've saved for later</p>
-          </header>
+      <!-- Saved Posts Content -->
+      <section class="feed-container saved-content">
+        <header class="page-header">
+          <h1>
+            <i class="fa fa-bookmark"></i> Saved Posts
+          </h1>
+        </header>
 
-          <div class="card-body saved-posts-container">
-            <!-- Saved Post 1 -->
-            <article class="saved-post-item">
-              <div class="saved-post-header">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="Sarah Miller"
-                  class="saved-post-avatar" />
-                <div class="saved-post-info">
-                  <strong class="saved-post-author">Sarah Miller</strong>
-                  <p class="saved-post-meta">
-                    Saved · <time datetime="2025-11-10">3 days ago</time>
-                  </p>
-                </div>
-                <button class="unsave-btn" data-post="1" title="Remove from saved">
-                  <i class="fa fa-bookmark" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="saved-post-content">
-                <p>Just finished my final project for Web Development class! Built a complete e-commerce site with React and Node.js. 🎉</p>
-              </div>
-              <div class="saved-post-actions">
-                <span class="saved-post-stat"><i class="fa fa-heart"></i> 24 likes</span>
-                <span class="saved-post-stat"><i class="fa fa-comment"></i> 8 comments</span>
-              </div>
-            </article>
-
-            <!-- Saved Post 2 -->
-            <article class="saved-post-item">
-              <div class="saved-post-header">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="Mike Chen"
-                  class="saved-post-avatar" />
-                <div class="saved-post-info">
-                  <strong class="saved-post-author">Mike Chen</strong>
-                  <p class="saved-post-meta">
-                    Saved · <time datetime="2025-11-09">4 days ago</time>
-                  </p>
-                </div>
-                <button class="unsave-btn" data-post="2" title="Remove from saved">
-                  <i class="fa fa-bookmark" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="saved-post-content">
-                <p>Anyone else excited about the new JavaScript features coming in ES2024? The pipeline operator is going to change how we write functional code!</p>
-              </div>
-              <div class="saved-post-actions">
-                <span class="saved-post-stat"><i class="fa fa-heart"></i> 15 likes</span>
-                <span class="saved-post-stat"><i class="fa fa-comment"></i> 12 comments</span>
-              </div>
-            </article>
-
-            <!-- Saved Post 3 -->
-            <article class="saved-post-item">
-              <div class="saved-post-header">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="Emily Johnson"
-                  class="saved-post-avatar" />
-                <div class="saved-post-info">
-                  <strong class="saved-post-author">Emily Johnson</strong>
-                  <p class="saved-post-meta">
-                    Saved · <time datetime="2025-11-08">5 days ago</time>
-                  </p>
-                </div>
-                <button class="unsave-btn" data-post="3" title="Remove from saved">
-                  <i class="fa fa-bookmark" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="saved-post-content">
-                <p>Study group session was productive today! We tackled algorithms and data structures. Nothing beats collaborative learning. 📚</p>
-              </div>
-              <div class="saved-post-actions">
-                <span class="saved-post-stat"><i class="fa fa-heart"></i> 31 likes</span>
-                <span class="saved-post-stat"><i class="fa fa-comment"></i> 6 comments</span>
-              </div>
-            </article>
-
-            <!-- Saved Post 4 -->
-            <article class="saved-post-item">
-              <div class="saved-post-header">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="Alex Wilson"
-                  class="saved-post-avatar" />
-                <div class="saved-post-info">
-                  <strong class="saved-post-author">Alex Wilson</strong>
-                  <p class="saved-post-meta">
-                    Saved · <time datetime="2025-11-05">1 week ago</time>
-                  </p>
-                </div>
-                <button class="unsave-btn" data-post="4" title="Remove from saved">
-                  <i class="fa fa-bookmark" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="saved-post-content">
-                <p>Just published my first open-source library on npm! It's a utility for handling async state management in React. Check it out! 🚀</p>
-              </div>
-              <div class="saved-post-actions">
-                <span class="saved-post-stat"><i class="fa fa-heart"></i> 48 likes</span>
-                <span class="saved-post-stat"><i class="fa fa-comment"></i> 15 comments</span>
-              </div>
-            </article>
-
-            <!-- Saved Post 5 -->
-            <article class="saved-post-item">
-              <div class="saved-post-header">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="Lisa Brown"
-                  class="saved-post-avatar" />
-                <div class="saved-post-info">
-                  <strong class="saved-post-author">Lisa Brown</strong>
-                  <p class="saved-post-meta">
-                    Saved · <time datetime="2025-11-01">2 weeks ago</time>
-                  </p>
-                </div>
-                <button class="unsave-btn" data-post="5" title="Remove from saved">
-                  <i class="fa fa-bookmark" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="saved-post-content">
-                <p>Best resources for learning TypeScript in 2025 - A comprehensive guide for beginners to advanced developers. Thread below! 👇</p>
-              </div>
-              <div class="saved-post-actions">
-                <span class="saved-post-stat"><i class="fa fa-heart"></i> 127 likes</span>
-                <span class="saved-post-stat"><i class="fa fa-comment"></i> 34 comments</span>
-              </div>
-            </article>
+        <div id="saved-posts" class="saved-posts-container">
+          <div class="loading-spinner">
+            <i class="fa fa-spinner fa-spin"></i>
+            <p>Loading saved posts...</p>
           </div>
-        </article>
+        </div>
       </section>
-
-      <!-- Right Sidebar -->
-      <aside class="right-sidebar">
-        <section class="follow-suggestions">
-          <h3>Suggested for You</h3>
-          <article class="suggestion-item">
-            <img
-              src="images/profile_picture.svg"
-              alt="Alex Wilson profile picture"
-              class="suggestion-avatar" />
-            <div class="suggestion-info">
-              <h4 class="suggestion-name">Alex Wilson</h4>
-              <p class="suggestion-mutual">Suggested for you</p>
-            </div>
-            <button class="follow-btn" data-user="alex-wilson">Follow</button>
-          </article>
-          <article class="suggestion-item">
-            <img
-              src="images/profile_picture.svg"
-              alt="Lisa Brown profile picture"
-              class="suggestion-avatar" />
-            <div class="suggestion-info">
-              <h4 class="suggestion-name">Lisa Brown</h4>
-              <p class="suggestion-mutual">Suggested for you</p>
-            </div>
-            <button class="follow-btn" data-user="lisa-brown">Follow</button>
-          </article>
-        </section>
-      </aside>
     </main>
 
     <!-- Footer -->
@@ -363,8 +198,9 @@
     <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
 
     <!-- JavaScript Files -->
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/theme.js"></script>
     <script src="scripts/navigation.js"></script>
-    <script src="scripts/interactions.js"></script>
   </body>
 </html>

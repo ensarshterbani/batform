@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="styles/responsive.css" />
     <link rel="stylesheet" href="styles/auth.css" />
   </head>
-  <body>
+  <body id="top">
     <!-- Simplified Navigation Header for Auth Pages -->
     <header class="navbar auth-navbar">
       <nav class="nav-container">
         <div class="nav-left">
           <h1 class="logo">
-            <a href="index.html">
+            <a href="login.html">
               <img src="images/batform-logo.svg" alt="Batform" class="logo-icon" />
               <span class="logo-text">Batform</span>
             </a>
@@ -34,7 +34,7 @@
 
         <div class="nav-right">
           <a href="login.html" class="auth-nav-btn login-btn">Log in</a>
-          <a href="signup.html" class="auth-nav-btn signup-btn">Sign up</a>
+          <a href="signup.html" class="auth-nav-btn signup-btn active">Sign up</a>
         </div>
       </nav>
     </header>
@@ -43,20 +43,29 @@
       <section class="auth-card">
         <header class="auth-header">
           <h2>Create your account</h2>
-          <p class="muted">
-            Join Batform — connect with others and share updates.
-          </p>
+          <p class="muted">Join Batform and connect with others.</p>
         </header>
 
-        <form class="auth-form" action="#" method="post" novalidate>
+        <form class="auth-form" id="signup-form" novalidate>
           <div class="form-row">
-            <label for="full-name">Full name</label>
+            <label for="fullname">Full Name</label>
             <input
-              id="full-name"
-              name="name"
+              id="fullname"
+              name="fullname"
               type="text"
               class="auth-input"
-              placeholder="Your Name"
+              placeholder="John Doe"
+              required />
+          </div>
+
+          <div class="form-row">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="auth-input"
+              placeholder="johndoe"
               required />
           </div>
 
@@ -72,35 +81,25 @@
           </div>
 
           <div class="form-row">
-            <label for="username">Username</label>
-            <input
-              id="username"
-              name="username"
-              type="text"
-              class="auth-input"
-              placeholder="@username"
-              required />
-          </div>
-
-          <div class="form-row">
             <label for="password">Password</label>
             <input
               id="password"
               name="password"
               type="password"
               class="auth-input"
-              placeholder="Create a password"
-              required />
+              placeholder="At least 6 characters"
+              required
+              minlength="6" />
           </div>
 
           <div class="form-row">
-            <label for="password-confirm">Confirm password</label>
+            <label for="confirm-password">Confirm Password</label>
             <input
-              id="password-confirm"
-              name="password_confirm"
+              id="confirm-password"
+              name="confirm-password"
               type="password"
               class="auth-input"
-              placeholder="Confirm password"
+              placeholder="Confirm your password"
               required />
           </div>
 
@@ -109,7 +108,10 @@
           </p>
 
           <div class="form-row form-actions">
-            <button type="submit" class="auth-btn">Sign up</button>
+            <button type="submit" class="auth-btn" id="signup-btn">
+              <span class="btn-text">Create Account</span>
+              <i class="fa fa-spinner fa-spin btn-spinner" style="display: none;"></i>
+            </button>
           </div>
         </form>
       </section>
@@ -132,6 +134,11 @@
     <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
 
     <!-- JavaScript Files -->
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/theme.js"></script>
+    <script>
+      document.getElementById('signup-form').addEventListener('submit', App.handleSignup);
+    </script>
   </body>
 </html>

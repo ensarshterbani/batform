@@ -225,13 +225,40 @@ body.dark-mode .sidebar-link.logout-link:hover i {
 
 .suggestion-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
 }
 
 .suggestion-name {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: #333333;
-    margin-bottom: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggestion-name:hover {
+    text-decoration: underline;
+}
+
+.suggestion-username {
+    font-size: 12px;
+    color: #6c757d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.dark-mode .suggestion-name {
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .suggestion-username {
+    color: var(--text-secondary) !important;
 }
 
 .suggestion-mutual {

@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="John Doe's Profile - Batform Social Media" />
-    <title>John Doe - Profile | Batform</title>
+    <meta name="description" content="User Profile - Batform Social Media" />
+    <title>Profile | Batform</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +16,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/feed.css" />
     <link rel="stylesheet" href="styles/profile.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
-    <link rel="stylesheet" href="styles/posts.css" />
   </head>
   <body>
     <!-- Main Navigation Header -->
@@ -43,9 +42,9 @@
               placeholder="Search for people, posts, or topics..."
               aria-label="Search" />
             <button type="submit" class="search-btn" aria-label="Search">
-              <span class="search-icon"
-                ><i class="fa fa-search" aria-hidden="true"></i
-              ></span>
+              <span class="search-icon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
             </button>
           </form>
         </div>
@@ -54,24 +53,24 @@
           <!-- Desktop Navigation -->
           <ul class="nav-menu desktop-nav">
             <li>
-              <a href="index.html" class="nav-link"
-                ><i class="fa fa-home" aria-hidden="true"></i
-              ></a>
+              <a href="index.html" class="nav-link">
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </a>
             </li>
             <li>
-              <a href="notification.html" class="nav-link"
-                ><i class="fa fa-bell" aria-hidden="true"></i
-              ></a>
+              <a href="notification.html" class="nav-link">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </a>
             </li>
             <li>
-              <a href="settings.html" class="nav-link"
-                ><i class="fa fa-cog" aria-hidden="true"></i
-              ></a>
+              <a href="settings.html" class="nav-link">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
             </li>
             <li>
-              <a href="#top" class="nav-link active" aria-current="page"
-                ><i class="fa fa-user" aria-hidden="true"></i
-              ></a>
+              <a href="profile.html" class="nav-link active" aria-current="page">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
             </li>
           </ul>
 
@@ -88,35 +87,29 @@
             <div class="mobile-dropdown" id="mobile-dropdown">
               <ul class="mobile-menu">
                 <li>
-                  <a href="index.html" class="mobile-link"
-                    ><i class="fa fa-home" aria-hidden="true"></i> Home</a
-                  >
+                  <a href="index.html" class="mobile-link">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                  </a>
                 </li>
                 <li>
-                  <a href="notification.html" class="mobile-link"
-                    ><i class="fa fa-bell" aria-hidden="true"></i>
-                    Notifications</a
-                  >
+                  <a href="notification.html" class="mobile-link">
+                    <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+                  </a>
                 </li>
                 <li>
-                  <a href="settings.html" class="mobile-link"
-                    ><i class="fa fa-cog" aria-hidden="true"></i> Settings</a
-                  >
+                  <a href="settings.html" class="mobile-link">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                  </a>
                 </li>
                 <li>
-                  <a href="#top" class="mobile-link active"
-                    ><i class="fa fa-user" aria-hidden="true"></i> Profile</a
-                  >
+                  <a href="profile.html" class="mobile-link active">
+                    <i class="fa fa-user" aria-hidden="true"></i> Profile
+                  </a>
                 </li>
                 <li>
-                  <a href="#" class="mobile-link"
-                    ><i class="fa fa-compass" aria-hidden="true"></i> Explore</a
-                  >
-                </li>
-                <li>
-                  <a href="saved.html" class="mobile-link"
-                    ><i class="fa fa-bookmark" aria-hidden="true"></i> Saved</a
-                  >
+                  <a href="saved.html" class="mobile-link">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i> Saved
+                  </a>
                 </li>
               </ul>
             </div>
@@ -125,388 +118,66 @@
       </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="profile-main">
+    <!-- Profile Content -->
+    <main class="profile-page">
       <!-- Profile Header -->
-      <header class="profile-header">
-        <div class="profile-cover">
-          <img
-            src="images/cover-placeholder.svg"
-            alt="John Doe's cover photo"
-            class="cover-photo" />
+      <section class="profile-header">
+        <div class="profile-cover" id="profile-cover">
+          <div class="cover-overlay"></div>
         </div>
-
-        <div class="profile-info">
-          <div class="profile-picture-container">
-            <img
-              src="images/profile_picture.svg"
-              alt="John Doe profile picture"
-              class="profile-picture" />
-          </div>
-
+        
+        <div class="profile-info-container">
+          <img
+            src="images/profile_picture.svg"
+            alt="Profile picture"
+            class="profile-avatar-large"
+            id="profile-avatar" />
+          
           <div class="profile-details">
-            <h1 class="profile-name">John Doe</h1>
-            <p class="profile-bio">
-              Computer Science Student at Tech University | Web Developer |
-              React Enthusiast
-            </p>
-
-            <div class="profile-meta">
-              <span class="profile-location">📍 San Francisco, CA</span>
-              <span class="profile-joined">📅 Joined March 2023</span>
-              <span class="profile-website"
-                >🔗
-                <a href="https://johndoe.dev" target="_blank" rel="noopener"
-                  >johndoe.dev</a
-                ></span
-              >
-            </div>
-
-            <div class="profile-stats">
-              <div class="stat-item">
-                <span class="stat-number">89</span>
+            <h1 class="profile-fullname" id="profile-name">Loading...</h1>
+            <p class="profile-username" id="profile-username">@username</p>
+            <p class="profile-bio" id="profile-bio">Loading bio...</p>
+            
+            <div class="profile-stats-row">
+              <div class="profile-stat">
+                <span class="stat-value" id="posts-count">0</span>
                 <span class="stat-label">Posts</span>
               </div>
-              <div class="stat-item">
-                <span class="stat-number">1.2k</span>
+              <div class="profile-stat">
+                <span class="stat-value" id="followers-count">0</span>
                 <span class="stat-label">Followers</span>
               </div>
-              <div class="stat-item">
-                <span class="stat-number">892</span>
+              <div class="profile-stat">
+                <span class="stat-value" id="following-count">0</span>
                 <span class="stat-label">Following</span>
               </div>
             </div>
           </div>
-
-          <div class="profile-actions">
-            <a href="settings.html"
-              ><button class="edit-profile-btn">Edit Profile</button></a
-            >
+          
+          <div class="profile-actions" id="profile-actions">
+            <!-- Dynamic: Edit Profile or Follow button -->
           </div>
         </div>
-      </header>
+      </section>
 
-      <!-- Profile Content -->
-      <div class="profile-content">
-        <!-- Profile Navigation -->
-        <nav class="profile-nav">
-          <ul class="profile-nav-list">
-            <li><a href="#posts" class="profile-nav-link active">Posts</a></li>
-            <li><a href="#about" class="profile-nav-link">About</a></li>
-            <li><a href="#followers" class="profile-nav-link">Followers</a></li>
-            <li><a href="#photos" class="profile-nav-link">Photos</a></li>
-            <li><a href="#videos" class="profile-nav-link">Videos</a></li>
-          </ul>
-        </nav>
-
-        <div class="profile-body">
-          <!-- Left Column - About Info -->
-          <aside class="profile-sidebar">
-            <section class="about-card">
-              <h2>About</h2>
-              <div class="about-info">
-                <div class="info-item">
-                  <strong>Education:</strong>
-                  <p>Computer Science at Tech University</p>
-                </div>
-                <div class="info-item">
-                  <strong>Work:</strong>
-                  <p>Frontend Developer Intern at StartupCo</p>
-                </div>
-                <div class="info-item">
-                  <strong>Skills:</strong>
-                  <p>JavaScript, React, Node.js, Python, HTML/CSS</p>
-                </div>
-                <div class="info-item">
-                  <strong>Interests:</strong>
-                  <p>Web Development, Open Source, Gaming, Photography</p>
-                </div>
-              </div>
-            </section>
-
-            <section class="followers-preview">
-              <h2>Followers <span class="followers-count">(1.2k)</span></h2>
-              <div class="followers-grid">
-                <a href="#" class="follower-item">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="Sarah Miller"
-                    class="follower-avatar" />
-                  <span class="follower-name">Sarah Miller</span>
-                </a>
-                <a href="#" class="follower-item">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="Mike Chen"
-                    class="follower-avatar" />
-                  <span class="follower-name">Mike Chen</span>
-                </a>
-                <a href="#" class="follower-item">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="Emily Johnson"
-                    class="follower-avatar" />
-                  <span class="follower-name">Emily Johnson</span>
-                </a>
-                <a href="#" class="follower-item">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="Alex Wilson"
-                    class="follower-avatar" />
-                  <span class="follower-name">Alex Wilson</span>
-                </a>
-                <a href="#" class="follower-item">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="Lisa Brown"
-                    class="follower-avatar" />
-                  <span class="follower-name">Lisa Brown</span>
-                </a>
-                <a href="#" class="follower-item">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="David Taylor"
-                    class="follower-avatar" />
-                  <span class="follower-name">David Taylor</span>
-                </a>
-              </div>
-              <a href="#" class="see-all-followers">See All Followers</a>
-            </section>
-
-            <section class="photos-preview">
-              <h2>Photos</h2>
-              <div class="photos-grid">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="John's photo"
-                  class="photo-thumbnail" />
-                <img
-                  src="images/profile_picture.svg"
-                  alt="John's photo"
-                  class="photo-thumbnail" />
-                <img
-                  src="images/profile_picture.svg"
-                  alt="John's photo"
-                  class="photo-thumbnail" />
-                <img
-                  src="images/profile_picture.svg"
-                  alt="John's photo"
-                  class="photo-thumbnail" />
-                <img
-                  src="images/profile_picture.svg"
-                  alt="John's photo"
-                  class="photo-thumbnail" />
-                <img
-                  src="images/profile_picture.svg"
-                  alt="John's photo"
-                  class="photo-thumbnail" />
-              </div>
-              <a href="#" class="see-all-photos">See All Photos</a>
-            </section>
-          </aside>
-
-          <!-- Right Column - Posts -->
-          <section class="profile-posts">
-            <!-- Post Creation (only visible on own profile) -->
-            <article class="post-creator">
-              <h2 class="visually-hidden">Create a new post</h2>
-              <div class="post-creator-header">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="Your profile picture"
-                  class="creator-avatar" />
-                <form class="post-form">
-                  <textarea
-                    class="post-input"
-                    placeholder="Share something with your friends..."
-                    rows="3"
-                    aria-label="Write a post"></textarea>
-                  <div class="post-actions">
-                    <div class="post-options">
-                      <button type="button" class="post-option-btn">
-                        <i class="fa fa-image" aria-hidden="true"></i>
-                        <span>Photo</span>
-                      </button>
-                      <button type="button" class="post-option-btn">
-                        <i class="fa fa-video" aria-hidden="true"></i>
-                        <span>Video</span>
-                      </button>
-                      <button type="submit" class="post-submit-btn">
-                        Post
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </article>
-
-            <!-- User's Posts -->
-            <div class="user-posts">
-              <h2 class="visually-hidden">John Doe's Posts</h2>
-
-              <!-- Post 1 -->
-              <article class="post">
-                <header class="post-header">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="John Doe profile picture"
-                    class="post-avatar" />
-                  <div class="post-author-info">
-                    <h3 class="post-author">John Doe</h3>
-                    <time class="post-time" datetime="2024-11-04T15:30:00"
-                      >Yesterday at 3:30 PM</time
-                    >
-                  </div>
-                </header>
-
-                <div class="post-content">
-                  <p>
-                    Just deployed my first full-stack application! It's a task
-                    management app built with React frontend and Node.js
-                    backend. The learning curve was steep but so worth it.
-                    Thanks to everyone who helped me debug along the way! 🚀
-                  </p>
-                  <img
-                    src="images/post-placeholder.svg"
-                    alt="Screenshot of John's task manager application"
-                    class="post-image" />
-                </div>
-
-                <footer class="post-footer">
-                  <div class="post-stats">
-                    <span class="likes-count">42 likes</span>
-                    <a href="comments.html" class="comments-count">15 comments</a>
-                  </div>
-                  <div class="post-actions">
-                    <button class="action-btn like-btn" data-action="like">
-                      <span class="action-icon"
-                        ><i class="fa fa-heart" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                    <a href="comments.html" class="action-btn comment-btn">
-                      <span class="action-icon"
-                        ><i class="fa fa-commenting" aria-hidden="true"></i
-                      ></span>
-                    </a>
-                    <button class="action-btn save-btn" data-action="save">
-                      <span class="action-icon"
-                        ><i class="fa fa-bookmark" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                  </div>
-                </footer>
-              </article>
-
-              <!-- Post 2 -->
-              <article class="post">
-                <header class="post-header">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="John Doe profile picture"
-                    class="post-avatar" />
-                  <div class="post-author-info">
-                    <h3 class="post-author">John Doe</h3>
-                    <time class="post-time" datetime="2024-11-03T12:15:00"
-                      >2 days ago</time
-                    >
-                  </div>
-                </header>
-
-                <div class="post-content">
-                  <p>
-                    Attending the local JavaScript meetup tonight! Looking
-                    forward to the talk on "Modern React Patterns". Always
-                    excited to learn from the community and network with fellow
-                    developers. 💻
-                  </p>
-                  <p>
-                    Anyone else going? Let me know if you want to grab coffee
-                    after!
-                  </p>
-                </div>
-
-                <footer class="post-footer">
-                  <div class="post-stats">
-                    <span class="likes-count">18 likes</span>
-                    <a href="comments.html" class="comments-count">7 comments</a>
-                  </div>
-                  <div class="post-actions">
-                    <button class="action-btn like-btn" data-action="like">
-                      <span class="action-icon"
-                        ><i class="fa fa-heart" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                    <a href="comments.html" class="action-btn comment-btn">
-                      <span class="action-icon"
-                        ><i class="fa fa-commenting" aria-hidden="true"></i
-                      ></span>
-                    </a>
-                    <button class="action-btn save-btn" data-action="save">
-                      <span class="action-icon"
-                        ><i class="fa fa-bookmark" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                  </div>
-                </footer>
-              </article>
-
-              <!-- Post 3 -->
-              <article class="post">
-                <header class="post-header">
-                  <img
-                    src="images/profile_picture.svg"
-                    alt="John Doe profile picture"
-                    class="post-avatar" />
-                  <div class="post-author-info">
-                    <h3 class="post-author">John Doe</h3>
-                    <time class="post-time" datetime="2024-11-01T09:45:00"
-                      >4 days ago</time
-                    >
-                  </div>
-                </header>
-
-                <div class="post-content">
-                  <p>
-                    Weekend coding session complete! Spent the last two days
-                    refactoring my portfolio website. Clean code is happy code.
-                    Here's what I learned about component composition in React:
-                  </p>
-                </div>
-
-                <footer class="post-footer">
-                  <div class="post-stats">
-                    <span class="likes-count">29 likes</span>
-                    <a href="comments.html" class="comments-count">11 comments</a>
-                  </div>
-                  <div class="post-actions">
-                    <button class="action-btn like-btn" data-action="like">
-                      <span class="action-icon"
-                        ><i class="fa fa-heart" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                    <a href="comments.html" class="action-btn comment-btn">
-                      <span class="action-icon"
-                        ><i class="fa fa-commenting" aria-hidden="true"></i
-                      ></span>
-                    </a>
-                    <button class="action-btn save-btn" data-action="save">
-                      <span class="action-icon"
-                        ><i class="fa fa-bookmark" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                  </div>
-                </footer>
-              </article>
-            </div>
-          </section>
+      <!-- Profile Posts -->
+      <section class="profile-posts">
+        <h2 class="section-title">
+          <i class="fa fa-th-large"></i> Posts
+        </h2>
+        <div class="posts-grid" id="user-posts">
+          <div class="loading-spinner">
+            <i class="fa fa-spinner fa-spin"></i>
+            <p>Loading posts...</p>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-content">
-        <p>&copy; 2024 Batform. A student project for educational purposes.</p>
+        <p>&copy; 2025 Batform.</p>
         <nav class="footer-nav">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
@@ -516,13 +187,12 @@
       </div>
     </footer>
 
-    <!-- Accessibility helper for screen readers -->
     <div class="visually-hidden" aria-live="polite" id="status-messages"></div>
 
     <!-- JavaScript Files -->
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/theme.js"></script>
     <script src="scripts/navigation.js"></script>
-    <script src="scripts/interactions.js"></script>
-    <script src="scripts/profile.js"></script>
   </body>
 </html>
