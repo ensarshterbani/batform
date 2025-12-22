@@ -248,7 +248,7 @@ const App = (function() {
         if (!author) return '';
         
         // Using destructuring to extract values
-        const { id: postId, content, image, createdAt } = post;
+        const { id: postId, content, image, mediaType, createdAt } = post;
         const { fullName, username, avatar } = author;
         
         const likeCount = Storage.getLikeCount(postId);
@@ -257,13 +257,40 @@ const App = (function() {
         const isSaved = currentUser ? Storage.hasUserSaved(postId, currentUser.id) : false;
         const timeAgo = Storage.formatTimeAgo(createdAt);
         
-        // Using figure and figcaption for semantic image markup
-        const imageMarkup = image ? `
-            <figure class="post-figure">
-                <img src="${image}" alt="Image shared by ${fullName}" class="post-image" />
-                <figcaption class="visually-hidden">Image shared by ${fullName}</figcaption>
-            </figure>
-        ` : '';
+        // Generate media markup based on type
+        let mediaMarkup = '';
+        if (image) {
+            if (mediaType === 'video') {
+                mediaMarkup = `
+                    <figure class="post-figure">
+                        <video src="${image}" controls class="post-video">
+                            Your browser does not support the video element.
+                        </video>
+                        <figcaption class="visually-hidden">Video shared by ${fullName}</figcaption>
+                    </figure>
+                `;
+            } else if (mediaType === 'audio') {
+                mediaMarkup = `
+                    <figure class="post-figure post-audio-figure">
+                        <div class="post-audio-container">
+                            <i class="fa fa-music post-audio-icon" aria-hidden="true"></i>
+                            <audio src="${image}" controls class="post-audio">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <figcaption class="visually-hidden">Audio shared by ${fullName}</figcaption>
+                    </figure>
+                `;
+            } else {
+                // Default to image (for backwards compatibility)
+                mediaMarkup = `
+                    <figure class="post-figure">
+                        <img src="${image}" alt="Image shared by ${fullName}" class="post-image" />
+                        <figcaption class="visually-hidden">Image shared by ${fullName}</figcaption>
+                    </figure>
+                `;
+            }
+        }
         
         return `
             <article class="post" data-post-id="${postId}">
@@ -286,7 +313,7 @@ const App = (function() {
                 
                 <div class="post-content">
                     <p>${escapeHtml(content || '')}</p>
-                    ${imageMarkup}
+                    ${mediaMarkup}
                 </div>
                 
                 <footer class="post-footer">
@@ -401,22 +428,74 @@ const App = (function() {
 
     // ==================== POST CREATION ====================
 
+    // Helper function to get media type from file
+    function getMediaType(file) {
+        if (file.type.startsWith('image/')) return 'image';
+        if (file.type.startsWith('video/')) return 'video';
+        if (file.type.startsWith('audio/')) return 'audio';
+        return 'unknown';
+    }
+
+    // Helper function to get max file size based on media type
+    function getMaxFileSize(mediaType) {
+        switch (mediaType) {
+            case 'video': return 50 * 1024 * 1024; // 50MB for videos
+            case 'audio': return 10 * 1024 * 1024; // 10MB for audio
+            default: return 5 * 1024 * 1024; // 5MB for images
+        }
+    }
+
+    // Helper function to generate media preview HTML
+    function generateMediaPreview(mediaData, mediaType, removeId) {
+        switch (mediaType) {
+            case 'video':
+                return `
+                    <div class="preview-media-container">
+                        <video src="${mediaData}" controls class="preview-video"></video>
+                        <button type="button" class="remove-media-btn" id="${removeId}">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                `;
+            case 'audio':
+                return `
+                    <div class="preview-media-container preview-audio-container">
+                        <i class="fa fa-music preview-audio-icon"></i>
+                        <audio src="${mediaData}" controls class="preview-audio"></audio>
+                        <button type="button" class="remove-media-btn" id="${removeId}">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                `;
+            default: // image
+                return `
+                    <div class="preview-media-container">
+                        <img src="${mediaData}" alt="Preview" />
+                        <button type="button" class="remove-media-btn" id="${removeId}">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                `;
+        }
+    }
+
     function initializePostCreator() {
         const form = document.getElementById('post-form');
         const textarea = document.getElementById('post-input');
         const submitBtn = document.getElementById('post-submit-btn');
-        const imageInput = document.getElementById('post-image-input');
-        const imagePreview = document.getElementById('image-preview');
+        const mediaInput = document.getElementById('post-media-input');
+        const mediaPreview = document.getElementById('media-preview');
         
         if (!form || !textarea || !submitBtn) return;
         
-        let selectedImage = null;
+        let selectedMedia = null;
+        let selectedMediaType = null;
         
         // Helper function to update button state
         function updatePostButtonState() {
             const hasText = textarea.value.trim().length > 0;
-            const hasImage = selectedImage !== null;
-            const canPost = hasText || hasImage;
+            const hasMedia = selectedMedia !== null;
+            const canPost = hasText || hasMedia;
             
             submitBtn.disabled = !canPost;
             submitBtn.style.opacity = canPost ? '1' : '0.6';
@@ -429,33 +508,32 @@ const App = (function() {
         // Enable/disable button based on content
         textarea.addEventListener('input', updatePostButtonState);
         
-        // Image selection
-        if (imageInput) {
-            imageInput.addEventListener('change', (e) => {
+        // Media selection
+        if (mediaInput) {
+            mediaInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
                 if (file) {
-                    if (file.size > 5 * 1024 * 1024) {
-                        showToast('Image must be less than 5MB', 'error');
+                    const mediaType = getMediaType(file);
+                    const maxSize = getMaxFileSize(mediaType);
+                    
+                    if (file.size > maxSize) {
+                        const sizeMB = Math.round(maxSize / (1024 * 1024));
+                        showToast(`${mediaType.charAt(0).toUpperCase() + mediaType.slice(1)} must be less than ${sizeMB}MB`, 'error');
                         return;
                     }
                     
                     const reader = new FileReader();
                     reader.onload = (e) => {
-                        selectedImage = e.target.result;
+                        selectedMedia = e.target.result;
+                        selectedMediaType = mediaType;
                         updatePostButtonState();
-                        if (imagePreview) {
-                            imagePreview.innerHTML = `
-                                <div class="preview-image-container">
-                                    <img src="${selectedImage}" alt="Preview" />
-                                    <button type="button" class="remove-image-btn" id="remove-image">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
-                            `;
-                            document.getElementById('remove-image')?.addEventListener('click', () => {
-                                selectedImage = null;
-                                imagePreview.innerHTML = '';
-                                imageInput.value = '';
+                        if (mediaPreview) {
+                            mediaPreview.innerHTML = generateMediaPreview(selectedMedia, selectedMediaType, 'remove-media');
+                            document.getElementById('remove-media')?.addEventListener('click', () => {
+                                selectedMedia = null;
+                                selectedMediaType = null;
+                                mediaPreview.innerHTML = '';
+                                mediaInput.value = '';
                                 updatePostButtonState();
                             });
                         }
@@ -470,7 +548,7 @@ const App = (function() {
             e.preventDefault();
             
             const content = textarea.value.trim();
-            if (!content && !selectedImage) return;
+            if (!content && !selectedMedia) return;
             
             const currentUser = Storage.getCurrentUser();
             if (!currentUser) {
@@ -487,14 +565,16 @@ const App = (function() {
                 const newPost = Storage.createPost({
                     authorId: currentUser.id,
                     content: content,
-                    image: selectedImage
+                    image: selectedMedia,
+                    mediaType: selectedMediaType
                 });
                 
                 // Reset form
                 textarea.value = '';
-                selectedImage = null;
-                if (imagePreview) imagePreview.innerHTML = '';
-                if (imageInput) imageInput.value = '';
+                selectedMedia = null;
+                selectedMediaType = null;
+                if (mediaPreview) mediaPreview.innerHTML = '';
+                if (mediaInput) mediaInput.value = '';
                 
                 submitBtn.disabled = true;
                 submitBtn.style.opacity = '0.6';
@@ -514,18 +594,19 @@ const App = (function() {
         const form = document.getElementById('profile-post-form');
         const textarea = document.getElementById('profile-post-input');
         const submitBtn = document.getElementById('profile-post-submit-btn');
-        const imageInput = document.getElementById('profile-post-image-input');
-        const imagePreview = document.getElementById('profile-image-preview');
+        const mediaInput = document.getElementById('profile-post-media-input');
+        const mediaPreview = document.getElementById('profile-media-preview');
         
         if (!form || !textarea || !submitBtn) return;
         
-        let selectedImage = null;
+        let selectedMedia = null;
+        let selectedMediaType = null;
         
         // Helper function to update button state
         function updatePostButtonState() {
             const hasText = textarea.value.trim().length > 0;
-            const hasImage = selectedImage !== null;
-            const canPost = hasText || hasImage;
+            const hasMedia = selectedMedia !== null;
+            const canPost = hasText || hasMedia;
             
             submitBtn.disabled = !canPost;
             submitBtn.style.opacity = canPost ? '1' : '0.6';
@@ -538,33 +619,32 @@ const App = (function() {
         // Enable/disable button based on content
         textarea.addEventListener('input', updatePostButtonState);
         
-        // Image selection
-        if (imageInput) {
-            imageInput.addEventListener('change', (e) => {
+        // Media selection
+        if (mediaInput) {
+            mediaInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
                 if (file) {
-                    if (file.size > 5 * 1024 * 1024) {
-                        showToast('Image must be less than 5MB', 'error');
+                    const mediaType = getMediaType(file);
+                    const maxSize = getMaxFileSize(mediaType);
+                    
+                    if (file.size > maxSize) {
+                        const sizeMB = Math.round(maxSize / (1024 * 1024));
+                        showToast(`${mediaType.charAt(0).toUpperCase() + mediaType.slice(1)} must be less than ${sizeMB}MB`, 'error');
                         return;
                     }
                     
                     const reader = new FileReader();
                     reader.onload = (e) => {
-                        selectedImage = e.target.result;
+                        selectedMedia = e.target.result;
+                        selectedMediaType = mediaType;
                         updatePostButtonState();
-                        if (imagePreview) {
-                            imagePreview.innerHTML = `
-                                <div class="preview-image-container">
-                                    <img src="${selectedImage}" alt="Preview" />
-                                    <button type="button" class="remove-image-btn" id="profile-remove-image">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
-                            `;
-                            document.getElementById('profile-remove-image')?.addEventListener('click', () => {
-                                selectedImage = null;
-                                imagePreview.innerHTML = '';
-                                imageInput.value = '';
+                        if (mediaPreview) {
+                            mediaPreview.innerHTML = generateMediaPreview(selectedMedia, selectedMediaType, 'profile-remove-media');
+                            document.getElementById('profile-remove-media')?.addEventListener('click', () => {
+                                selectedMedia = null;
+                                selectedMediaType = null;
+                                mediaPreview.innerHTML = '';
+                                mediaInput.value = '';
                                 updatePostButtonState();
                             });
                         }
@@ -579,7 +659,7 @@ const App = (function() {
             e.preventDefault();
             
             const content = textarea.value.trim();
-            if (!content && !selectedImage) return;
+            if (!content && !selectedMedia) return;
             
             const currentUser = Storage.getCurrentUser();
             if (!currentUser) {
@@ -596,14 +676,16 @@ const App = (function() {
                 Storage.createPost({
                     authorId: currentUser.id,
                     content: content,
-                    image: selectedImage
+                    image: selectedMedia,
+                    mediaType: selectedMediaType
                 });
                 
                 // Reset form
                 textarea.value = '';
-                selectedImage = null;
-                if (imagePreview) imagePreview.innerHTML = '';
-                if (imageInput) imageInput.value = '';
+                selectedMedia = null;
+                selectedMediaType = null;
+                if (mediaPreview) mediaPreview.innerHTML = '';
+                if (mediaInput) mediaInput.value = '';
                 
                 submitBtn.disabled = true;
                 submitBtn.style.opacity = '0.6';

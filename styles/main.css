@@ -1620,11 +1620,28 @@ body.dark-mode .notification-item.unread { background-color: rgba(8, 129, 120, 0
 body.dark-mode .page-header { background-color: #1a1a2e; }
 body.dark-mode .page-header h1 { color: #e0e0e0; }
 
-/* Image Preview */
-.image-preview { margin-top: 12px; }
-.preview-image-container { position: relative; display: inline-block; max-width: 100%; }
-.preview-image-container img { max-width: 100%; max-height: 300px; border-radius: 12px; object-fit: cover; }
-.remove-image-btn {
+/* Media Preview */
+.image-preview, .media-preview { margin-top: 12px; }
+.preview-image-container, .preview-media-container { position: relative; display: inline-block; max-width: 100%; }
+.preview-image-container img, .preview-media-container img { max-width: 100%; max-height: 300px; border-radius: 12px; object-fit: cover; }
+.preview-media-container video { max-width: 100%; max-height: 300px; border-radius: 12px; }
+.preview-media-container.preview-audio-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #088178 0%, #065f57 100%);
+    padding: 16px 20px;
+    border-radius: 12px;
+}
+.preview-audio-icon {
+    font-size: 24px;
+    color: white;
+}
+.preview-audio {
+    flex: 1;
+    max-width: 300px;
+}
+.remove-image-btn, .remove-media-btn {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -1638,6 +1655,41 @@ body.dark-mode .page-header h1 { color: #e0e0e0; }
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+}
+.preview-audio-container .remove-media-btn {
+    position: static;
+    margin-left: auto;
+}
+
+/* Post Media Styles */
+.post-video {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 12px;
+    background: #000;
+}
+.post-audio-figure {
+    margin: 0;
+}
+.post-audio-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, #088178 0%, #065f57 100%);
+    padding: 20px 24px;
+    border-radius: 12px;
+}
+.post-audio-icon {
+    font-size: 32px;
+    color: white;
+}
+.post-audio {
+    flex: 1;
+    max-width: 100%;
+}
+body.dark-mode .post-audio-container {
+    background: linear-gradient(135deg, #0a9b8e 0%, #077a6e 100%);
 }
 
 /* Post Author Link */
