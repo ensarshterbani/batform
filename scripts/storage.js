@@ -135,6 +135,7 @@ const Storage = (function() {
             authorId: postData.authorId,
             content: postData.content,
             image: postData.image || null,
+            mediaType: postData.mediaType || null,
             createdAt: Date.now()
         };
         posts.unshift(newPost); // Add to beginning

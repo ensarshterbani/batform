@@ -851,15 +851,27 @@ const App = (function() {
                 return;
             }
             
+            if (!userId) {
+                console.error('Follow button missing user ID');
+                return;
+            }
+            
             const isNowFollowing = Storage.toggleFollow(currentUser.id, userId);
             
             btn.classList.toggle('following', isNowFollowing);
             btn.textContent = isNowFollowing ? 'Following' : 'Follow';
             
-            // Update follower count
-            const followersCount = document.getElementById('followers-count');
-            if (followersCount) {
-                followersCount.textContent = Storage.getFollowerCount(userId);
+            // Update the profile user's follower count
+            const followersCountEl = document.getElementById('followers-count');
+            if (followersCountEl) {
+                const newFollowerCount = Storage.getFollowerCount(userId);
+                followersCountEl.textContent = newFollowerCount;
+            }
+            
+            // Also update sidebar follower count if viewing own stats elsewhere
+            const sidebarFollowersEl = document.getElementById('sidebar-followers');
+            if (sidebarFollowersEl) {
+                sidebarFollowersEl.textContent = Storage.getFollowerCount(currentUser.id);
             }
             
             // Create notification
@@ -1358,18 +1370,25 @@ const App = (function() {
                 const userId = btn.dataset.userId;
                 const isNowFollowing = Storage.toggleFollow(currentUser.id, userId);
                 
+                // Update button state
+                btn.classList.toggle('following', isNowFollowing);
+                btn.textContent = isNowFollowing ? 'Following' : 'Follow';
+                
                 if (isNowFollowing) {
-                    btn.textContent = 'Following';
-                    btn.classList.add('following');
-                    
                     Storage.createNotification({
                         userId: userId,
                         type: 'follow',
                         fromUserId: currentUser.id
                     });
-                    
-                    showToast('Now following!', 'success');
                 }
+                
+                // Update sidebar follower count for current user
+                const sidebarFollowersEl = document.getElementById('sidebar-followers');
+                if (sidebarFollowersEl) {
+                    sidebarFollowersEl.textContent = Storage.getFollowerCount(currentUser.id);
+                }
+                
+                showToast(isNowFollowing ? 'Now following!' : 'Unfollowed', 'success');
             });
         });
     }
