@@ -49,24 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Mobile navigation initialized');
     }
     
-    // Logout button handler
+    // Logout button handler (sidebar)
     const logoutBtn = document.getElementById('logout-btn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (confirm('Are you sure you want to log out?')) {
-                if (typeof Storage !== 'undefined' && Storage.logoutUser) {
-                    Storage.logoutUser();
-                }
-                if (typeof App !== 'undefined' && App.showToast) {
-                    App.showToast('Logged out successfully', 'success');
-                }
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 500);
-            }
+            handleLogout();
         });
     }
+    
+    // Mobile logout button handler
+    const mobileLogoutBtns = document.querySelectorAll('.mobile-logout-btn');
+    mobileLogoutBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleLogout();
+        });
+    });
     
     // Update sidebar user info
     updateSidebarUserInfo();
@@ -114,13 +113,23 @@ function updateSidebarUserInfo() {
     }
 }
 
-// Legacy logout function for backward compatibility
-function confirmLogout(event) {
-    event.preventDefault();
+// Centralized logout handler
+function handleLogout() {
     if (confirm('Are you sure you want to log out?')) {
         if (typeof Storage !== 'undefined' && Storage.logoutUser) {
             Storage.logoutUser();
         }
-        window.location.href = 'login.html';
+        if (typeof App !== 'undefined' && App.showToast) {
+            App.showToast('Logged out successfully', 'success');
+        }
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 500);
     }
+}
+
+// Legacy logout function for backward compatibility
+function confirmLogout(event) {
+    event.preventDefault();
+    handleLogout();
 }

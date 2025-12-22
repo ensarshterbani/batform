@@ -524,3 +524,216 @@ body.dark-mode .danger-info p {
         width: 100%;
     }
 }
+
+/* ==================== LOGIN ACTIVITY TABLE ==================== */
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    margin-top: 16px;
+}
+
+body.dark-mode .table-wrapper {
+    border-color: #30363d;
+}
+
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: white;
+}
+
+body.dark-mode .activity-table {
+    background: #161b22;
+}
+
+.activity-table caption {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+    background: #f8f9fa;
+    border-bottom: 2px solid #088178;
+}
+
+body.dark-mode .activity-table caption {
+    color: #e6edf3;
+    background: #21262d;
+}
+
+.activity-table thead {
+    background: linear-gradient(135deg, #088178 0%, #065f57 100%);
+}
+
+.activity-table thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.activity-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+body.dark-mode .activity-table tbody tr {
+    border-bottom-color: #30363d;
+}
+
+.activity-table tbody tr:hover {
+    background-color: rgba(8, 129, 120, 0.05);
+}
+
+body.dark-mode .activity-table tbody tr:hover {
+    background-color: rgba(8, 129, 120, 0.1);
+}
+
+.activity-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+body.dark-mode .activity-table tbody tr:nth-child(even) {
+    background-color: #1a1f2e;
+}
+
+.activity-table td {
+    padding: 12px 16px;
+    color: #555;
+    vertical-align: middle;
+}
+
+body.dark-mode .activity-table td {
+    color: #b0b0b0;
+}
+
+.activity-table tbody th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    background-color: rgba(8, 129, 120, 0.08);
+}
+
+body.dark-mode .activity-table tbody th {
+    color: #e6edf3;
+    background-color: rgba(8, 129, 120, 0.15);
+}
+
+.activity-table tfoot {
+    background: #f8f9fa;
+    border-top: 2px solid #e9ecef;
+}
+
+body.dark-mode .activity-table tfoot {
+    background: #21262d;
+    border-top-color: #30363d;
+}
+
+.activity-table tfoot td {
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #6c757d;
+    text-align: center;
+}
+
+body.dark-mode .activity-table tfoot td {
+    color: #8b949e;
+}
+
+/* Status badges */
+.status-active {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+body.dark-mode .status-active {
+    background-color: rgba(40, 167, 69, 0.25);
+    color: #5dd879;
+}
+
+.status-inactive {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background-color: rgba(108, 117, 125, 0.15);
+    color: #6c757d;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+body.dark-mode .status-inactive {
+    background-color: rgba(108, 117, 125, 0.25);
+    color: #8b949e;
+}
+
+/* ==================== AUDIO PREVIEW ==================== */
+
+.audio-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.audio-preview label {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+body.dark-mode .audio-preview label {
+    color: #e6edf3;
+}
+
+.audio-preview audio {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.audio-note {
+    padding: 10px 14px;
+    background: rgba(8, 129, 120, 0.1);
+    border-radius: 8px;
+    color: #088178;
+    font-size: 13px;
+    max-width: 400px;
+}
+
+body.dark-mode .audio-note {
+    background: rgba(8, 129, 120, 0.2);
+    color: #26d0ce;
+}
+
+/* Responsive table */
+@media (max-width: 600px) {
+    .activity-table {
+        font-size: 12px;
+    }
+    
+    .activity-table thead th,
+    .activity-table td,
+    .activity-table tbody th {
+        padding: 10px 12px;
+    }
+    
+    .activity-table thead th {
+        font-size: 10px;
+    }
+}

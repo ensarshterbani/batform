@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <!-- Background -->
+  <rect width="640" height="360" fill="#1a1f2e"/>
+  
+  <!-- Play button circle -->
+  <circle cx="320" cy="180" r="60" fill="#088178" opacity="0.9"/>
+  
+  <!-- Play triangle -->
+  <path d="M300 150 L300 210 L355 180 Z" fill="white"/>
+  
+  <!-- Text -->
+  <text x="320" y="280" text-anchor="middle" fill="#6c757d" font-family="Arial, sans-serif" font-size="16">
+    Video Tutorial Coming Soon
+  </text>
+</svg>

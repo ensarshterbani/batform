@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About Batform - Learn more about our social media platform" />
+    <title>About | Batform</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <div class="nav-left">
+          <h1 class="logo">
+            <a href="index.html">
+              <img src="images/batform-logo.svg" alt="Batform" class="logo-icon" />
+              <span class="logo-text">Batform</span>
+            </a>
+          </h1>
+        </div>
+
+        <div class="nav-center">
+          <form class="search-form" role="search">
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search for people, posts, or topics..."
+              aria-label="Search" />
+            <button type="submit" class="search-btn" aria-label="Search">
+              <span class="search-icon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </button>
+          </form>
+        </div>
+
+        <div class="nav-right">
+          <!-- Desktop Navigation -->
+          <ul class="nav-menu desktop-nav">
+            <li>
+              <a href="index.html" class="nav-link">
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="notification.html" class="nav-link">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="settings.html" class="nav-link">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="profile.html" class="nav-link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile Hamburger Menu -->
+          <div class="mobile-nav">
+            <button
+              class="hamburger-btn"
+              id="hamburger-btn"
+              aria-label="Toggle navigation menu">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <!-- Mobile Dropdown Menu -->
+            <div class="mobile-dropdown" id="mobile-dropdown">
+              <ul class="mobile-menu">
+                <li>
+                  <a href="index.html" class="mobile-link">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                  </a>
+                </li>
+                <li>
+                  <a href="notification.html" class="mobile-link">
+                    <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+                  </a>
+                </li>
+                <li>
+                  <a href="settings.html" class="mobile-link">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                  </a>
+                </li>
+                <li>
+                  <a href="profile.html" class="mobile-link">
+                    <i class="fa fa-user" aria-hidden="true"></i> Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="saved.html" class="mobile-link">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i> Saved
+                  </a>
+                </li>
+                <li>
+                  <a href="about.html" class="mobile-link active">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i> About
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="about-page">
+      <div class="about-container">
+        <!-- Hero Section -->
+        <section class="about-hero">
+          <h1><i class="fa fa-info-circle" aria-hidden="true"></i> About Batform</h1>
+          <p class="hero-subtitle">
+            A modern social media platform built with <em>passion</em> and <strong>purpose</strong>.
+          </p>
+        </section>
+
+        <!-- Video Section - YouTube Embed -->
+        <section class="about-section video-section">
+          <h2><i class="fa fa-play-circle" aria-hidden="true"></i> Welcome to Batform!</h2>
+          <p>Here's a video about JavaScript:</p>
+          
+          <div class="video-wrapper">
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/DHjqpvDnNGE?si=bNb4j39mxPcJmDNX" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </section>
+
+        <!-- Features Table Section -->
+        <section class="about-section features-section">
+          <h2><i class="fa fa-star" aria-hidden="true"></i> Platform Features</h2>
+          <p>Discover what you can do on Batform:</p>
+          
+          <div class="table-wrapper">
+            <table class="features-table">
+              <caption>Complete list of Batform features and their availability</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Create Posts</th>
+                  <td>Share your thoughts with text and images</td>
+                  <td><span class="status-available"><i class="fa fa-check"></i> Available</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Like & Comment</th>
+                  <td>Engage with posts from other users</td>
+                  <td><span class="status-available"><i class="fa fa-check"></i> Available</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Follow Users</th>
+                  <td>Stay connected with people you care about</td>
+                  <td><span class="status-available"><i class="fa fa-check"></i> Available</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Save Posts</th>
+                  <td>Bookmark posts to view later</td>
+                  <td><span class="status-available"><i class="fa fa-check"></i> Available</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Notifications</th>
+                  <td>Get notified when someone interacts with you</td>
+                  <td><span class="status-available"><i class="fa fa-check"></i> Available</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Dark Mode</th>
+                  <td>Easy on the eyes, day or night</td>
+                  <td><span class="status-available"><i class="fa fa-check"></i> Available</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Direct Messages</th>
+                  <td>Private conversations with friends</td>
+                  <td><span class="status-coming"><i class="fa fa-clock"></i> Coming Soon</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Stories</th>
+                  <td>Share moments that disappear in 24 hours</td>
+                  <td><span class="status-coming"><i class="fa fa-clock"></i> Coming Soon</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3">
+                    <em>Last updated: December 2025</em> — More features are being developed!
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <!-- Audio Section -->
+        <section class="about-section audio-section">
+          <h2><i class="fa fa-volume-up" aria-hidden="true"></i> Notification Sounds</h2>
+          <p>Preview our notification sound:</p>
+          
+          <div class="audio-wrapper">
+            <label for="notification-sound">Notification alert:</label>
+            <audio id="notification-sound" controls>
+              <source src="media/notification.mp3" type="audio/mpeg">
+              <source src="media/notification.ogg" type="audio/ogg">
+              Your browser does not support the audio element. 
+              <a href="media/notification.mp3">Download the audio file</a>.
+            </audio>
+            <p class="audio-note">
+              <i class="fa fa-info-circle"></i> 
+              <em>Audio preview coming soon!</em>
+            </p>
+          </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="about-section cta-section">
+          <h2>Ready to Join?</h2>
+          <p>Create your account today and start connecting with others!</p>
+          <div class="cta-buttons">
+            <a href="signup.html" class="btn btn-primary">
+              <i class="fa fa-user-plus"></i> Sign Up Now
+            </a>
+            <a href="login.html" class="btn btn-secondary">
+              <i class="fa fa-sign-in-alt"></i> Log In
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 <strong>Batform</strong>. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="about.html" class="footer-link">About</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Help</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/navigation.js"></script>
+  </body>
+</html>
