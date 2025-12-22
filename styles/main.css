@@ -11,6 +11,19 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Accessibility - Visually Hidden (screen reader only) */
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -281,6 +294,19 @@ input, textarea, select {
     transition: border-color 0.2s ease;
 }
 
+/* Fieldset Styling - invisible semantic wrappers */
+fieldset,
+.settings-fieldset,
+.auth-fieldset,
+.modal-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    background: transparent;
+}
+
+
 input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: #088178;
@@ -404,13 +430,26 @@ svg {
     height: auto;
 }
 
-/* Lists */
+/* Lists - Using child selectors for direct children */
 ul, ol {
     margin-bottom: 1rem;
 }
 
 li {
     margin-bottom: 0.25rem;
+}
+
+/* Direct child selectors for navigation lists */
+.nav-menu > li {
+    display: inline-block;
+}
+
+.sidebar-menu > li {
+    margin-bottom: 4px;
+}
+
+.footer-nav > a {
+    padding: 0 8px;
 }
 
 /* Tables */
@@ -1647,18 +1686,30 @@ body.dark-mode .demo-credentials { background-color: #2d2d44; color: #e0e0e0; }
 /* Follow Button States */
 .follow-btn.following { background-color: #088178; color: white; }
 .edit-profile-btn {
-    background-color: transparent;
-    color: #088178;
+    background-color: #088178;
+    color: white;
     border: 2px solid #088178;
     padding: 10px 24px;
-    border-radius: 8px;
+    border-radius: 25px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.2s ease;
 }
-.edit-profile-btn:hover { background-color: #088178; color: white; }
-body.dark-mode .edit-profile-btn { color: #26d0ce; border-color: #26d0ce; }
-body.dark-mode .edit-profile-btn:hover { background-color: #088178; color: white; border-color: #088178; }
+.edit-profile-btn:hover { 
+    background-color: #065f57; 
+    border-color: #065f57;
+    transform: translateY(-2px);
+}
+body.dark-mode .edit-profile-btn { 
+    background-color: #088178;
+    color: white; 
+    border-color: #088178; 
+}
+body.dark-mode .edit-profile-btn:hover { 
+    background-color: #065f57; 
+    border-color: #065f57;
+}

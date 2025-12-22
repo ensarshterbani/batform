@@ -95,6 +95,7 @@
     
     .profile-actions {
         justify-content: center;
+        align-items: center;
     }
 }
 
@@ -229,6 +230,7 @@
     
     .profile-actions {
         justify-content: center;
+        align-items: center;
         margin-top: 16px;
         gap: 8px;
     }
@@ -412,6 +414,7 @@
     
     .profile-actions {
         flex-direction: column;
+        align-items: center;
         width: 100%;
         gap: 8px;
     }
@@ -419,7 +422,9 @@
     .edit-profile-btn,
     .message-btn {
         width: 100%;
+        max-width: 280px;
         text-align: center;
+        justify-content: center;
     }
     
     .profile-nav-list {

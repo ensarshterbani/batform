@@ -63,6 +63,26 @@ body.dark-mode .auth-header .muted {
   margin-top: 20px;
 }
 
+/* Auth fieldset - invisible wrapper for semantic grouping */
+.auth-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.auth-fieldset > legend {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .form-row {
   display: flex;
   flex-direction: column;

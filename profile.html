@@ -165,6 +165,37 @@
         <h2 class="section-title">
           <i class="fa fa-th-large"></i> Posts
         </h2>
+        
+        <!-- Post Creator (only shown on own profile) -->
+        <article class="post-creator profile-post-creator" id="profile-post-creator" style="display: none;">
+          <h3 class="visually-hidden">Create a new post</h3>
+          <div class="post-creator-header">
+            <img
+              src="images/profile_picture.svg"
+              alt="Your profile picture"
+              class="creator-avatar current-user-avatar" />
+            <form class="post-form" id="profile-post-form">
+              <textarea
+                class="post-input"
+                id="profile-post-input"
+                placeholder="What's on your mind?"
+                rows="3"
+                aria-label="Write a post"></textarea>
+              <div id="profile-image-preview" class="image-preview"></div>
+              <div class="post-actions">
+                <div class="post-options">
+                  <label class="post-option-btn">
+                    <i class="fa fa-image" aria-hidden="true"></i>
+                    <span>Photo</span>
+                    <input type="file" id="profile-post-image-input" accept="image/*" hidden />
+                  </label>
+                  <button type="submit" class="post-submit-btn" id="profile-post-submit-btn">Post</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </article>
+        
         <div class="posts-grid" id="user-posts">
           <div class="loading-spinner">
             <i class="fa fa-spinner fa-spin"></i>
@@ -177,8 +208,8 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-content">
-        <p>&copy; 2025 Batform.</p>
-        <nav class="footer-nav">
+        <p>&copy; 2025 <strong>Batform</strong>. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
           <a href="#" class="footer-link">Help</a>

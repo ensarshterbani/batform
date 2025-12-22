@@ -47,61 +47,78 @@
         </header>
 
         <form class="auth-form" id="signup-form" novalidate>
-          <div class="form-row">
-            <label for="fullname">Full Name</label>
-            <input
-              id="fullname"
-              name="fullname"
-              type="text"
-              class="auth-input"
-              placeholder="John Doe"
-              required />
-          </div>
+          <fieldset class="auth-fieldset">
+            <legend class="visually-hidden">Account Details</legend>
+            <div class="form-row">
+              <label for="fullname">Full Name</label>
+              <input
+                id="fullname"
+                name="fullname"
+                type="text"
+                class="auth-input"
+                placeholder="John Doe"
+                minlength="2"
+                maxlength="50"
+                autocomplete="name"
+                required />
+            </div>
 
-          <div class="form-row">
-            <label for="username">Username</label>
-            <input
-              id="username"
-              name="username"
-              type="text"
-              class="auth-input"
-              placeholder="johndoe"
-              required />
-          </div>
+            <div class="form-row">
+              <label for="username">Username</label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                class="auth-input"
+                placeholder="johndoe"
+                minlength="3"
+                maxlength="20"
+                pattern="[a-z0-9_]+"
+                title="Only lowercase letters, numbers, and underscores"
+                autocomplete="username"
+                required />
+            </div>
 
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              class="auth-input"
-              placeholder="you@example.com"
-              required />
-          </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="auth-input"
+                placeholder="you@example.com"
+                maxlength="100"
+                autocomplete="email"
+                required />
+            </div>
 
-          <div class="form-row">
-            <label for="password">Password</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              class="auth-input"
-              placeholder="At least 6 characters"
-              required
-              minlength="6" />
-          </div>
+            <div class="form-row">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="auth-input"
+                placeholder="At least 6 characters"
+                minlength="6"
+                maxlength="50"
+                autocomplete="new-password"
+                required />
+            </div>
 
-          <div class="form-row">
-            <label for="confirm-password">Confirm Password</label>
-            <input
-              id="confirm-password"
-              name="confirm-password"
-              type="password"
-              class="auth-input"
-              placeholder="Confirm your password"
-              required />
-          </div>
+            <div class="form-row">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                id="confirm-password"
+                name="confirm-password"
+                type="password"
+                class="auth-input"
+                placeholder="Confirm your password"
+                minlength="6"
+                autocomplete="new-password"
+                required />
+            </div>
+          </fieldset>
 
           <p class="auth-footer">
             Already have an account? <a href="login.html">Log in</a>
@@ -120,8 +137,8 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-content">
-        <p>&copy; 2025 Batform.</p>
-        <nav class="footer-nav">
+        <p>&copy; 2025 <strong>Batform</strong>. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
           <a href="#" class="footer-link">Help</a>

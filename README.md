@@ -6,6 +6,10 @@ A clean and professional social media platform built with HTML, CSS, and JavaScr
 
 Batform is a social media website that demonstrates modern web development practices using semantic HTML5, clean CSS design, and JavaScript for interactivity. The project follows a progressive enhancement approach: HTML for structure, CSS for presentation, and JavaScript for dynamic functionality.
 
+## Client-Server model simulation
+
+Instead of a real database and backend implemented with something like PHP and MySQL, we have chosen instead to only use JavaScript's localStorage as a simulation of a client-server model, since our project is only focused on the front-end.
+
 ## Contributors
 
 This project is being developed by Ensar Shtërbani, Erzen Neziri and Luis Tunaj.

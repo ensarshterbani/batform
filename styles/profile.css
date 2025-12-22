@@ -197,7 +197,8 @@ body.dark-mode .stat-label {
 }
 
 .edit-profile-btn:hover {
-  transform: scale(1.1) translateY(-3px);
+  background-color: #065f57;
+  transform: translateY(-2px);
 }
 
 .message-btn {
@@ -1260,6 +1261,7 @@ body.dark-mode .post-content p {
 
   .profile-actions {
     justify-content: center;
+    align-items: center;
     margin-top: 16px;
     width: 100%;
     gap: 12px;
@@ -1337,12 +1339,15 @@ body.dark-mode .post-content p {
 
   .profile-actions {
     flex-direction: column;
+    align-items: center;
     width: 100%;
   }
 
   .edit-profile-btn,
   .message-btn {
     width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 
   /* Profile post creator mobile */
@@ -1541,6 +1546,23 @@ body.dark-mode .profile-posts .section-title {
   color: #e0e0e0;
 }
 
+/* Profile Post Creator */
+.profile-post-creator {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.dark-mode .profile-post-creator {
+  background: var(--card-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .posts-grid {
   display: flex;
   flex-direction: column;
@@ -1551,6 +1573,30 @@ body.dark-mode .profile-posts .section-title {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(8, 129, 120, 0.2), rgba(8, 129, 120, 0.6));
+}
+
+/* Profile Website Link - External links with target/rel */
+.profile-website-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: hsl(168, 89%, 25%);
+  font-size: 14px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.profile-website-link:hover {
+  text-decoration: underline;
+  color: hsl(168, 89%, 20%);
+}
+
+body.dark-mode .profile-website-link {
+  color: hsl(174, 72%, 49%);
+}
+
+body.dark-mode .profile-website-link:hover {
+  color: hsl(174, 72%, 55%);
 }
 
 /* Responsive */

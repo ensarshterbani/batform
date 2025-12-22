@@ -47,27 +47,34 @@
         </header>
 
         <form class="auth-form" id="login-form" novalidate>
-          <div class="form-row">
-            <label for="email">Email or username</label>
-            <input
-              id="email"
-              name="email"
-              type="text"
-              class="auth-input"
-              placeholder="you@example.com"
-              required />
-          </div>
+          <fieldset class="auth-fieldset">
+            <legend class="visually-hidden">Login Credentials</legend>
+            <div class="form-row">
+              <label for="email">Email or username</label>
+              <input
+                id="email"
+                name="email"
+                type="text"
+                class="auth-input"
+                placeholder="you@example.com"
+                maxlength="100"
+                autocomplete="username"
+                required />
+            </div>
 
-          <div class="form-row">
-            <label for="password">Password</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              class="auth-input"
-              placeholder="Your password"
-              required />
-          </div>
+            <div class="form-row">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="auth-input"
+                placeholder="Your password"
+                minlength="6"
+                autocomplete="current-password"
+                required />
+            </div>
+          </fieldset>
 
           <p class="auth-footer">
             Don't have an account? <a href="signup.html">Create one</a>
@@ -87,8 +94,8 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-content">
-        <p>&copy; 2025 Batform.</p>
-        <nav class="footer-nav">
+        <p>&copy; 2025 <strong>Batform</strong>. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
           <a href="#" class="footer-link">Help</a>

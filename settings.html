@@ -140,135 +140,119 @@
               Account
             </h2>
             <p class="section-description">
-              Update your personal information and account details
+              Update your <em>personal information</em> and account details
             </p>
 
-            <div class="settings-grid">
-              <div class="form-group">
-                <label for="display-name">Display Name</label>
-                <input
-                  type="text"
-                  id="display-name"
-                  name="displayName"
-                  placeholder="John Doe"
-                  required />
-              </div>
+            <fieldset class="settings-fieldset">
+              <legend>Basic Information</legend>
+              <div class="settings-grid">
+                <div class="form-group">
+                  <label for="display-name">Display Name</label>
+                  <input
+                    type="text"
+                    id="display-name"
+                    name="displayName"
+                    placeholder="John Doe"
+                    maxlength="50"
+                    pattern="[A-Za-z\s]+"
+                    title="Only letters and spaces allowed"
+                    required />
+                </div>
 
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  placeholder="johndoe"
-                  required />
-                <small class="form-help"
-                  >This will be your unique identifier (@johndoe)</small
-                >
-              </div>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="johndoe"
+                    minlength="3"
+                    maxlength="20"
+                    pattern="[a-z0-9_]+"
+                    title="Only lowercase letters, numbers, and underscores"
+                    required />
+                  <small class="form-help"
+                    >This will be your <strong>unique identifier</strong> (@johndoe)</small
+                  >
+                </div>
 
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="john@example.com"
-                  required />
-              </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    maxlength="100"
+                    required />
+                </div>
 
-              <div class="form-group">
-                <label for="bio">Bio</label>
-                <textarea
-                  id="bio"
-                  name="bio"
-                  rows="3"
-                  placeholder="Tell us about yourself..."></textarea>
-              </div>
+                <div class="form-group">
+                  <label for="bio">Bio</label>
+                  <textarea
+                    id="bio"
+                    name="bio"
+                    rows="3"
+                    maxlength="200"
+                    placeholder="Tell us about yourself..."></textarea>
+                </div>
 
-              <div class="form-group">
-                <label for="website">Website</label>
-                <input
-                  type="url"
-                  id="website"
-                  name="website"
-                  placeholder="https://yourwebsite.com" />
-              </div>
+                <div class="form-group">
+                  <label for="website">Website</label>
+                  <input
+                    type="url"
+                    id="website"
+                    name="website"
+                    placeholder="https://yourwebsite.com"
+                    maxlength="100" />
+                </div>
 
-              <div class="form-group">
-                <label for="location">Location</label>
-                <input
-                  type="text"
-                  id="location"
-                  name="location"
-                  placeholder="San Francisco, CA" />
-              </div>
-            </div>
-
-            <!-- Profile Picture Upload -->
-            <div class="upload-section">
-              <h3>Profile Picture</h3>
-              <div class="upload-container">
-                <img
-                  src="images/profile_picture.svg"
-                  alt="Current profile picture"
-                  class="current-avatar" />
-                <div class="upload-controls">
-                  <button type="button" class="btn btn-secondary upload-btn">
-                    <i class="fa fa-camera" aria-hidden="true"></i> Change
-                    Picture
-                  </button>
-                  <button type="button" class="btn btn-outline remove-btn">
-                    Remove
-                  </button>
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="San Francisco, CA"
+                    maxlength="50" />
                 </div>
               </div>
-            </div>
-
-            <!-- Cover Photo Upload -->
-            <div class="upload-section">
-              <h3>Cover Photo</h3>
-              <div class="cover-upload-container">
-                <img
-                  src="images/cover-placeholder.svg"
-                  alt="Current cover photo"
-                  class="current-cover" />
-                <div class="upload-controls">
-                  <button type="button" class="btn btn-secondary upload-btn">
-                    <i class="fa fa-image" aria-hidden="true"></i> Change Cover
-                  </button>
-                  <button type="button" class="btn btn-outline remove-btn">
-                    Remove
-                  </button>
-                </div>
-              </div>
-            </div>
+            </fieldset>
 
             <!-- Password Change -->
-            <div class="password-section">
-              <h3>Change Password</h3>
+            <fieldset class="settings-fieldset">
+              <legend>Change Password</legend>
               <div class="settings-grid">
                 <div class="form-group">
                   <label for="current-password">Current Password</label>
                   <input
                     type="password"
                     id="current-password"
-                    name="currentPassword" />
+                    name="currentPassword"
+                    minlength="6" />
                 </div>
                 <div class="form-group">
                   <label for="new-password">New Password</label>
-                  <input type="password" id="new-password" name="newPassword" />
-                  <small class="form-help">Must be at least 8 characters</small>
+                  <input
+                    type="password"
+                    id="new-password"
+                    name="newPassword"
+                    minlength="8"
+                    maxlength="50"
+                    pattern="(?=.*\d)(?=.*[a-z]).{8,}"
+                    title="Must contain at least 8 characters, including a number" />
+                  <small class="form-help">Must be <strong>at least 8 characters</strong></small>
                 </div>
                 <div class="form-group">
                   <label for="confirm-password">Confirm New Password</label>
                   <input
                     type="password"
                     id="confirm-password"
-                    name="confirmPassword" />
+                    name="confirmPassword"
+                    minlength="8" />
                 </div>
               </div>
-            </div>
+            </fieldset>
           </section>
 
           <!-- 2. Privacy & Visibility Section -->
@@ -383,8 +367,8 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-content">
-        <p>&copy; 2025 Batform.</p>
-        <nav class="footer-nav">
+        <p>&copy; 2025 <strong>Batform</strong>. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
           <a href="#" class="footer-link">Privacy Policy</a>
           <a href="#" class="footer-link">Terms of Service</a>
           <a href="#" class="footer-link">Help</a>
