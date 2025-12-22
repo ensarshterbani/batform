@@ -74,18 +74,18 @@
 
 .post-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  width: 100%;
 }
 
 .post-options {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
-  padding-left: 20px;
-  width: 100%;
+  gap: 24px;
 }
 
 .post-option-btn {
@@ -94,13 +94,16 @@
   color: #6c757d;
   font-size: 14px;
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 8px 16px;
   border-radius: 20px;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .post-option-btn:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   color: #088178;
 }
 
@@ -108,13 +111,12 @@
   background-color: #088178;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 24px;
   border-radius: 25px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  width: 110px;
 }
 
 .post-submit-btn:hover {
@@ -532,18 +534,17 @@ a.comment-btn {
   }
 
   .post-actions {
-    justify-content: space-around;
+    justify-content: center;
     gap: 8px;
   }
 
-  .post-option-btn {
-    flex: 1;
+  .post-options {
     justify-content: center;
-    min-width: 80px;
+    gap: 16px;
   }
 
   .action-btn {
-    min-width: 80px;
+    min-width: 70px;
     justify-content: center;
   }
 }
@@ -559,19 +560,17 @@ a.comment-btn {
   }
 
   .post-options {
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
   }
 
   .post-option-btn {
-    flex: 1 1 calc(50% - 4px);
-    min-width: 100px;
     padding: 8px 12px;
+    font-size: 13px;
   }
 
   .post-submit-btn {
-    width: 100%;
-    margin-top: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
   }
 }
